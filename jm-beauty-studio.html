@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>JM Beauty Studio | Premium Beauty Booking</title>
+<meta name="description" content="Premium nails, lashes, brows and embroidery treatments at JM Beauty Studio. Browse services, add to cart and send a booking request through WhatsApp.">
+<meta name="theme-color" content="#22150f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17120f;--espresso:#3b2418;--brown:#6f4935;--gold:#c7a56a;--gold2:#ead9b7;--ivory:#fbf8f2;--paper:#fff;--sand:#eee5d8;--muted:#756b65;--line:rgba(59,36,24,.13);--green:#1f8f55;--shadow:0 24px 70px rgba(38,24,17,.12);--radius:28px;--max:1180px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,system-ui,sans-serif;background:var(--ivory);color:var(--ink);line-height:1.65;overflow-x:hidden}body.lock{overflow:hidden}
+img{display:block;width:100%}a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}button{cursor:pointer}
+.container{width:min(calc(100% - 34px),var(--max));margin:auto}.serif,h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif}
+.kicker{display:inline-flex;align-items:center;gap:10px;color:var(--brown);font-size:.72rem;font-weight:800;letter-spacing:.19em;text-transform:uppercase}.kicker:before{content:"";width:34px;height:1px;background:var(--gold)}
+.title{font-size:clamp(2.7rem,6vw,5.6rem);line-height:.95;letter-spacing:-.04em}.lead{margin-top:20px;color:var(--muted);font-size:1.03rem;max-width:680px}.center{text-align:center}.center .lead{margin-inline:auto}
+.btn{min-height:52px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 22px;border:1px solid transparent;border-radius:999px;font-size:.88rem;font-weight:800;transition:.25s}.btn:hover{transform:translateY(-3px)}
+.btn-dark{background:var(--ink);color:white;box-shadow:0 14px 34px rgba(23,18,15,.18)}.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#271b13}.btn-line{border-color:var(--line);background:white}.btn-light{background:white}
+.site-header{position:fixed;z-index:1000;top:0;left:0;width:100%;transition:.3s}.site-header.scrolled,.site-header.inner{background:rgba(251,248,242,.94);backdrop-filter:blur(18px);box-shadow:0 8px 30px rgba(35,22,15,.08)}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;position:relative;z-index:1002;color:white}.site-header.scrolled .brand,.site-header.inner .brand{color:var(--ink)}
+.logo-mark{width:46px;height:46px;display:grid;place-items:center;border:1px solid currentColor;border-radius:15px 15px 15px 4px;font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:700}
+.brand strong{display:block;font-family:"Cormorant Garamond",serif;font-size:1.3rem;line-height:1}.brand small{display:block;margin-top:4px;font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;opacity:.68}
+.nav-links{display:flex;align-items:center;gap:23px;color:white}.site-header.scrolled .nav-links,.site-header.inner .nav-links{color:var(--ink)}.nav-link{font-size:.8rem;font-weight:700}.nav-link.active{color:var(--brown)}
+.cart-nav{position:relative}.cart-badge{position:absolute;top:-7px;right:-7px;width:22px;height:22px;display:grid;place-items:center;border-radius:50%;background:var(--gold);color:var(--ink);font-size:.65rem;font-weight:900}
+.menu-btn{display:none;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);color:white;position:relative;z-index:1002}.site-header.scrolled .menu-btn,.site-header.inner .menu-btn{color:var(--ink);border-color:var(--line);background:white}
+.mobile-nav{position:fixed;z-index:1001;inset:0;background:#21150f;color:white;display:grid;place-items:center;padding:100px 25px 35px;opacity:0;visibility:hidden;transition:.3s}.mobile-nav.open{opacity:1;visibility:visible}.mobile-nav nav{display:grid;gap:14px;text-align:center;width:min(100%,420px)}.mobile-nav a{font-family:"Cormorant Garamond",serif;font-size:2.3rem}
+.page{display:none;min-height:100vh}.page.active{display:block}.section{padding:110px 0}.section-white{background:white}.page-hero{padding:150px 0 80px;background:radial-gradient(circle at 85% 10%,rgba(199,165,106,.19),transparent 34%),var(--sand)}
+.hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;color:white;isolation:isolate;overflow:hidden;background:#24150e}.hero-bg{position:absolute;z-index:-3;inset:0;background:url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2200&q=88") center/cover}
+.hero:after{content:"";position:absolute;z-index:-2;inset:0;background:linear-gradient(90deg,rgba(24,14,9,.92),rgba(24,14,9,.62) 48%,rgba(24,14,9,.22)),linear-gradient(0deg,rgba(24,14,9,.86),transparent 62%)}.hero-content{padding:150px 0 72px}
+.hero h1{font-size:clamp(4.1rem,9vw,8rem);line-height:.82;letter-spacing:-.055em}.hero h1 em{font-style:normal;color:var(--gold2)}.hero p{margin-top:26px;max-width:650px;color:rgba(255,255,255,.76)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}.hero-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:35px}.hero-chip{padding:10px 14px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.08);font-size:.75rem}
+.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:55px}.category-card{position:relative;min-height:430px;border-radius:var(--radius);overflow:hidden;color:white;display:flex;align-items:flex-end;isolation:isolate;box-shadow:var(--shadow)}
+.category-card img{position:absolute;z-index:-3;inset:0;height:100%;object-fit:cover}.category-card:after{content:"";position:absolute;z-index:-2;inset:0;background:linear-gradient(0deg,rgba(24,15,10,.92),rgba(24,15,10,.1))}.category-content{padding:25px}.category-content h3{font-size:2rem}.category-content p{color:rgba(255,255,255,.68);font-size:.82rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.image-stack{min-height:650px;position:relative}.image-stack .main{position:absolute;inset:0 80px 40px 0;height:calc(100% - 40px);object-fit:cover;border-radius:220px 220px 28px 28px;box-shadow:var(--shadow)}.image-stack .small{position:absolute;right:0;bottom:0;width:46%;height:300px;object-fit:cover;border:10px solid var(--ivory);border-radius:25px}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin:35px 0 26px}.filter{padding:10px 15px;border:1px solid var(--line);border-radius:999px;background:white;font-size:.77rem;font-weight:800}.filter.active{background:var(--ink);color:white}
+.service-list{display:grid;gap:13px}.service-group{margin-bottom:45px}.service-group h3{font-size:2.2rem;margin-bottom:16px}.service-item{background:white;border:1px solid var(--line);border-radius:20px;padding:21px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}.service-item h4{font-size:.96rem}.meta,.desc{color:var(--muted);font-size:.78rem}.desc{margin-top:8px}.price{font-weight:900;margin-top:10px}.add-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:white;font-size:1.35rem}.add-btn.added{background:var(--ink);color:white}
+.checkout-layout{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:30px;align-items:start}.checkout-card,.summary-card{background:white;border:1px solid var(--line);border-radius:26px;padding:26px;box-shadow:var(--shadow)}.summary-card{position:sticky;top:105px}
+.checkout-item{display:grid;grid-template-columns:1fr auto;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}.qty{display:flex;align-items:center;gap:8px}.qty button{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;background:white}.remove{border:0;background:none;color:#a24c34;font-size:.74rem;margin-top:8px}
+.checkout-steps{display:flex;gap:10px;margin-bottom:26px}.step-pill{flex:1;padding:13px;border-radius:14px;background:var(--sand);font-size:.74rem;font-weight:800;text-align:center}.step-pill.active{background:var(--ink);color:white}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:.76rem;font-weight:800}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:14px;background:var(--ivory);padding:13px 14px}.field textarea{min-height:110px}
+.summary-line{display:flex;justify-content:space-between;gap:20px;padding:10px 0}.summary-line.total{font-size:1.1rem;font-weight:900;border-top:1px solid var(--line);margin-top:10px;padding-top:18px}.summary-note{font-size:.74rem;color:var(--muted);margin-top:12px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.info-card{background:white;border:1px solid var(--line);border-radius:24px;padding:26px}.info-card h3{font-size:1.6rem}.info-card p{color:var(--muted);font-size:.86rem;margin-top:8px}.map iframe{width:100%;height:520px;border:0;border-radius:30px}
+.footer{background:#1d120d;color:white;padding:70px 0 25px}.footer-grid{display:grid;grid-template-columns:1.4fr .7fr 1fr;gap:50px}.footer p,.footer a{color:rgba(255,255,255,.6);font-size:.82rem}.footer h4{color:var(--gold2);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px}.footer-links{display:grid;gap:10px}.copyright{margin-top:45px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:20px}
+.empty-state{text-align:center;padding:60px 20px}.empty-state h3{font-size:2.2rem}.empty-state p{color:var(--muted);margin:10px auto 22px;max-width:450px}
+@media(max-width:980px){.nav-links{display:none}.menu-btn{display:grid;place-items:center}.category-grid{grid-template-columns:repeat(2,1fr)}.split,.checkout-layout{grid-template-columns:1fr}.summary-card{position:relative;top:auto}.grid-3{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}
+@media(max-width:650px){.container{width:min(calc(100% - 24px),var(--max))}.hero{min-height:780px}.hero-bg{background-position:64% center}.hero h1{font-size:4.1rem}.hero-content{padding:125px 0 50px}.actions{display:grid}.actions .btn{width:100%}.section{padding:82px 0}.page-hero{padding:125px 0 65px}.category-grid,.grid-3,.form-grid,.footer-grid{grid-template-columns:1fr}.category-card{min-height:410px}.split{gap:48px}.image-stack{min-height:480px}.image-stack .main{inset:0 40px 35px 0;border-radius:150px 150px 24px 24px}.image-stack .small{height:210px;border-width:7px}.filters{overflow:auto;flex-wrap:nowrap}.filter{white-space:nowrap}.checkout-steps{overflow:auto}.step-pill{min-width:130px}.field.full{grid-column:auto}.footer-grid>div:first-child{grid-column:auto}.copyright{flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#home" data-route="home"><span class="logo-mark">JM</span><span><strong>JM Beauty Studio</strong><small>Beauty · Nails · Lashes</small></span></a>
+    <nav class="nav-links">
+      <a class="nav-link" href="#home" data-route="home">Home</a>
+      <a class="nav-link" href="#services" data-route="services">Services</a>
+      <a class="nav-link" href="#promotions" data-route="promotions">Promotions</a>
+      <a class="nav-link" href="#about" data-route="about">About</a>
+      <a class="nav-link" href="#contact" data-route="contact">Contact</a>
+      <a class="btn btn-dark cart-nav" href="#cart" data-route="cart">Cart <span class="cart-badge" data-cart-count>0</span></a>
+    </nav>
+    <button class="menu-btn" aria-label="Open menu">☰</button>
+  </div>
+</header>
+<div class="mobile-nav"><nav>
+  <a href="#home" data-route="home">Home</a><a href="#services" data-route="services">Services</a><a href="#promotions" data-route="promotions">Promotions</a><a href="#about" data-route="about">About</a><a href="#contact" data-route="contact">Contact</a><a class="btn btn-gold" href="#cart" data-route="cart">View Cart (<span data-cart-count>0</span>)</a>
+</nav></div>
+
+<section class="page active" data-page="home">
+  <div class="hero"><div class="hero-bg"></div><div class="container hero-content"><span class="kicker" style="color:var(--gold2)">Kampung Baru · Kuala Lumpur</span><h1>Refined beauty.<br><em>Designed around you.</em></h1><p>Discover premium nail, lash, brow and embroidery treatments in a calm, beautifully considered studio environment.</p><div class="actions"><a class="btn btn-gold" href="#services" data-route="services">Explore Services</a><a class="btn btn-light" href="#cart" data-route="cart">View Cart</a></div><div class="hero-chips"><span class="hero-chip">Nails</span><span class="hero-chip">Lash Extensions</span><span class="hero-chip">Brows</span><span class="hero-chip">Embroidery</span></div></div></div>
+  <div class="section section-white"><div class="container center"><span class="kicker">Treatment Categories</span><h2 class="title">Beauty, curated by category.</h2><p class="lead">Each section opens as a separate page view instead of one long scrolling landing page.</p><div class="category-grid">
+    <a class="category-card" href="#services" data-route="services" data-category="Nails"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=85"><div class="category-content"><h3>Nails</h3><p>Manicure, pedicure, gel and extensions.</p></div></a>
+    <a class="category-card" href="#services" data-route="services" data-category="Extensions"><img src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=900&q=85"><div class="category-content"><h3>Lashes</h3><p>Touch-ups, lifts and volume extensions.</p></div></a>
+    <a class="category-card" href="#services" data-route="services" data-category="Lash & Brow"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=85"><div class="category-content"><h3>Brows</h3><p>Tinting and brow lamination.</p></div></a>
+    <a class="category-card" href="#services" data-route="services" data-category="Embroidery"><img src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?auto=format&fit=crop&w=900&q=85"><div class="category-content"><h3>Embroidery</h3><p>Brow, lip and eyeliner treatments.</p></div></a>
+  </div></div></div>
+</section>
+
+<section class="page" data-page="services">
+  <div class="page-hero"><div class="container"><span class="kicker">Treatment Menu</span><h1 class="title">Choose your services.</h1><p class="lead">Add treatments to your cart, then complete the full checkout process.</p></div></div>
+  <div class="section"><div class="container"><div class="filters" id="filters"></div><div id="serviceGroups"></div></div></div>
+</section>
+
+<section class="page" data-page="promotions">
+  <div class="page-hero"><div class="container"><span class="kicker">Weekday Beauty Treat</span><h1 class="title">Happy Hour promotions.</h1><p class="lead">Selected first-trial offers available Tuesday to Friday, subject to confirmation.</p></div></div>
+  <div class="section"><div class="container grid-3">
+    <div class="info-card"><h3>Gel Manicure</h3><p>Weekday first-trial promotion.</p><div class="price">MYR 78</div></div>
+    <div class="info-card"><h3>Gel Pedicure</h3><p>Weekday first-trial promotion.</p><div class="price">MYR 98</div></div>
+    <div class="info-card"><h3>Lash Lift + Tint</h3><p>Keratin lash lift and mascara tint.</p><div class="price">MYR 98</div></div>
+    <div class="info-card"><h3>Brow Lamination + Tint</h3><p>Sleek lifted brows with tinting.</p><div class="price">MYR 118</div></div>
+    <div class="info-card"><h3>Double Beauty</h3><p>One selected lash service plus one nail service.</p><div class="price">MYR 308</div></div>
+    <div class="info-card"><h3>Book a Promotion</h3><p>Add the promotion from the service page and continue to cart.</p><a class="btn btn-dark" href="#services" data-route="services" data-category="Happy Hour" style="margin-top:18px">View Promotions</a></div>
+  </div></div>
+</section>
+
+<section class="page" data-page="about">
+  <div class="page-hero"><div class="container"><span class="kicker">About JM</span><h1 class="title">Precision, care and quiet luxury.</h1></div></div>
+  <div class="section"><div class="container split"><div class="image-stack"><img class="main" src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=85"><img class="small" src="https://images.unsplash.com/photo-1633681926035-ec1ac984418a?auto=format&fit=crop&w=800&q=85"></div><div><span class="kicker">The Studio</span><h2 class="title">A boutique beauty destination.</h2><p class="lead">JM Beauty Studio specialises in nails, lashes, brows and embroidery treatments in a warm, premium environment inspired by stone, gold and espresso tones.</p></div></div></div>
+</section>
+
+<section class="page" data-page="contact">
+  <div class="page-hero"><div class="container"><span class="kicker">Visit the Studio</span><h1 class="title">Your next beauty appointment starts here.</h1></div></div>
+  <div class="section"><div class="container grid-3">
+    <div class="info-card"><h3>Address</h3><p>1st Floor, 33 Jalan Yap Kwan Seng, Kampung Baru, 50450 Kuala Lumpur.</p></div>
+    <div class="info-card"><h3>Contact</h3><p>016-808 3598</p><a class="btn btn-dark" href="https://wa.me/60168083598" target="_blank" style="margin-top:18px">WhatsApp Studio</a></div>
+    <div class="info-card"><h3>Opening Hours</h3><p>Generally open until 8:00 PM. Please confirm daily hours directly with the studio.</p></div>
+  </div><div class="container map" style="margin-top:35px"><iframe src="https://www.google.com/maps?q=JM%20Beauty%20Studio%2033%20Jalan%20Yap%20Kwan%20Seng%20Kuala%20Lumpur&output=embed" loading="lazy"></iframe></div></div>
+</section>
+
+<section class="page" data-page="cart">
+  <div class="page-hero"><div class="container"><span class="kicker">Shopping Cart</span><h1 class="title">Review your selected services.</h1><p class="lead">This is a real cart page. Adjust quantity, remove services, review totals, then proceed to checkout.</p></div></div>
+  <div class="section"><div class="container checkout-layout"><div class="checkout-card" id="cartPageItems"></div><aside class="summary-card" id="cartSummary"></aside></div></div>
+</section>
+
+<section class="page" data-page="checkout">
+  <div class="page-hero"><div class="container"><span class="kicker">Checkout</span><h1 class="title">Complete your booking request.</h1><p class="lead">Enter your details, choose a preferred date and time, review the order and send it to WhatsApp.</p></div></div>
+  <div class="section"><div class="container checkout-layout">
+    <div class="checkout-card">
+      <div class="checkout-steps"><div class="step-pill">1. Cart</div><div class="step-pill active">2. Details</div><div class="step-pill">3. WhatsApp</div></div>
+      <div class="form-grid">
+        <div class="field"><label>Your name</label><input id="customerName" placeholder="Full name"></div>
+        <div class="field"><label>Phone number</label><input id="customerPhone" placeholder="01X-XXXXXXX"></div>
+        <div class="field"><label>Preferred date</label><input type="date" id="preferredDate"></div>
+        <div class="field"><label>Preferred time</label><select id="preferredTime"><option value="">Select a time</option><option>11:00 AM</option><option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option><option>6:00 PM</option><option>7:00 PM</option></select></div>
+        <div class="field full"><label>Notes</label><textarea id="notes" placeholder="Preferred style, first-time customer, special request, etc."></textarea></div>
+      </div>
+    </div>
+    <aside class="summary-card" id="checkoutSummary"></aside>
+  </div></div>
+</section>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="#home" data-route="home"><span class="logo-mark">JM</span><span><strong>JM Beauty Studio</strong><small>Beauty · Nails · Lashes</small></span></a><p style="margin-top:18px;max-width:430px">A premium beauty destination for nails, lashes, brows and embroidery treatments in Kuala Lumpur.</p></div><div><h4>Explore</h4><div class="footer-links"><a href="#services" data-route="services">Services</a><a href="#promotions" data-route="promotions">Promotions</a><a href="#cart" data-route="cart">Cart</a><a href="#about" data-route="about">About</a></div></div><div><h4>Contact</h4><div class="footer-links"><a href="tel:+60168083598">016-808 3598</a><p>1st Floor, 33 Jalan Yap Kwan Seng, Kampung Baru, Kuala Lumpur</p></div></div></div><div class="copyright"><p>© <span id="year"></span> JM Beauty Studio.</p><p>Website concept by Plannique Design Co.</p></div></div></footer>
+
+<script>
+const SERVICES=[{"category": "Featured", "name": "Gel manicure", "duration": 90, "price": 118, "description": "Shape, cuticle care and a polished gel finish."}, {"category": "Featured", "name": "Basic pedicure", "duration": 60, "price": 100, "description": "Trim, shape and light exfoliation for refreshed feet."}, {"category": "Featured", "name": "Eyelash touch up", "duration": 60, "price": 100, "description": "Refill visible gaps and refresh the look of existing extensions."}, {"category": "Featured", "name": "Basic manicure", "duration": 75, "price": 90, "description": "File, shape and cuticle care with a neat natural finish."}, {"category": "Nails", "name": "Spa manicure + basic manicure", "duration": 105, "price": 188, "description": "A longer pampering manicure with nail shaping and care."}, {"category": "Nails", "name": "Gel pedicure + gel removal", "duration": 90, "price": 173, "description": "Gel pedicure with careful removal of existing gel polish."}, {"category": "Nails", "name": "Gel manicure + gel removal", "duration": 90, "price": 153, "description": "Complete gel manicure with safe removal of previous gel."}, {"category": "Nails", "name": "Infill nail extension + gel manicure", "duration": 120, "price": 286, "description": "Refill extension growth and finish with a new gel manicure."}, {"category": "Nails", "name": "Overlay nail", "duration": 40, "price": 78, "description": "A durable overlay to add strength and a clean natural finish."}, {"category": "Happy Hour", "name": "Double beauty: lashes + nails", "duration": 120, "price": 308, "description": "Choose one lash service and one nail service for a weekday treat."}, {"category": "Happy Hour", "name": "Keratin lash lift + mascara tint", "duration": 60, "price": 98, "description": "First-trial weekday promotion, Tuesday to Friday."}, {"category": "Happy Hour", "name": "Brow lamination + brow tinting", "duration": 90, "price": 118, "description": "Weekday first-trial brow promotion."}, {"category": "Happy Hour", "name": "Gel pedicure", "duration": 90, "price": 98, "description": "Weekday first-trial gel pedicure promotion."}, {"category": "Happy Hour", "name": "Gel manicure", "duration": 90, "price": 78, "description": "Weekday first-trial gel manicure promotion."}, {"category": "Lash & Brow", "name": "Keratin lower lash and tinting", "duration": 75, "price": 166, "description": "Define, lengthen and curl natural lower lashes with tint."}, {"category": "Lash & Brow", "name": "Eyelash tinting", "duration": 30, "price": 66, "description": "Enhance the appearance of natural lashes with tint."}, {"category": "Lash & Brow", "name": "Eyebrow tinting", "duration": 60, "price": 86, "description": "Add definition and depth to natural brows."}, {"category": "Lash & Brow", "name": "Brow lamination and brow tint", "duration": 90, "price": 256, "description": "Lift and shape brow hairs for a fuller, sleek result."}, {"category": "Lash & Brow", "name": "Keratin lash lift and mascara tint", "duration": 60, "price": 236, "description": "Lift and curl natural lashes without extensions."}, {"category": "Extensions", "name": "Upgrade lashes", "duration": 60, "price": 10, "description": "Upgrade add-on for an existing lash appointment."}, {"category": "Extensions", "name": "2D bottom lash", "duration": 30, "price": 56, "description": "Soft lower-lash enhancement for added definition."}, {"category": "Extensions", "name": "Single bottom lash", "duration": 30, "price": 46, "description": "Natural-looking single lower-lash enhancement."}, {"category": "Extensions", "name": "Eyelash extension removal", "duration": 20, "price": 46, "description": "Careful removal of existing eyelash extensions."}, {"category": "Extensions", "name": "Mega volume eyelash extension", "duration": 150, "price": 356, "description": "Lightweight mega-volume lashes for a fuller fan effect."}, {"category": "Embroidery", "name": "Lip embroidery", "duration": 120, "price": 906, "description": "Semi-permanent lip colour and shape enhancement."}, {"category": "Embroidery", "name": "Inner eyeliner embroidery", "duration": 90, "price": 606, "description": "Semi-permanent inner eyeliner definition."}, {"category": "Embroidery", "name": "Eyebrow embroidery touch up", "duration": 90, "price": 506, "description": "Refresh and refine existing eyebrow embroidery."}, {"category": "Embroidery", "name": "Combination eyebrow embroidery", "duration": 120, "price": 906, "description": "A blend of microblading and soft shading."}, {"category": "Embroidery", "name": "Microblading eyebrow embroidery", "duration": 120, "price": 806, "description": "Hair-stroke style semi-permanent brow enhancement."}, {"category": "Embroidery", "name": "Micro shading eyebrow embroidery", "duration": 120, "price": 806, "description": "Soft powder-shaded brow enhancement."}];
+const WHATSAPP_NUMBER="60168083598";
+let cart=[];
+let activeCategory="All";
+const money=n=>"MYR "+Number(n).toFixed(0);
+const duration=m=>{const h=Math.floor(m/60),min=m%60;return [h?h+" hr"+(h>1?"s":""):"",min?min+" min":""].filter(Boolean).join(" ")||"0 min"};
+function route(page,category){
+  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.dataset.page===page));
+  document.querySelectorAll(".nav-link").forEach(a=>a.classList.toggle("active",a.dataset.route===page));
+  document.querySelector(".site-header").classList.toggle("inner",page!=="home");
+  if(page==="services"&&category){activeCategory=category;drawFilters();drawServices()}
+  if(page==="cart") renderCartPage();
+  if(page==="checkout") renderCheckout();
+  scrollTo({top:0,behavior:"instant"});
+}
+function go(page,category){location.hash=page;route(page,category)}
+document.addEventListener("click",e=>{
+  const a=e.target.closest("[data-route]"); if(!a)return;
+  e.preventDefault(); const category=a.dataset.category||null; history.pushState({page:a.dataset.route,category},"","#"+a.dataset.route); route(a.dataset.route,category);
+  document.querySelector(".mobile-nav").classList.remove("open");document.body.classList.remove("lock");
+});
+window.addEventListener("popstate",()=>route((location.hash||"#home").slice(1)));
+function drawFilters(){const cats=["All",...new Set(SERVICES.map(x=>x.category))];document.querySelector("#filters").innerHTML=cats.map(c=>`<button class="filter ${c===activeCategory?"active":""}" onclick='activeCategory=${JSON.stringify(c)};drawFilters();drawServices()'>${c}</button>`).join("")}
+function drawServices(){
+  const groups={};SERVICES.filter(x=>activeCategory==="All"||x.category===activeCategory).forEach(x=>(groups[x.category]??=[]).push(x));
+  document.querySelector("#serviceGroups").innerHTML=Object.entries(groups).map(([cat,items])=>`<section class="service-group"><h3>${cat}</h3><div class="service-list">${items.map(x=>`<article class="service-item"><div><h4>${x.name}</h4><div class="meta">${duration(x.duration)}</div><p class="desc">${x.description}</p><div class="price">${money(x.price)}</div></div><button class="add-btn" data-name="${x.name.replaceAll('"','&quot;')}" onclick='addToCart(${JSON.stringify(x)})'>+</button></article>`).join("")}</div></section>`).join("");renderBadges()}
+function addToCart(item){const existing=cart.find(x=>x.name===item.name);if(existing)existing.qty++;else cart.push({...item,qty:1});renderBadges();drawServices()}
+function changeQty(name,delta){const item=cart.find(x=>x.name===name);if(!item)return;item.qty+=delta;if(item.qty<=0)cart=cart.filter(x=>x.name!==name);renderBadges();renderCartPage();renderCheckout()}
+function removeItem(name){cart=cart.filter(x=>x.name!==name);renderBadges();renderCartPage();renderCheckout();drawServices()}
+function totals(){return{count:cart.reduce((a,b)=>a+b.qty,0),total:cart.reduce((a,b)=>a+b.price*b.qty,0),mins:cart.reduce((a,b)=>a+b.duration*b.qty,0)}}
+function renderBadges(){const t=totals();document.querySelectorAll("[data-cart-count]").forEach(e=>e.textContent=t.count);document.querySelectorAll(".add-btn").forEach(btn=>{const added=cart.some(x=>x.name===btn.dataset.name);btn.classList.toggle("added",added);btn.textContent=added?"✓":"+"})}
+function renderCartPage(){
+  const box=document.querySelector("#cartPageItems"),sum=document.querySelector("#cartSummary"),t=totals();
+  if(!cart.length){box.innerHTML=`<div class="empty-state"><h3>Your cart is empty.</h3><p>Add treatments from the service page before proceeding to checkout.</p><a class="btn btn-dark" href="#services" data-route="services">Browse Services</a></div>`;sum.innerHTML="";return}
+  box.innerHTML=`<h2 style="font-size:2rem;margin-bottom:10px">Selected Services</h2>${cart.map(x=>`<div class="checkout-item"><div><strong>${x.name}</strong><div class="meta">${duration(x.duration)} · ${money(x.price)} each</div><button class="remove" onclick='removeItem(${JSON.stringify(x.name)})'>Remove</button></div><div class="qty"><button onclick='changeQty(${JSON.stringify(x.name)},-1)'>−</button><strong>${x.qty}</strong><button onclick='changeQty(${JSON.stringify(x.name)},1)'>+</button></div></div>`).join("")}`;
+  sum.innerHTML=`<h3 style="font-size:1.9rem">Order Summary</h3><div class="summary-line"><span>Services</span><span>${t.count}</span></div><div class="summary-line"><span>Estimated duration</span><span>${duration(t.mins)}</span></div><div class="summary-line total"><span>Total</span><span>${money(t.total)}</span></div><p class="summary-note">This is an estimated total. Final price and availability are confirmed by the studio.</p><button class="btn btn-dark" style="width:100%;margin-top:18px" onclick="go('checkout')">Proceed to Checkout</button><button class="btn btn-line" style="width:100%;margin-top:10px" onclick="go('services')">Continue Shopping</button>`;
+}
+function renderCheckout(){
+  const sum=document.querySelector("#checkoutSummary"),t=totals();
+  if(!cart.length){sum.innerHTML=`<div class="empty-state"><h3>No services selected.</h3><p>Add at least one service before checkout.</p><button class="btn btn-dark" onclick="go('services')">Browse Services</button></div>`;return}
+  sum.innerHTML=`<h3 style="font-size:1.9rem">Booking Summary</h3>${cart.map(x=>`<div class="summary-line"><span>${x.name} × ${x.qty}</span><span>${money(x.price*x.qty)}</span></div>`).join("")}<div class="summary-line"><span>Estimated duration</span><span>${duration(t.mins)}</span></div><div class="summary-line total"><span>Total</span><span>${money(t.total)}</span></div><p class="summary-note">Your appointment is not confirmed until JM Beauty Studio replies through WhatsApp.</p><button class="btn btn-gold" style="width:100%;margin-top:18px" onclick="buildWhatsapp()">Place Booking Request</button><button class="btn btn-line" style="width:100%;margin-top:10px" onclick="go('cart')">Back to Cart</button>`;
+}
+function buildWhatsapp(){
+  if(!cart.length){alert("Your cart is empty.");go("services");return}
+  const name=document.querySelector("#customerName").value.trim(),phone=document.querySelector("#customerPhone").value.trim(),date=document.querySelector("#preferredDate").value,time=document.querySelector("#preferredTime").value,notes=document.querySelector("#notes").value.trim()||"None";
+  if(!name||!phone||!date||!time){alert("Please complete your name, phone number, preferred date and preferred time.");return}
+  const t=totals();const lines=cart.map((x,i)=>`${i+1}. ${x.name} x${x.qty}\nDuration: ${duration(x.duration*x.qty)}\nSubtotal: ${money(x.price*x.qty)}`).join("\n\n");
+  const msg=`Hi JM Beauty Studio, I would like to place a booking request.\n\nSERVICES\n${lines}\n\nEstimated duration: ${duration(t.mins)}\nEstimated total: ${money(t.total)}\n\nCUSTOMER DETAILS\nName: ${name}\nPhone: ${phone}\nPreferred date: ${date}\nPreferred time: ${time}\nNotes: ${notes}\n\nPlease confirm availability and final price. Thank you.`;
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank");
+}
+document.addEventListener("DOMContentLoaded",()=>{
+  document.querySelector(".menu-btn").onclick=()=>{document.querySelector(".mobile-nav").classList.toggle("open");document.body.classList.toggle("lock")};
+  const header=document.querySelector(".site-header");const update=()=>header.classList.toggle("scrolled",scrollY>25);update();addEventListener("scroll",update,{passive:true});
+  document.querySelector("#preferredDate").min=new Date().toISOString().split("T")[0];
+  document.querySelector("#year").textContent=new Date().getFullYear();
+  drawFilters();drawServices();route((location.hash||"#home").slice(1));
+});
+</script>
+</body>
+</html>
