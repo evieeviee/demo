@@ -17,7 +17,11 @@ img{display:block;width:100%}a{text-decoration:none;color:inherit}button,input,s
 .kicker{display:inline-flex;align-items:center;gap:10px;color:var(--brown);font-size:.72rem;font-weight:800;letter-spacing:.19em;text-transform:uppercase}.kicker:before{content:"";width:34px;height:1px;background:var(--gold)}
 .title{font-size:clamp(2.7rem,6vw,5.6rem);line-height:.95;letter-spacing:-.04em}.lead{margin-top:20px;color:var(--muted);font-size:1.03rem;max-width:680px}.center{text-align:center}.center .lead{margin-inline:auto}
 .btn{min-height:52px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 22px;border:1px solid transparent;border-radius:999px;font-size:.88rem;font-weight:800;transition:.25s}.btn:hover{transform:translateY(-3px)}
-.btn-dark{background:var(--ink);color:white;box-shadow:0 14px 34px rgba(23,18,15,.18)}.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#271b13}.btn-line{border-color:var(--line);background:white}.btn-light{background:white}
+.btn-dark{background:var(--ink);color:white;box-shadow:0 14px 34px rgba(23,18,15,.18)}.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#271b13}.btn-line{border-color:var(--line);background:white}.btn-light{
+  background:white;
+  color:var(--ink) !important;
+  border-color:white;
+}
 .site-header{position:fixed;z-index:1000;top:0;left:0;width:100%;transition:.3s}.site-header.scrolled,.site-header.inner{background:rgba(251,248,242,.94);backdrop-filter:blur(18px);box-shadow:0 8px 30px rgba(35,22,15,.08)}
 .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;position:relative;z-index:1002;color:white}.site-header.scrolled .brand,.site-header.inner .brand{color:var(--ink)}
 .logo-mark{width:46px;height:46px;display:grid;place-items:center;border:1px solid currentColor;border-radius:15px 15px 15px 4px;font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:700}
