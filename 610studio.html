@@ -3,748 +3,124 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>610 STUDIO | Beauty Salon & Beauty Academy in Kuala Lumpur</title>
-<meta name="description" content="610 STUDIO is a boutique beauty salon and academy in Kuala Lumpur offering nails, eyelash perm, facial treatments, makeup and bridal beauty services in a calm, elegant studio." />
-<meta name="keywords" content="610 Studio, beauty salon Kuala Lumpur, Cheras beauty salon, nail salon KL, eyelash perm KL, facial treatment KL, bridal makeup KL, beauty academy Kuala Lumpur" />
-<meta name="robots" content="index,follow" />
-<meta name="theme-color" content="#141311" />
-
-<meta property="og:title" content="610 STUDIO | Beauty, Refined." />
-<meta property="og:description" content="Boutique beauty services, personalised care and a refined studio experience in Kuala Lumpur." />
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="en_MY" />
-
+<title>610 STUDIO | Beauty, Refined.</title>
+<meta name="description" content="610 STUDIO is a boutique beauty salon and academy in Kuala Lumpur offering nails, eyelash perm, facial treatments, makeup and bridal beauty services." />
+<meta name="theme-color" content="#11110f" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
 :root{
-  --ink:#171613;
-  --ink2:#28251f;
-  --cream:#f6f2eb;
-  --ivory:#fffdf9;
-  --sand:#e7dfd2;
-  --nude:#d5c3b2;
-  --gold:#b89a69;
-  --muted:#7d756b;
-  --white:#fff;
-  --shadow:0 24px 70px rgba(24,20,15,.12);
+  --ink:#11110f;--ink2:#1a1916;--cream:#f7f2e9;--ivory:#fffdf9;--sand:#e9dfd0;
+  --gold:#c5a268;--gold2:#ddbd82;--muted:#746d64;--line:#e7dccd;--white:#fff;
+  --shadow:0 24px 70px rgba(28,22,15,.12);--max:1420px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:var(--ivory);
-  color:var(--ink);
-  font-family:"DM Sans",sans-serif;
-  overflow-x:hidden;
-}
-img{display:block;width:100%;height:100%;object-fit:cover}
-a{color:inherit;text-decoration:none}
-button{font:inherit}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+body.menu-open,body.modal-open{overflow:hidden}
+a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;width:100%;height:100%;object-fit:cover}
+.shell{width:min(calc(100% - 64px),var(--max));margin:auto}.serif{font-family:"Cormorant Garamond",serif}
+.reveal{opacity:0;transform:translateY(24px);transition:.75s ease}.reveal.show{opacity:1;transform:none}
 
-.reveal{opacity:0;transform:translateY(24px);transition:.8s ease}
-.reveal.show{opacity:1;transform:none}
+/* NAV */
+.topbar{position:absolute;top:0;left:0;right:0;z-index:1000;height:86px;display:grid;grid-template-columns:220px 1fr 220px;align-items:center;padding:0 4.5vw;color:#fff}
+.logo{display:flex;align-items:center;gap:14px;line-height:1}.logo610{font-family:"Cormorant Garamond",serif;font-size:46px;font-weight:500;letter-spacing:-.04em}.logo-sub{display:block;font-size:9px;letter-spacing:.45em;margin-top:5px}
+.nav{display:flex;justify-content:center;gap:34px;font-size:12px;text-transform:uppercase;letter-spacing:.08em}.nav a{opacity:.82;position:relative}.nav a:first-child:after,.nav a:hover:after{content:"";position:absolute;left:0;right:0;bottom:-9px;height:1px;background:var(--gold)}
+.book-mini{justify-self:end;background:linear-gradient(135deg,var(--gold2),#b78f50);color:#17120d;padding:13px 21px;border-radius:999px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.menu-btn{display:none;justify-self:end;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;align-items:center;justify-content:center}.hamb{width:18px;height:14px;position:relative}.hamb span{position:absolute;width:18px;height:1.5px;background:currentColor;left:0;transition:.25s}.hamb span:nth-child(1){top:0}.hamb span:nth-child(2){top:6px}.hamb span:nth-child(3){top:12px}.menu-btn.active span:nth-child(1){transform:translateY(6px) rotate(45deg)}.menu-btn.active span:nth-child(2){opacity:0}.menu-btn.active span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:1200;background:rgba(11,10,9,.55);opacity:0;pointer-events:none;transition:.3s}.mobile-menu.open{opacity:1;pointer-events:auto}.mobile-panel{position:absolute;right:0;top:0;width:min(88vw,420px);height:100%;background:#f8f3eb;padding:100px 28px 32px;transform:translateX(100%);transition:.35s;display:flex;flex-direction:column}.mobile-menu.open .mobile-panel{transform:none}.mobile-links a{display:block;font-family:"Cormorant Garamond",serif;font-size:34px;padding:15px 0;border-bottom:1px solid var(--line)}.mobile-actions{margin-top:auto;display:grid;gap:10px}.mobile-actions a{min-height:50px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:13px}.mobile-actions a:first-child{background:var(--ink);color:#fff}.mobile-actions a:last-child{border:1px solid var(--line)}
 
-.topbar{
-  position:fixed;top:0;left:0;width:100%;z-index:1000;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:18px 5vw;
-  transition:.35s ease;
-  color:#fff;
-}
-.topbar.scrolled{
-  background:rgba(255,253,249,.92);
-  backdrop-filter:blur(16px);
-  color:var(--ink);
-  box-shadow:0 8px 30px rgba(0,0,0,.06);
-}
-.brand{
-  display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:.08em;
-}
-.brand-mark{
-  width:42px;height:42px;border:1px solid currentColor;border-radius:50%;
-  display:grid;place-items:center;
-  font-family:"Cormorant Garamond",serif;font-size:22px;
-}
-.nav{display:flex;gap:28px;font-size:14px}
-.nav a{opacity:.86}
-.nav a:hover{opacity:1}
-.book-mini{
-  padding:12px 18px;border:1px solid currentColor;border-radius:999px;
-  font-size:13px;letter-spacing:.04em;
-}
-.menu-btn{display:none;background:none;border:0;color:inherit;font-size:25px}
+/* HERO */
+.hero{min-height:750px;height:100svh;max-height:960px;background:#111;color:#fff;position:relative;overflow:hidden;display:grid;grid-template-columns:45% 55%}
+.hero-left{position:relative;z-index:3;display:flex;align-items:center;padding:130px 4vw 80px 5.5vw;background:linear-gradient(90deg,#090908 0%,#0d0c0b 80%,rgba(13,12,11,.2) 100%)}
+.hero-inner{max-width:560px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.27em;color:var(--gold2);font-weight:600;margin-bottom:18px}.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(70px,8vw,126px);line-height:.76;letter-spacing:-.045em;font-weight:500;margin:0}.hero h1 i{display:block;color:var(--gold2);font-weight:400}.hero p{max-width:455px;color:#e1dcd4;font-size:14px;line-height:1.8;margin:30px 0 27px}.hero-actions{display:flex;gap:13px;flex-wrap:wrap}.btn{min-height:50px;padding:0 23px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.075em;border:1px solid transparent;transition:.25s}.btn:hover{transform:translateY(-2px)}.btn-gold{background:linear-gradient(135deg,#d4b277,#b99154);color:#17120d}.btn-outline{color:#fff;border-color:rgba(255,255,255,.45)}
+.hero-badges{display:flex;flex-wrap:wrap;gap:13px 24px;margin-top:30px;color:#d7d0c6;font-size:10px;text-transform:uppercase;letter-spacing:.13em}.hero-badges span:before{content:"•";color:var(--gold2);margin-right:10px}
+.hero-image{position:relative;overflow:hidden}.hero-image img{filter:saturate(.82) contrast(1.03);transform:scale(1.02)}.hero-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,10,9,.33),transparent 35%),linear-gradient(0deg,rgba(0,0,0,.12),transparent 42%)}
+.hero-float{position:absolute;z-index:4;right:4vw;bottom:30px;display:flex;align-items:center;gap:14px;max-width:350px;background:rgba(25,23,20,.72);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.16);padding:12px 18px 12px 12px;border-radius:22px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}.hero-float img{width:54px;height:54px;border-radius:50%}
 
-.hero{
-  min-height:100svh;
-  background:var(--ink);
-  color:#fff;
-  display:grid;
-  grid-template-columns:42% 58%;
-  position:relative;
-}
-.hero-copy{
-  padding:150px 8vw 90px 7vw;
-  display:flex;flex-direction:column;justify-content:center;
-}
-.eyebrow{
-  text-transform:uppercase;letter-spacing:.24em;font-size:11px;font-weight:600;
-  color:var(--gold);margin-bottom:24px;
-}
-.hero h1{
-  margin:0;
-  font-family:"Cormorant Garamond",serif;
-  font-size:clamp(64px,8vw,126px);
-  line-height:.78;
-  letter-spacing:-.045em;
-  font-weight:500;
-}
-.hero h1 i{display:block;font-weight:400;color:#d9c4a1}
-.hero-p{
-  max-width:470px;
-  margin:34px 0 32px;
-  color:#d9d3c9;
-  line-height:1.8;
-  font-size:15px;
-}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.btn{
-  min-height:52px;padding:0 24px;border-radius:999px;
-  display:inline-flex;align-items:center;justify-content:center;
-  border:1px solid transparent;font-size:13px;font-weight:600;
-  letter-spacing:.04em;transition:.25s ease;cursor:pointer;
-}
-.btn-gold{background:var(--gold);color:#17130e}
-.btn-gold:hover{transform:translateY(-2px);background:#c7aa79}
-.btn-outline{border-color:rgba(255,255,255,.35);color:#fff}
-.btn-outline:hover{background:#fff;color:#111}
-.hero-visual{position:relative;overflow:hidden}
-.hero-visual::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(23,22,19,.24),transparent 35%),linear-gradient(0deg,rgba(23,22,19,.25),transparent 45%);
-}
-.hero-visual img{transform:scale(1.02)}
-.hero-tag{
-  position:absolute;z-index:2;right:30px;bottom:28px;
-  border:1px solid rgba(255,255,255,.35);
-  backdrop-filter:blur(10px);
-  background:rgba(0,0,0,.18);
-  border-radius:999px;padding:11px 15px;
-  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
-}
+/* TRUST BAR + STRIP */
+.trust{background:#fff;border-bottom:1px solid var(--line)}.trust .shell{display:grid;grid-template-columns:repeat(4,1fr);min-height:85px;align-items:center}.trust-item{display:flex;align-items:center;justify-content:center;gap:13px;padding:17px 12px;border-right:1px solid #eee6db}.trust-item:last-child{border-right:0}.trust-icon{width:36px;height:36px;border:1px solid #c9b18a;border-radius:50%;display:grid;place-items:center;color:#a8824d}.trust-item strong{font-size:10px;text-transform:uppercase;letter-spacing:.08em}.trust-item small{display:block;font-size:9px;color:var(--muted);margin-top:3px}
+.category-strip{height:55px;background:#efe5d7;border-bottom:1px solid #d9ccbb;display:flex;align-items:center;justify-content:center;gap:34px;text-transform:uppercase;letter-spacing:.19em;font-size:10px;white-space:nowrap;overflow:hidden}.category-strip span:not(:last-child):after{content:"•";margin-left:34px;color:#1d1a17}
 
-.marquee{
-  overflow:hidden;background:#e9e0d3;border-block:1px solid #d8ccbc;
-  padding:14px 0;
-}
-.marquee-track{
-  display:flex;gap:42px;width:max-content;
-  animation:marquee 24s linear infinite;
-  font-family:"Cormorant Garamond",serif;font-size:20px;font-style:italic;
-}
-.marquee-track span::after{content:"✦";margin-left:42px;color:var(--gold)}
-@keyframes marquee{to{transform:translateX(-50%)}}
+/* SERVICES */
+.services{background:linear-gradient(180deg,#f6f0e8 0%,#f8f4ee 100%);padding:70px 0 76px}.services-layout{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start}.section-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:#a17d48;font-weight:600}.services-intro h2,.gallery-intro h2,.visit-intro h2{font-family:"Cormorant Garamond",serif;font-size:54px;line-height:.9;font-weight:500;margin:11px 0 20px;letter-spacing:-.03em}.services-intro h2 i{color:#b68b4e;font-weight:400}.services-intro p,.gallery-intro p,.visit-intro p{color:var(--muted);font-size:13px;line-height:1.75}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.service-card{min-height:190px;border-radius:18px;background:#fff;border:1px solid #ebe3d8;overflow:hidden;display:grid;grid-template-columns:44% 56%;cursor:pointer;transition:.3s;box-shadow:0 8px 20px rgba(26,20,12,.03)}.service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.service-copy{padding:24px 18px;display:flex;flex-direction:column;justify-content:space-between}.service-round{width:42px;height:42px;border-radius:50%;background:#111;color:#d7b779;display:grid;place-items:center;font-size:20px}.service-card h3{font-family:"Cormorant Garamond",serif;font-size:25px;font-weight:500;margin:8px 0 5px}.service-card p{font-size:11px;line-height:1.55;color:#615c55;margin:0}.service-arrow{margin-top:10px;font-size:18px}.service-photo{min-height:190px;overflow:hidden}.service-photo img{transition:.5s}.service-card:hover img{transform:scale(1.05)}
 
-.section{padding:110px 7vw}
-.section-head{
-  display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:end;margin-bottom:52px;
-}
-.section-kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
-.section-title{
-  margin:0;font-family:"Cormorant Garamond",serif;
-  font-size:clamp(46px,6vw,78px);line-height:.95;font-weight:500;letter-spacing:-.03em;
-}
-.section-copy{color:var(--muted);line-height:1.8;max-width:650px}
+/* ABOUT */
+.about{background:#11110f;color:#fff;padding:58px 0}.about-grid{display:grid;grid-template-columns:44% 1fr;gap:70px;align-items:center}.about-media{position:relative;height:440px}.about-main{position:absolute;left:0;top:0;width:78%;height:100%;overflow:hidden;border-radius:130px 130px 16px 16px}.about-small{position:absolute;right:0;bottom:0;width:40%;height:48%;border-radius:16px;overflow:hidden;border:9px solid #11110f}.about-copy h2{font-family:"Cormorant Garamond",serif;font-size:55px;line-height:.94;font-weight:500;margin:10px 0 18px}.about-copy p{color:#d0c8bd;line-height:1.75;font-size:13px;max-width:620px}.quality-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px}.quality{border-top:1px solid #3b3833;padding:16px 8px 0;text-align:center}.quality span{display:block;color:#cda96c;font-size:26px;margin-bottom:7px}.quality strong{font-size:9px;line-height:1.4;text-transform:uppercase;letter-spacing:.08em}
 
-.services{background:#f5f0e8}
-.services-grid{
-  display:grid;grid-template-columns:repeat(5,1fr);gap:14px;
-}
-.service-card{
-  min-height:330px;background:#fff;border-radius:24px;padding:26px;
-  display:flex;flex-direction:column;justify-content:space-between;
-  border:1px solid #e9e1d7;
-  transition:.35s ease;cursor:pointer;position:relative;overflow:hidden;
-}
-.service-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
-.service-no{font-size:11px;letter-spacing:.16em;color:#9b8a75}
-.service-icon{font-size:28px}
-.service-card h3{
-  margin:12px 0 8px;font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:500;
-}
-.service-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}
-.service-arrow{font-size:22px;margin-top:20px}
+/* ACADEMY */
+.academy{background:#efe5d8;padding:28px 0}.academy-card{display:grid;grid-template-columns:250px 1fr 46%;gap:34px;align-items:center}.academy-copy h2{font-family:"Cormorant Garamond",serif;font-size:46px;line-height:.86;font-weight:500;margin:8px 0 12px}.academy-copy p{font-size:12px;line-height:1.7;color:#5d5750}.academy-points{display:grid;gap:11px;font-size:11px;text-transform:uppercase;letter-spacing:.05em}.academy-points span{display:flex;align-items:center;gap:10px}.academy-points i{width:32px;height:32px;border:1px solid #bfa77f;border-radius:50%;display:grid;place-items:center;font-style:normal;color:#a27d47}.academy-photo{height:200px;border-radius:16px;overflow:hidden}
 
-.experience{
-  background:var(--ink);
-  color:#fff;
-  padding:115px 7vw;
-}
-.exp-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center}
-.exp-images{position:relative;min-height:650px}
-.exp-main{
-  position:absolute;left:0;top:0;width:73%;height:82%;border-radius:180px 180px 24px 24px;overflow:hidden;
-}
-.exp-small{
-  position:absolute;right:0;bottom:0;width:45%;height:48%;border:10px solid var(--ink);border-radius:20px;overflow:hidden;
-}
-.exp-copy h2{
-  font-family:"Cormorant Garamond",serif;font-size:clamp(52px,6vw,82px);
-  font-weight:500;line-height:.94;margin:15px 0 28px;
-}
-.exp-copy p{color:#c9c1b7;line-height:1.9}
-.points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
-.point{border-top:1px solid #3a3833;padding:18px 0;font-size:13px;color:#ddd5cb}
+/* GALLERY + REVIEW */
+.gallery{background:#fff;padding:38px 0 42px}.gallery-wrap{display:grid;grid-template-columns:250px 1fr 280px;gap:22px;align-items:stretch}.gallery-intro h2{font-size:45px}.gallery-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.gallery-item{height:185px;border-radius:14px;overflow:hidden;cursor:pointer}.gallery-item img{transition:.45s}.gallery-item:hover img{transform:scale(1.05)}.review-card{background:#11110f;color:#fff;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;justify-content:center}.score{font-family:"Cormorant Garamond",serif;font-size:48px;line-height:1}.stars{color:#e2b965;letter-spacing:.12em;margin:5px 0 14px}.review-card p{font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.2;margin:0 0 12px}.review-card small{color:#a9a198;font-size:10px}
 
-.academy{
-  padding:0;background:#efe7dc;
-}
-.academy-wrap{
-  display:grid;grid-template-columns:1fr 1fr;min-height:720px;
-}
-.academy-image{min-height:600px}
-.academy-copy{
-  padding:100px 8vw;display:flex;flex-direction:column;justify-content:center;
-}
-.academy-copy h2{
-  font-family:"Cormorant Garamond",serif;font-size:clamp(54px,6vw,86px);
-  line-height:.9;margin:16px 0 26px;font-weight:500;
-}
-.academy-copy p{color:var(--muted);line-height:1.9}
-.academy-pill{
-  margin-top:28px;display:inline-flex;width:max-content;align-items:center;gap:12px;
-  border-bottom:1px solid var(--ink);padding-bottom:7px;font-size:13px;font-weight:600;
-}
+/* VISIT + FOOT */
+.visit{background:#f3eadf;padding:34px 0 0}.visit-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:38px;align-items:start}.visit-intro h2{font-size:52px}.visit-card{background:#fff;border:1px solid #e2d7c9;border-radius:20px;padding:26px}.visit-card h3{font-family:"Cormorant Garamond",serif;font-size:34px;margin:0 0 10px}.info{padding:12px 0;border-top:1px solid #eee6dc;font-size:12px;line-height:1.6}.info label{display:block;color:#9b7d56;text-transform:uppercase;letter-spacing:.12em;font-size:9px;margin-bottom:3px}.visit-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.visit-actions .btn-outline{color:var(--ink);border-color:#d7c8b6}.mini-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;height:180px;margin-bottom:10px}.mini-gallery img{border-radius:14px}.book-banner{background:#11110f;color:#fff;border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}.book-banner strong{font-family:"Cormorant Garamond",serif;font-size:27px;font-weight:500}.wa{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#cfa96b,#b58c50);color:#17120d;padding:12px 18px;border-radius:999px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em}.wa svg{width:18px;height:18px}
+.footer{background:#f3eadf;border-top:1px solid #ded1c0;margin-top:32px}.footer-grid{min-height:95px;display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:35px;font-size:11px}.socials{display:flex;align-items:center;gap:10px}.socials a{width:34px;height:34px;border-radius:50%;border:1px solid #cdbda9;display:grid;place-items:center}.socials svg{width:15px;height:15px}.footer-note{color:#756d64;text-align:right}
+.mobile-book{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:1100;background:#111;color:#fff;border-radius:999px;padding:8px 8px 8px 18px;align-items:center;justify-content:space-between;box-shadow:0 14px 38px rgba(0,0,0,.3);font-size:12px}.mobile-book b{background:var(--gold);color:#17120d;padding:11px 14px;border-radius:999px;font-size:10px}
 
-.gallery{padding:110px 7vw}
-.gallery-grid{
-  display:grid;grid-template-columns:1.2fr .8fr 1fr;grid-template-rows:300px 300px;gap:14px;
-}
-.g-item{overflow:hidden;border-radius:18px;cursor:pointer;position:relative}
-.g-item img{transition:.5s ease}
-.g-item:hover img{transform:scale(1.05)}
-.g-item:nth-child(1){grid-row:span 2}
-.g-item:nth-child(4){grid-column:span 2}
-.g-item::after{
-  content:"View";position:absolute;right:14px;bottom:14px;
-  background:rgba(255,255,255,.88);color:#111;border-radius:999px;padding:8px 12px;font-size:11px;
-  opacity:0;transform:translateY(6px);transition:.25s ease;
-}
-.g-item:hover::after{opacity:1;transform:none}
+/* MODALS */
+.lightbox,.modal{display:none;position:fixed;inset:0;z-index:2000;background:rgba(9,9,8,.9);align-items:center;justify-content:center;padding:22px}.lightbox.open,.modal.open{display:flex}.lightbox img{width:auto;max-width:92vw;max-height:86vh;border-radius:16px}.lb-close,.modal-close{position:absolute;border:0;background:none;cursor:pointer}.lb-close{right:22px;top:15px;color:#fff;font-size:34px}.modal-card{position:relative;width:min(100%,560px);background:#fff;border-radius:22px;padding:34px;box-shadow:var(--shadow)}.modal-close{right:16px;top:12px;font-size:28px}.modal-card h3{font-family:"Cormorant Garamond",serif;font-size:40px;font-weight:500;margin:8px 0}.modal-card p{color:var(--muted);line-height:1.7}
 
-.review{
-  margin:0 7vw 110px;background:#171613;color:#fff;border-radius:36px;
-  padding:70px 6vw;display:grid;grid-template-columns:.65fr 1.35fr;gap:70px;align-items:center;
+@media(max-width:1100px){
+  .topbar{grid-template-columns:180px 1fr 180px}.nav{gap:20px}.hero{grid-template-columns:48% 52%}.services-layout{grid-template-columns:1fr}.services-intro{max-width:560px}.service-grid{grid-template-columns:repeat(2,1fr)}.about-grid{grid-template-columns:1fr;gap:35px}.about-media{height:520px}.academy-card{grid-template-columns:230px 1fr}.academy-photo{grid-column:1/-1;height:280px}.gallery-wrap{grid-template-columns:220px 1fr}.review-card{grid-column:1/-1;min-height:220px}.visit-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr auto}.footer-note{grid-column:1/-1;text-align:left;padding-bottom:18px}
 }
-.score{
-  font-family:"Cormorant Garamond",serif;font-size:86px;line-height:.8;
+@media(max-width:760px){
+  .shell{width:min(calc(100% - 32px),var(--max))}.topbar{height:70px;display:flex;justify-content:space-between;padding:0 18px}.logo610{font-size:36px}.logo-sub{font-size:7px}.nav,.book-mini{display:none}.menu-btn{display:flex}.hero{height:auto;min-height:0;display:block}.hero-left{min-height:620px;padding:115px 20px 56px;background:linear-gradient(180deg,rgba(11,10,9,.96),rgba(11,10,9,.78)),url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=88') center/cover}.hero-image{height:52svh}.hero h1{font-size:70px}.hero p{font-size:13px}.hero-actions{display:grid}.hero-actions .btn{width:100%}.hero-float{left:16px;right:16px;bottom:15px;max-width:none}.hero-badges{gap:8px 12px}.trust .shell{grid-template-columns:1fr 1fr}.trust-item{justify-content:flex-start;border-bottom:1px solid #eee6db}.category-strip{justify-content:flex-start;overflow-x:auto;padding:0 18px;gap:24px}.category-strip span:not(:last-child):after{margin-left:24px}.services{padding:58px 0}.services-layout{gap:28px}.services-intro h2{font-size:46px}.service-grid{grid-template-columns:1fr}.service-card{grid-template-columns:46% 54%;min-height:180px}.about{padding:55px 0}.about-media{height:420px}.about-main{width:80%}.about-small{width:47%;height:42%}.about-copy h2{font-size:47px}.quality-grid{grid-template-columns:1fr 1fr}.academy{padding:48px 0}.academy-card{grid-template-columns:1fr;gap:22px}.academy-copy h2{font-size:45px}.academy-photo{grid-column:auto;height:230px}.gallery{padding:52px 0}.gallery-wrap{grid-template-columns:1fr}.gallery-intro h2{font-size:46px}.gallery-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:5px}.gallery-item{min-width:72vw;height:320px;scroll-snap-align:center}.review-card{grid-column:auto;min-height:240px}.visit{padding-top:52px}.visit-grid{gap:22px}.visit-intro h2{font-size:46px}.mini-gallery{height:150px}.book-banner{align-items:flex-start;flex-direction:column}.footer-grid{grid-template-columns:1fr;padding:24px 0 95px}.footer-note{text-align:left;padding:0}.mobile-book{display:flex}
 }
-.stars{color:#ddb971;letter-spacing:.14em;margin:20px 0 10px}
-.review-quote{
-  font-family:"Cormorant Garamond",serif;font-size:clamp(30px,4vw,52px);
-  line-height:1.12;font-style:italic;color:#f5efe5;
-}
-.review small{color:#a9a297}
-
-.visit{
-  background:#f1ebe2;padding:110px 7vw;
-}
-.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
-.visit-card{
-  background:white;border-radius:28px;padding:42px;border:1px solid #e5dbcf;box-shadow:0 20px 60px rgba(30,25,18,.08)
-}
-.visit-card h3{
-  font-family:"Cormorant Garamond",serif;font-size:42px;margin:0 0 18px;font-weight:500
-}
-.info-row{padding:17px 0;border-top:1px solid #eee5db;font-size:14px;line-height:1.7}
-.info-label{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9a8870;margin-bottom:4px}
-.map-card{
-  min-height:470px;border-radius:28px;overflow:hidden;position:relative;
-  background:
-    linear-gradient(rgba(25,24,22,.18),rgba(25,24,22,.18)),
-    url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=88') center/cover;
-}
-.map-overlay{
-  position:absolute;inset:auto 20px 20px 20px;background:rgba(255,255,255,.91);
-  backdrop-filter:blur(10px);padding:20px;border-radius:18px;
-}
-.map-overlay strong{display:block;font-family:"Cormorant Garamond",serif;font-size:26px;margin-bottom:4px}
-
-.footer{
-  background:#11110f;color:#fff;padding:70px 7vw 95px;
-  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:60px;
-}
-.footer-logo{font-family:"Cormorant Garamond",serif;font-size:54px}
-.footer p,.footer a{color:#aaa49c;font-size:13px;line-height:1.8}
-.footer h4{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#c8aa78}
-
-.mobile-book{
-  display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:1100;
-  background:#171613;color:#fff;border-radius:999px;padding:15px 18px;
-  box-shadow:0 12px 38px rgba(0,0,0,.28);
-  align-items:center;justify-content:space-between;font-size:13px;font-weight:600;
-}
-.mobile-book span:last-child{background:var(--gold);color:#17130e;border-radius:999px;padding:9px 14px}
-
-.lightbox{
-  display:none;position:fixed;inset:0;background:rgba(10,10,9,.94);z-index:2000;
-  align-items:center;justify-content:center;padding:25px;
-}
-.lightbox.open{display:flex}
-.lightbox img{width:auto;max-width:92vw;max-height:86vh;border-radius:16px;object-fit:contain}
-.lb-close{
-  position:absolute;top:22px;right:26px;color:#fff;background:none;border:0;font-size:36px;cursor:pointer;
-}
-
-.modal{
-  display:none;position:fixed;inset:0;z-index:1900;background:rgba(15,14,12,.68);
-  align-items:center;justify-content:center;padding:20px;
-}
-.modal.open{display:flex}
-.modal-card{
-  max-width:560px;width:100%;background:#fff;border-radius:28px;padding:34px;position:relative;
-  box-shadow:var(--shadow);
-}
-.modal-card h3{font-family:"Cormorant Garamond",serif;font-size:40px;margin:4px 0 12px}
-.modal-card p{color:var(--muted);line-height:1.8}
-.modal-close{position:absolute;right:20px;top:16px;border:0;background:none;font-size:28px;cursor:pointer}
-
-@media(max-width:1000px){
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-copy{min-height:78svh;padding-top:130px}
-  .hero-visual{height:58svh}
-  .services-grid{grid-template-columns:repeat(2,1fr)}
-  .service-card:last-child{grid-column:span 2}
-  .exp-grid,.academy-wrap,.visit-grid{grid-template-columns:1fr}
-  .academy-copy{order:-1}
-  .section-head{grid-template-columns:1fr;gap:22px}
-  .review{grid-template-columns:1fr;gap:35px}
-  .footer{grid-template-columns:1fr 1fr}
-}
-
-@media(max-width:720px){
-  .topbar{padding:14px 18px}
-  .nav,.book-mini{display:none}
-  .menu-btn{display:block}
-  .hero-copy{padding:115px 22px 64px;min-height:74svh}
-  .hero h1{font-size:72px}
-  .hero-p{font-size:14px}
-  .hero-visual{height:52svh}
-  .hero-tag{right:14px;bottom:14px}
-  .section,.gallery,.visit{padding:78px 20px}
-  .services-grid{grid-template-columns:1fr}
-  .service-card,.service-card:last-child{grid-column:auto;min-height:250px}
-  .experience{padding:80px 20px}
-  .exp-grid{gap:45px}
-  .exp-images{min-height:470px}
-  .exp-main{width:78%;height:84%}
-  .exp-small{width:48%;height:44%}
-  .points{grid-template-columns:1fr}
-  .academy-wrap{min-height:auto}
-  .academy-image{min-height:450px}
-  .academy-copy{padding:78px 24px}
-  .gallery-grid{
-    display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:8px;
-  }
-  .g-item{min-width:82vw;height:430px;scroll-snap-align:center}
-  .review{margin:0 20px 80px;padding:46px 25px;border-radius:26px}
-  .score{font-size:72px}
-  .visit-grid{gap:24px}
-  .visit-card{padding:30px 22px}
-  .map-card{min-height:380px}
-  .footer{grid-template-columns:1fr;padding:60px 24px 110px}
-  .mobile-book{display:flex}
-}
-
-/* ===== Essential package responsive enhancements ===== */
-.menu-btn{width:44px;height:44px;border-radius:50%;align-items:center;justify-content:center;cursor:pointer;position:relative;z-index:1202}
-.hamb{width:18px;height:14px;position:relative;display:block}
-.hamb span{position:absolute;left:0;width:18px;height:1.5px;background:currentColor;transition:.28s ease}
-.hamb span:nth-child(1){top:0}.hamb span:nth-child(2){top:6px}.hamb span:nth-child(3){top:12px}
-.menu-btn.active .hamb span:nth-child(1){transform:translateY(6px) rotate(45deg)}
-.menu-btn.active .hamb span:nth-child(2){opacity:0}
-.menu-btn.active .hamb span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-
-.mobile-menu{position:fixed;inset:0;z-index:1150;background:rgba(16,15,13,.48);opacity:0;pointer-events:none;transition:.3s ease}
-.mobile-menu.open{opacity:1;pointer-events:auto}
-.mobile-menu-panel{position:absolute;right:0;top:0;width:min(88vw,420px);height:100%;background:#f8f3ec;color:var(--ink);padding:108px 28px 32px;display:flex;flex-direction:column;transform:translateX(100%);transition:.36s cubic-bezier(.2,.8,.2,1)}
-.mobile-menu.open .mobile-menu-panel{transform:none}
-.mobile-menu-links{display:flex;flex-direction:column}
-.mobile-menu-links a{font-family:"Cormorant Garamond",serif;font-size:34px;line-height:1;padding:17px 0;border-bottom:1px solid #e4d9cc}
-.mobile-menu-actions{margin-top:auto;display:grid;gap:11px}
-.mobile-menu-actions a{min-height:52px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
-.mobile-menu-primary{background:var(--ink);color:#fff}
-.mobile-menu-secondary{border:1px solid #d8ccbe}
-.mobile-menu-actions small{color:var(--muted);line-height:1.6;margin-top:4px}
-body.menu-open{overflow:hidden}
-
-.hero-visual img,.exp-main img,.exp-small img,.academy-image img,.g-item img{image-rendering:auto}
-.hero-visual img{filter:saturate(.88) contrast(1.02)}
-.service-card:focus-within,.service-card:hover{box-shadow:var(--shadow)}
-.g-item{background:#eee7dd}
-
-@media(max-width:1000px){
-  .menu-btn{display:flex}
-}
-@media(max-width:720px){
-  .topbar{height:68px}
-  .hero-copy{min-height:68svh;padding:104px 20px 54px}
-  .hero h1{font-size:clamp(56px,18vw,74px);line-height:.83}
-  .hero-p{font-size:13px;line-height:1.75;margin:24px 0}
-  .hero-actions{display:grid;grid-template-columns:1fr}
-  .hero-actions .btn{width:100%;min-height:48px}
-  .hero-visual{height:48svh}
-  .section,.gallery,.visit{padding:74px 18px}
-  .section-title{font-size:44px}
-  .section-copy{font-size:13px}
-  .service-card,.service-card:last-child{min-height:225px}
-  .experience{padding:74px 18px}
-  .exp-images{min-height:440px}
-  .exp-copy h2{font-size:50px}
-  .academy-copy{padding:72px 22px}
-  .academy-copy h2{font-size:54px}
-  .academy-image{min-height:420px}
-  .review{margin:0 18px 74px;padding:42px 24px}
-  .review-quote{font-size:31px}
-  .visit-card{padding:28px 22px}
-  .footer{padding:58px 22px 112px}
-}
-@media(max-width:390px){
-  .mobile-menu-links a{font-size:30px}
-  .hero h1{font-size:55px}
-  .section-title{font-size:41px}
-}
-
+@media(max-width:390px){.hero h1{font-size:60px}.service-card{grid-template-columns:1fr}.service-photo{height:190px;order:-1}.quality-grid{grid-template-columns:1fr 1fr}.mini-gallery{grid-template-columns:1fr 1fr;height:auto}.mini-gallery img{height:130px}.mini-gallery img:last-child{display:none}}
 </style>
 </head>
-
 <body>
-
 <header class="topbar" id="topbar">
-  <a href="#home" class="brand">
-    <span class="brand-mark">610</span>
-    <span>610 STUDIO</span>
-  </a>
-
-  <nav class="nav">
-    <a href="#services">Services</a>
-    <a href="#studio">Studio</a>
-    <a href="#academy">Academy</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#visit">Visit</a>
-  </nav>
-
-  <a class="book-mini" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank">Book Appointment</a>
-  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-  <span class="hamb"><span></span><span></span><span></span></span>
-</button>
+  <a class="logo" href="#home"><span><span class="logo610">610</span><span class="logo-sub">STUDIO</span></span></a>
+  <nav class="nav"><a href="#home">Home</a><a href="#services">Services</a><a href="#studio">Studio</a><a href="#academy">Academy</a><a href="#gallery">Gallery</a><a href="#visit">Contact</a></nav>
+  <a class="book-mini" target="_blank" rel="noopener" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment.">Book Appointment</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span class="hamb"><span></span><span></span><span></span></span></button>
 </header>
-
-<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <div class="mobile-menu-panel">
-    <nav class="mobile-menu-links">
-      <a href="#services">Services</a>
-      <a href="#studio">The Studio</a>
-      <a href="#academy">Academy</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#visit">Visit Us</a>
-    </nav>
-    <div class="mobile-menu-actions">
-      <a class="mobile-menu-primary" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank">WhatsApp to Book</a>
-      <a class="mobile-menu-secondary" href="tel:+60165890610">Call 016-589 0610</a>
-      <small>Wisma Aman Elite · Taman Desa Aman Cheras · Kuala Lumpur</small>
-    </div>
-  </div>
-</div>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true"><div class="mobile-panel"><div class="mobile-links"><a href="#home">Home</a><a href="#services">Services</a><a href="#studio">The Studio</a><a href="#academy">Academy</a><a href="#gallery">Gallery</a><a href="#visit">Visit Us</a></div><div class="mobile-actions"><a target="_blank" rel="noopener" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment.">WhatsApp to Book</a><a href="tel:+60165890610">Call 016-589 0610</a></div></div></div>
 
 <main>
 <section class="hero" id="home">
-  <div class="hero-copy">
-    <div class="eyebrow">Kuala Lumpur · Beauty Studio</div>
-    <h1>Beauty,<i>Refined.</i></h1>
-    <p class="hero-p">
-      A calm, contemporary beauty studio dedicated to personalised beauty care —
-      from nails and lashes to facial treatments, makeup and bridal beauty.
-    </p>
-    <div class="hero-actions">
-      <a class="btn btn-gold" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank">Book on WhatsApp</a>
-      <a class="btn btn-outline" href="#services">Explore Services</a>
-    </div>
-  </div>
-
-  <div class="hero-visual">
-    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1400&q=88" alt="610 Studio interior">
-    <div class="hero-tag">A quiet space for beauty</div>
-  </div>
+  <div class="hero-left"><div class="hero-inner reveal"><div class="eyebrow">Beauty, Refined.</div><h1>Beauty,<i>Refined.</i></h1><p>Boutique beauty services, personalised care and a refined studio experience in Kuala Lumpur — from nails and lashes to facial treatments, makeup and bridal beauty.</p><div class="hero-actions"><a class="btn btn-gold" target="_blank" rel="noopener" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment.">Book Appointment <span>◉</span></a><a class="btn btn-outline" href="#services">Explore Services →</a></div><div class="hero-badges"><span>Professional</span><span>Personalised</span><span>Premium</span><span>Hygiene</span></div></div></div>
+  <div class="hero-image"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1800&q=90" alt="Elegant manicure treatment at 610 Studio"><div class="hero-float"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=400&q=85" alt="Elegant salon interior"><span>A calm, elegant space where beauty meets artistry.</span></div></div>
 </section>
 
-<div class="marquee">
-  <div class="marquee-track">
-    <span>Nails</span><span>Lashes</span><span>Facial</span><span>Makeup</span><span>Bridal</span><span>Beauty Academy</span>
-    <span>Nails</span><span>Lashes</span><span>Facial</span><span>Makeup</span><span>Bridal</span><span>Beauty Academy</span>
-  </div>
-</div>
+<section class="trust"><div class="shell"><div class="trust-item"><div class="trust-icon">♡</div><div><strong>Expert Care</strong><small>Skilled professionals</small></div></div><div class="trust-item"><div class="trust-icon">♢</div><div><strong>Premium Products</strong><small>For the best results</small></div></div><div class="trust-item"><div class="trust-icon">◯</div><div><strong>Personalised</strong><small>Beauty tailored to you</small></div></div><div class="trust-item"><div class="trust-icon">✓</div><div><strong>Hygiene Focused</strong><small>Clean, safe and maintained</small></div></div></div></section>
+<div class="category-strip"><span>Nails</span><span>Eyelash Perm</span><span>Facial</span><span>Makeup & Bridal</span><span>Academy</span><span>Beauty Products</span></div>
 
-<section class="section services" id="services">
-  <div class="section-head reveal">
-    <div>
-      <div class="section-kicker">Our Beauty Menu</div>
-      <h2 class="section-title">Care designed around you.</h2>
-    </div>
-    <p class="section-copy">
-      Discover thoughtful beauty services delivered in a comfortable studio environment.
-      Tap any service to learn more, then speak with the team directly to confirm the treatment that suits you.
-    </p>
-  </div>
+<section class="services" id="services"><div class="shell services-layout"><div class="services-intro reveal"><div class="section-kicker">Our Services</div><h2>Care designed<br>around <i>you.</i></h2><p>Thoughtful beauty services with attention to detail. Tap any service to learn more, then speak directly with the team to confirm the treatment that suits you.</p></div><div class="service-grid">
+  <article class="service-card reveal" onclick="openService('Nail Art & Manicure','Clean, elegant nail care — from polished everyday looks to detailed nail designs tailored to your style.')"><div class="service-copy"><div class="service-round">♢</div><div><h3>Nails</h3><p>Manicure, gel polish, nail art and nail care.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=88" alt="Nail services"></div></article>
+  <article class="service-card reveal" onclick="openService('Eyelash Perm','Enhance your natural eye shape with professional lash and eye beauty treatments, including eyelash perm services.')"><div class="service-copy"><div class="service-round">◡</div><div><h3>Eyelash</h3><p>Eyelash perm, lash lift and lash care.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=900&q=88" alt="Eyelash treatment"></div></article>
+  <article class="service-card reveal" onclick="openService('Facial Treatments','Personalised facial care designed to leave your skin feeling refreshed, cared for and beautifully renewed.')"><div class="service-copy"><div class="service-round">♡</div><div><h3>Facial</h3><p>Classic facial, skin treatment and deep cleansing.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=88" alt="Facial treatment"></div></article>
+  <article class="service-card reveal" onclick="openService('Makeup','Professional makeup for celebrations, events, photography and special occasions — tailored to your preferred look.')"><div class="service-copy"><div class="service-round">✧</div><div><h3>Makeup</h3><p>Daily makeup, event makeup and professional styling.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=88" alt="Makeup services"></div></article>
+  <article class="service-card reveal" onclick="openService('Bridal Beauty','A personalised bridal beauty experience designed around your features, style and wedding-day vision.')"><div class="service-copy"><div class="service-round">♕</div><div><h3>Bridal</h3><p>Bridal makeup, hairdo and pre-wedding packages.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=88" alt="Bridal beauty"></div></article>
+  <article class="service-card reveal" onclick="openService('610 Beaute Academy','Professional beauty learning for aspiring artists who want to build technique, confidence and practical experience.')"><div class="service-copy"><div class="service-round">⌂</div><div><h3>Academy</h3><p>Professional beauty courses for aspiring beauty artists.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=88" alt="Beauty academy"></div></article>
+</div></div></section>
 
-  <div class="services-grid">
-    <article class="service-card reveal" onclick="openService('Nail Art & Manicure','Clean, elegant nail care — from polished everyday looks to detailed nail designs tailored to your style.')">
-      <div><span class="service-no">01</span><div class="service-icon">✦</div></div>
-      <div><h3>Nails</h3><p>Manicure, nail care and expressive nail designs for every mood.</p><div class="service-arrow">↗</div></div>
-    </article>
+<section class="about" id="studio"><div class="shell about-grid"><div class="about-media reveal"><div class="about-main"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=88" alt="610 Studio interior"></div><div class="about-small"><img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=800&q=88" alt="610 Studio beauty area"></div></div><div class="about-copy reveal"><div class="section-kicker">About 610 Studio</div><h2>A studio that feels<br>as good as it looks.</h2><p>Clean lines, warm neutrals and a relaxed atmosphere create the setting for a more personal beauty experience. Every visit is designed to feel comfortable, unrushed and beautifully considered.</p><div class="quality-grid"><div class="quality"><span>♧</span><strong>Personalised<br>Care</strong></div><div class="quality"><span>♢</span><strong>Quality<br>Products</strong></div><div class="quality"><span>✓</span><strong>Hygiene<br>Focused</strong></div><div class="quality"><span>☆</span><strong>Skilled<br>Artists</strong></div></div></div></div></section>
 
-    <article class="service-card reveal" onclick="openService('Lash & Eye Beauty','Enhance your natural eye shape with professional lash and eye beauty treatments, including eyelash perm services.')">
-      <div><span class="service-no">02</span><div class="service-icon">◌</div></div>
-      <div><h3>Lashes</h3><p>Soft, lifted and naturally enhanced eye beauty.</p><div class="service-arrow">↗</div></div>
-    </article>
+<section class="academy" id="academy"><div class="shell academy-card"><div class="academy-copy reveal"><div class="section-kicker">610 Academy</div><h2>Learn.<br>Create.<br>Master.</h2><p>Take your beauty passion to the next level and build your dream career with practical studio learning.</p><a class="btn" style="border:1px solid #c8b79e;margin-top:12px" target="_blank" rel="noopener" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20know%20more%20about%20the%20beauty%20academy.">View Courses →</a></div><div class="academy-points reveal"><span><i>◯</i> Professional Trainers</span><span><i>✦</i> Hands-On Practical</span><span><i>◇</i> Certificate Provided</span></div><div class="academy-photo reveal"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=88" alt="610 Beauty Academy classroom"></div></div></section>
 
-    <article class="service-card reveal" onclick="openService('Facial Treatments','Personalised facial care designed to leave your skin feeling refreshed, cared for and beautifully renewed.')">
-      <div><span class="service-no">03</span><div class="service-icon">◇</div></div>
-      <div><h3>Facial</h3><p>Personalised facial care in a calm, private setting.</p><div class="service-arrow">↗</div></div>
-    </article>
+<section class="gallery" id="gallery"><div class="shell gallery-wrap"><div class="gallery-intro reveal"><div class="section-kicker">Gallery</div><h2>Beauty in<br>the details.</h2><p>Every service, every touch, crafted with passion and precision.</p></div><div class="gallery-row"><div class="gallery-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=900&q=88" alt="Beauty tools"></div><div class="gallery-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=88" alt="Makeup palette"></div><div class="gallery-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=88" alt="Bridal styling"></div><div class="gallery-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=88" alt="Salon interior"></div></div><div class="review-card reveal"><div class="score">5.0</div><div class="stars">★★★★★</div><p>“A beauty space created to help you look good, feel confident and enjoy the experience.”</p><small>Google rating shown in current business listing</small></div></div></section>
 
-    <article class="service-card reveal" onclick="openService('Makeup','Professional makeup for celebrations, events, photography and special occasions — tailored to your preferred look.')">
-      <div><span class="service-no">04</span><div class="service-icon">✧</div></div>
-      <div><h3>Makeup</h3><p>Professional makeup for events and unforgettable moments.</p><div class="service-arrow">↗</div></div>
-    </article>
-
-    <article class="service-card reveal" onclick="openService('Bridal Beauty','A personalised bridal beauty experience designed around your features, style and wedding-day vision.')">
-      <div><span class="service-no">05</span><div class="service-icon">♡</div></div>
-      <div><h3>Bridal</h3><p>Refined bridal beauty for your most meaningful day.</p><div class="service-arrow">↗</div></div>
-    </article>
-  </div>
-</section>
-
-<section class="experience" id="studio">
-  <div class="exp-grid">
-    <div class="exp-images reveal">
-      <div class="exp-main"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=88" alt="610 Studio lounge"></div>
-      <div class="exp-small"><img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=1600&q=88" alt="610 Studio beauty area"></div>
-    </div>
-
-    <div class="exp-copy reveal">
-      <div class="section-kicker">The 610 Experience</div>
-      <h2>A studio that feels as good as it looks.</h2>
-      <p>
-        Clean lines, warm neutrals and a relaxed atmosphere create the setting for a more personal beauty experience.
-        At 610 STUDIO, every visit is designed to feel comfortable, unrushed and beautifully considered.
-      </p>
-
-      <div class="points">
-        <div class="point">Personalised beauty care</div>
-        <div class="point">Comfortable studio environment</div>
-        <div class="point">Professional beauty services</div>
-        <div class="point">Convenient Kuala Lumpur location</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="academy" id="academy">
-  <div class="academy-wrap">
-    <div class="academy-image">
-      <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1400&q=88" alt="610 Beaute Academy">
-    </div>
-    <div class="academy-copy reveal">
-      <div class="section-kicker">610 Beauté Academy</div>
-      <h2>Learn.<br>Create.<br><i>Master.</i></h2>
-      <p>
-        Beyond the studio, 610 BEAUTÉ ACADEMY is a space for aspiring beauty professionals
-        to learn techniques, build confidence and grow their craft in a practical studio environment.
-      </p>
-      <a class="academy-pill" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20know%20more%20about%20the%20beauty%20academy." target="_blank">
-        Enquire About Academy <span>↗</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="gallery" id="gallery">
-  <div class="section-head reveal">
-    <div>
-      <div class="section-kicker">Inside 610</div>
-      <h2 class="section-title">Beauty in the details.</h2>
-    </div>
-    <p class="section-copy">
-      A glimpse into our studio, nail work and learning environment. On mobile, swipe across the gallery.
-    </p>
-  </div>
-
-  <div class="gallery-grid">
-    <div class="g-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1400&q=88" alt="Nail art at 610 Studio"></div>
-    <div class="g-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1400&q=88" alt="Nail design"></div>
-    <div class="g-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=1400&q=88" alt="Studio interior"></div>
-    <div class="g-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=88" alt="Beauty academy class"></div>
-  </div>
-</section>
-
-<section class="review reveal">
-  <div>
-    <div class="score">5.0</div>
-    <div class="stars">★★★★★</div>
-    <small>Google rating shown in current business listing</small>
-  </div>
-  <div>
-    <div class="review-quote">“A beauty space created to help you look good, feel confident and enjoy the experience.”</div>
-  </div>
-</section>
-
-<section class="visit" id="visit">
-  <div class="section-head reveal">
-    <div>
-      <div class="section-kicker">Visit 610 Studio</div>
-      <h2 class="section-title">Your next beauty appointment starts here.</h2>
-    </div>
-    <p class="section-copy">
-      Speak directly with the studio to check availability, confirm your preferred treatment and arrange your visit.
-    </p>
-  </div>
-
-  <div class="visit-grid">
-    <div class="visit-card reveal">
-      <h3>610 STUDIO</h3>
-
-      <div class="info-row">
-        <span class="info-label">Address</span>
-        Wisma Aman Elite, Jalan Desa Aman 1,<br>
-        Taman Desa Aman Cheras,<br>
-        56100 Kuala Lumpur
-      </div>
-
-      <div class="info-row">
-        <span class="info-label">Phone</span>
-        016-589 0610
-      </div>
-
-      <div class="info-row">
-        <span class="info-label">Opening Hours</span>
-        Please contact the studio to confirm today's availability.
-      </div>
-
-      <div class="hero-actions" style="margin-top:24px">
-        <a class="btn btn-gold" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank">WhatsApp to Book</a>
-        <a class="btn" style="border-color:#d7cabb" href="https://www.google.com/maps/search/?api=1&query=610+Studio+Wisma+Aman+Elite+Jalan+Desa+Aman+1+Kuala+Lumpur" target="_blank">Get Directions</a>
-      </div>
-    </div>
-
-    <div class="map-card reveal">
-      <div class="map-overlay">
-        <strong>Find us in Kuala Lumpur</strong>
-        <span style="color:#746b61;font-size:13px">Taman Desa Aman Cheras · Wisma Aman Elite</span>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="visit" id="visit"><div class="shell visit-grid"><div class="visit-intro reveal"><div class="section-kicker">Visit Us</div><h2>Your next beauty appointment starts here.</h2><p>Speak directly with the studio to check availability, confirm your preferred treatment and arrange your visit.</p><div class="visit-card"><h3>610 STUDIO</h3><div class="info"><label>Address</label>Wisma Aman Elite, Jalan Desa Aman 1,<br>Taman Desa Aman Cheras, 56100 Kuala Lumpur</div><div class="info"><label>Phone</label>016-589 0610</div><div class="info"><label>Opening Hours</label>Please contact the studio to confirm today's availability.</div><div class="visit-actions"><a class="btn btn-gold" target="_blank" rel="noopener" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment.">WhatsApp to Book</a><a class="btn btn-outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=610+Studio+Wisma+Aman+Elite+Jalan+Desa+Aman+1+Kuala+Lumpur">Directions</a></div></div></div><div class="reveal"><div class="mini-gallery"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=700&q=88" alt="Salon interior"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=700&q=88" alt="Beauty studio"><img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=700&q=88" alt="Beauty salon"></div><div class="book-banner"><div><small style="color:#c6bfb6;text-transform:uppercase;letter-spacing:.13em">Book Now</small><br><strong>Ready for your next beauty visit?</strong></div><a class="wa" target="_blank" rel="noopener" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment."><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.62c-.26-.13-1.55-.76-1.79-.85-.24-.09-.42-.13-.6.13-.18.26-.69.85-.85 1.03-.16.18-.31.2-.58.07-.26-.13-1.1-.41-2.1-1.3-.78-.69-1.3-1.54-1.46-1.8-.16-.26-.02-.4.12-.53.12-.12.26-.31.4-.47.13-.16.18-.26.26-.44.09-.18.04-.33-.02-.46-.07-.13-.6-1.44-.82-1.97-.22-.52-.44-.45-.6-.46h-.51c-.18 0-.46.07-.71.33-.24.26-.93.91-.93 2.21s.96 2.56 1.09 2.74c.13.18 1.88 2.87 4.56 4.02.64.28 1.14.44 1.53.56.64.2 1.22.17 1.68.1.51-.08 1.55-.64 1.77-1.25.22-.62.22-1.15.16-1.25-.07-.12-.24-.18-.51-.31Z"/><path d="M16.03 3.2A12.72 12.72 0 0 0 5.18 22.58L3.2 28.8l6.42-1.95A12.77 12.77 0 1 0 16.03 3.2Zm0 23.15c-2.15 0-4.15-.65-5.81-1.76l-.42-.28-3.81 1.16 1.2-3.7-.27-.43a10.31 10.31 0 1 1 9.11 5.01Z"/></svg>Book via WhatsApp</a></div></div></div></section>
 </main>
 
-<footer class="footer">
-  <div>
-    <div class="footer-logo">610 STUDIO</div>
-    <p>Beauty salon & beauty academy in Kuala Lumpur.</p>
-  </div>
+<footer class="footer"><div class="shell footer-grid"><div><div class="logo610" style="font-size:32px">610 STUDIO</div><div style="font-size:10px;color:#80776e;margin-top:2px">Beauty salon & beauty academy in Kuala Lumpur.</div></div><div class="socials" aria-label="Social media"><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.8l.42-3.1H13.5V7.92c0-.9.25-1.51 1.57-1.51h1.78V3.64c-.31-.04-1.36-.13-2.58-.13-2.55 0-4.3 1.55-4.3 4.41V9.9H7v3.1h2.97v8h3.53Z"/></svg></a><a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.4 3h3.05c.18 1.52 1.05 2.85 2.55 3.62v3.05a7.24 7.24 0 0 1-2.6-.63v6.2A5.76 5.76 0 1 1 12 9.5v3.14a2.66 2.66 0 1 0 2.4 2.65V3Z"/></svg></a><a target="_blank" rel="noopener" href="https://wa.me/60165890610" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M19.11 17.62c-.26-.13-1.55-.76-1.79-.85-.24-.09-.42-.13-.6.13-.18.26-.69.85-.85 1.03-.16.18-.31.2-.58.07-.26-.13-1.1-.41-2.1-1.3-.78-.69-1.3-1.54-1.46-1.8-.16-.26-.02-.4.12-.53.12-.12.26-.31.4-.47.13-.16.18-.26.26-.44.09-.18.04-.33-.02-.46-.07-.13-.6-1.44-.82-1.97-.22-.52-.44-.45-.6-.46h-.51c-.18 0-.46.07-.71.33-.24.26-.93.91-.93 2.21s.96 2.56 1.09 2.74c.13.18 1.88 2.87 4.56 4.02.64.28 1.14.44 1.53.56.64.2 1.22.17 1.68.1.51-.08 1.55-.64 1.77-1.25.22-.62.22-1.15.16-1.25-.07-.12-.24-.18-.51-.31Z"/><path d="M16.03 3.2A12.72 12.72 0 0 0 5.18 22.58L3.2 28.8l6.42-1.95A12.77 12.77 0 1 0 16.03 3.2Zm0 23.15c-2.15 0-4.15-.65-5.81-1.76l-.42-.28-3.81 1.16 1.2-3.7-.27-.43a10.31 10.31 0 1 1 9.11 5.01Z"/></svg></a></div><div class="footer-note">016-589 0610 · Taman Desa Aman Cheras · Kuala Lumpur</div></div></footer>
 
-  <div>
-    <h4>Explore</h4>
-    <p>
-      <a href="#services">Services</a><br>
-      <a href="#studio">The Studio</a><br>
-      <a href="#academy">Academy</a><br>
-      <a href="#gallery">Gallery</a>
-    </p>
-  </div>
-
-  <div>
-    <h4>Connect</h4>
-    <p>
-      <a href="tel:+60165890610">016-589 0610</a><br>
-      <a href="https://wa.me/60165890610" target="_blank">WhatsApp</a><br>
-      <span>Instagram · TikTok · Facebook</span>
-    </p>
-  </div>
-</footer>
-
-<a class="mobile-book" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank">
-  <span>610 STUDIO</span><span>Book Appointment</span>
-</a>
-
-<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-  <button class="lb-close" aria-label="Close">×</button>
-  <img id="lbImg" alt="Gallery preview">
-</div>
-
-<div class="modal" id="serviceModal" onclick="closeService(event)">
-  <div class="modal-card">
-    <button class="modal-close" onclick="document.getElementById('serviceModal').classList.remove('open')">×</button>
-    <div class="section-kicker">610 Studio Service</div>
-    <h3 id="modalTitle">Service</h3>
-    <p id="modalText"></p>
-    <a class="btn btn-gold" style="margin-top:10px" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20enquire%20about%20a%20beauty%20service." target="_blank">Ask on WhatsApp</a>
-  </div>
-</div>
-
+<a class="mobile-book" target="_blank" rel="noopener" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment."><span>610 STUDIO</span><b>Book Appointment</b></a>
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)"><button class="lb-close" aria-label="Close">×</button><img id="lbImg" alt="Gallery preview"></div>
+<div class="modal" id="serviceModal" onclick="closeService(event)"><div class="modal-card"><button class="modal-close" onclick="document.getElementById('serviceModal').classList.remove('open')">×</button><div class="section-kicker">610 Studio Service</div><h3 id="modalTitle">Service</h3><p id="modalText"></p><a class="btn btn-gold" style="margin-top:10px" target="_blank" rel="noopener" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20enquire%20about%20a%20beauty%20service.">Ask on WhatsApp</a></div></div>
 <script>
-const topbar = document.getElementById('topbar');
-window.addEventListener('scroll',()=>{
-  topbar.classList.toggle('scrolled', window.scrollY > 40);
-});
-
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting) entry.target.classList.add('show');
-  });
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-function openLightbox(el){
-  document.getElementById('lbImg').src = el.querySelector('img').src;
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeLightbox(e){
-  if(e.target.id==='lightbox' || e.target.classList.contains('lb-close')){
-    document.getElementById('lightbox').classList.remove('open');
-    document.body.style.overflow='';
-  }
-}
-function openService(title,text){
-  document.getElementById('modalTitle').textContent=title;
-  document.getElementById('modalText').textContent=text;
-  document.getElementById('serviceModal').classList.add('open');
-}
-function closeService(e){
-  if(e.target.id==='serviceModal') e.currentTarget.classList.remove('open');
-}
-
-const menuBtn = document.getElementById('menuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-
-function setMobileMenu(open){
-  mobileMenu.classList.toggle('open', open);
-  menuBtn.classList.toggle('active', open);
-  menuBtn.setAttribute('aria-expanded', String(open));
-  mobileMenu.setAttribute('aria-hidden', String(!open));
-  document.body.classList.toggle('menu-open', open);
-}
-
-menuBtn.addEventListener('click', () => setMobileMenu(!mobileMenu.classList.contains('open')));
-mobileMenu.addEventListener('click', (e) => { if(e.target === mobileMenu) setMobileMenu(false); });
-document.querySelectorAll('.mobile-menu-links a').forEach(a => a.addEventListener('click', () => setMobileMenu(false)));
-document.addEventListener('keydown', (e) => { if(e.key === 'Escape') setMobileMenu(false); });
-
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+function openLightbox(el){document.getElementById('lbImg').src=el.querySelector('img').src;document.getElementById('lightbox').classList.add('open');document.body.classList.add('modal-open')}
+function closeLightbox(e){if(e.target.id==='lightbox'||e.target.classList.contains('lb-close')){document.getElementById('lightbox').classList.remove('open');document.body.classList.remove('modal-open')}}
+function openService(title,text){document.getElementById('modalTitle').textContent=title;document.getElementById('modalText').textContent=text;document.getElementById('serviceModal').classList.add('open');document.body.classList.add('modal-open')}
+function closeService(e){if(e.target.id==='serviceModal'){e.currentTarget.classList.remove('open');document.body.classList.remove('modal-open')}}
+const menuBtn=document.getElementById('menuBtn'),mobileMenu=document.getElementById('mobileMenu');function setMenu(open){mobileMenu.classList.toggle('open',open);menuBtn.classList.toggle('active',open);menuBtn.setAttribute('aria-expanded',String(open));mobileMenu.setAttribute('aria-hidden',String(!open));document.body.classList.toggle('menu-open',open)}menuBtn.addEventListener('click',()=>setMenu(!mobileMenu.classList.contains('open')));mobileMenu.addEventListener('click',e=>{if(e.target===mobileMenu)setMenu(false)});document.querySelectorAll('.mobile-links a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape'){setMenu(false);document.getElementById('lightbox').classList.remove('open');document.getElementById('serviceModal').classList.remove('open');document.body.classList.remove('modal-open')}});
 </script>
-
 </body>
 </html>
