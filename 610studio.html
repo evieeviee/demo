@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>610 STUDIO | Beauty, Refined.</title>
-<meta name="description" content="610 STUDIO is a boutique beauty salon and academy in Kuala Lumpur offering nails, eyelash perm, facial treatments, makeup and bridal beauty services." />
-<meta name="theme-color" content="#11110f" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>610 BEAUTÉ ACADEMY | Beauty, Refined.</title>
+<meta content="610 Beauté Academy is a boutique beauty salon and academy in Kuala Lumpur offering nails, eyelash perm, facial treatments, makeup, bridal beauty services and professional beauty learning." name="description"/>
+<meta content="#11110f" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   --ink:#11110f;--ink2:#1a1916;--cream:#f7f2e9;--ivory:#fffdf9;--sand:#e9dfd0;
@@ -77,74 +78,433 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;width
   .shell{width:min(calc(100% - 32px),var(--max))}.topbar{height:70px;display:flex;justify-content:space-between;padding:0 18px;position:fixed;top:0;left:0;right:0;background:rgba(17,16,14,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 8px 24px rgba(0,0,0,.12)}.logo610{font-size:36px}.logo-sub{font-size:7px}.nav,.book-mini{display:none}.menu-btn{display:flex}.hero{height:auto;min-height:0;display:block}.hero-left{min-height:620px;padding:115px 20px 56px;background:linear-gradient(180deg,rgba(11,10,9,.96),rgba(11,10,9,.78)),url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=88') center/cover}.hero-image{height:52svh}.hero h1{font-size:70px}.hero p{font-size:13px}.hero-actions{display:grid}.hero-actions .btn{width:100%}.hero-float{left:16px;right:16px;bottom:15px;max-width:none}.hero-badges{gap:8px 12px}.trust .shell{grid-template-columns:1fr 1fr}.trust-item{justify-content:flex-start;border-bottom:1px solid #eee6db}.category-strip{justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0 18px;gap:24px;scrollbar-width:none;-ms-overflow-style:none}.category-strip::-webkit-scrollbar{display:none}.category-strip span{scroll-snap-align:center;flex:0 0 auto}.category-strip span:not(:last-child):after{margin-left:24px}.services{padding:58px 0}.services-layout{gap:28px}.services-intro h2{font-size:46px}.service-grid{grid-template-columns:1fr}.service-card{grid-template-columns:46% 54%;min-height:180px}.about{padding:55px 0}.about-media{height:420px}.about-main{width:80%}.about-small{width:47%;height:42%}.about-copy h2{font-size:47px}.quality-grid{grid-template-columns:1fr 1fr}.academy{padding:48px 0}.academy-card{grid-template-columns:1fr;gap:22px}.academy-copy h2{font-size:45px}.academy-photo{grid-column:auto;height:230px}.gallery{padding:52px 0}.gallery-wrap{grid-template-columns:1fr}.gallery-intro h2{font-size:46px}.gallery-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:0;scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-x:contain}.gallery-row::-webkit-scrollbar{display:none}.gallery-item{min-width:78vw;height:320px;scroll-snap-align:center;scroll-snap-stop:always}.mobile-dots{display:flex}.review-card{grid-column:auto;min-height:240px}.visit{padding-top:52px}.visit-grid{gap:22px}.visit-intro h2{font-size:46px}.mini-gallery{height:150px}.book-banner{align-items:flex-start;flex-direction:column}.footer-grid{grid-template-columns:1fr;padding:24px 0 95px}.footer-note{text-align:left;padding:0}.mobile-book{display:flex}
 }
 @media(max-width:390px){.mobile-panel{padding-left:22px;padding-right:22px}.mobile-links a{font-size:26px;padding:12px 0}.hero h1{font-size:60px}.service-card{grid-template-columns:1fr}.service-photo{height:190px;order:-1}.quality-grid{grid-template-columns:1fr 1fr}.mini-gallery{grid-template-columns:1fr 1fr;height:auto}.mini-gallery img{height:130px}.mini-gallery img:last-child{display:none}}
+
+/* SMART WHATSAPP ENQUIRY */
+.smart-modal{
+  display:none;position:fixed;inset:0;z-index:2600;background:rgba(10,9,8,.82);
+  align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(10px);
+}
+.smart-modal.open{display:flex}
+.smart-card{
+  position:relative;width:min(100%,620px);max-height:92vh;overflow:auto;
+  background:#fffdf9;border-radius:24px;padding:30px;box-shadow:0 30px 80px rgba(0,0,0,.3)
+}
+.smart-close{
+  position:absolute;top:14px;right:14px;width:42px;height:42px;border-radius:50%;
+  border:1px solid #dfd3c4;background:#fff;color:#17130f;font-size:24px;cursor:pointer
+}
+.smart-head{padding-right:50px}
+.smart-head .section-kicker{margin-bottom:8px}
+.smart-head h3{font-family:"Cormorant Garamond",serif;font-size:42px;line-height:.95;font-weight:500;margin:0 0 10px}
+.smart-head p{margin:0 0 20px;color:var(--muted);font-size:12px;line-height:1.65}
+.smart-context{
+  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px
+}
+.smart-context span{
+  background:#f3eadf;border:1px solid #e5d7c5;border-radius:999px;padding:7px 10px;
+  font-size:10px;font-weight:600;color:#6d5b43
+}
+.smart-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.smart-field{display:grid;gap:6px}
+.smart-field.full{grid-column:1/-1}
+.smart-field label{
+  font-size:9px;text-transform:uppercase;letter-spacing:.11em;color:#9a7c55;font-weight:600
+}
+.smart-field input,.smart-field select,.smart-field textarea{
+  width:100%;border:1px solid #dfd4c6;background:#fff;border-radius:13px;padding:12px 13px;
+  color:#17130f;outline:none;font-family:"DM Sans",sans-serif
+}
+.smart-field textarea{min-height:95px;resize:vertical}
+.smart-field input:focus,.smart-field select:focus,.smart-field textarea:focus{border-color:#bd9660;box-shadow:0 0 0 3px rgba(197,162,104,.12)}
+.smart-submit{
+  grid-column:1/-1;border:0;min-height:52px;border-radius:999px;cursor:pointer;
+  background:linear-gradient(135deg,#d2ad70,#b88f52);color:#17120d;
+  font-weight:700;text-transform:uppercase;letter-spacing:.07em
+}
+.smart-note{grid-column:1/-1;font-size:9px;color:#8d8479;line-height:1.55}
+@media(max-width:760px){
+  .smart-modal{padding:0;align-items:flex-end}
+  .smart-card{width:100%;max-height:91vh;border-radius:24px 24px 0 0;padding:26px 18px calc(24px + env(safe-area-inset-bottom))}
+  .smart-head h3{font-size:36px}
+  .smart-form{grid-template-columns:1fr}
+  .smart-field.full,.smart-submit,.smart-note{grid-column:auto}
+}
+
+
+/* FINAL RESPONSIVE / MOBILE UX FIXES */
+html,body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+  overscroll-behavior-x:none;
+}
+body{
+  min-height:100%;
+  position:relative;
+}
+section,header,footer,main,.shell{
+  max-width:100%;
+}
+.mobile-panel{
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+}
+.mobile-links a{
+  font-size:21px!important;
+  line-height:1.15!important;
+  padding:11px 0!important;
+}
+@media(max-width:390px){
+  .mobile-links a{
+    font-size:19px!important;
+    padding:10px 0!important;
+  }
+}
+.mobile-actions a{
+  font-size:11px!important;
+}
+
+/* Prevent carousels from ever changing the page's vertical scroll position */
+.category-strip,
+.gallery-row{
+  overscroll-behavior-x:contain;
+  overscroll-behavior-y:auto;
+  touch-action:pan-x pan-y;
+}
+
+/* Safer spacing / sizing on small devices */
+@media(max-width:760px){
+  .hero-left{
+    min-height:auto!important;
+    padding-top:108px!important;
+    padding-bottom:48px!important;
+  }
+  .hero h1{
+    font-size:clamp(54px,16vw,70px)!important;
+    line-height:.84!important;
+  }
+  .hero p{
+    font-size:13px!important;
+    line-height:1.65!important;
+  }
+  .services-intro h2,
+  .about-copy h2,
+  .academy-copy h2,
+  .gallery-intro h2,
+  .visit-intro h2{
+    font-size:clamp(38px,11vw,47px)!important;
+  }
+  .service-card h3{
+    font-size:23px!important;
+  }
+  .service-card p,
+  .services-intro p,
+  .gallery-intro p,
+  .visit-intro p,
+  .academy-copy p,
+  .about-copy p{
+    font-size:12px!important;
+  }
+  .smart-card{
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+  }
+}
+
+/* Avoid browser anchor-jump side effects when opening smart enquiry triggers */
+a.smart-wa[href="#"]{
+  cursor:pointer;
+}
 </style>
 </head>
 <body>
 <header class="topbar" id="topbar">
-  <a class="logo" href="#home"><span><span class="logo610">610</span><span class="logo-sub">STUDIO</span></span></a>
-  <nav class="nav"><a href="#home">Home</a><a href="#services">Services</a><a href="#studio">Studio</a><a href="#academy">Academy</a><a href="#gallery">Gallery</a><a href="#visit">Contact</a></nav>
-  <a class="book-mini" target="_blank" rel="noopener" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment.">Book Appointment</a>
-  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span class="hamb"><span></span><span></span><span></span></span></button>
+<a class="logo" href="#home"><span><span class="logo610">610</span><span class="logo-sub">BEAUTÉ ACADEMY</span></span></a>
+<nav class="nav"><a href="#home">Home</a><a href="#services">Services</a><a href="#studio">Studio</a><a href="#academy">Academy</a><a href="#gallery">Gallery</a><a href="#visit">Contact</a></nav>
+<a class="book-mini smart-wa" data-enquiry="Appointment Booking" data-service="General Beauty Appointment" href="javascript:void(0)">Book Appointment</a>
+<button aria-expanded="false" aria-label="Open menu" class="menu-btn" id="menuBtn"><span class="hamb"><span></span><span></span><span></span></span></button>
 </header>
-<div class="mobile-menu" id="mobileMenu" aria-hidden="true"><div class="mobile-panel"><button class="mobile-close" id="mobileClose" type="button" aria-label="Close menu">×</button><div class="mobile-links"><a href="#home">Home</a><a href="#services">Services</a><a href="#studio">The Studio</a><a href="#academy">Academy</a><a href="#gallery">Gallery</a><a href="#visit">Visit Us</a></div><div class="mobile-actions"><a target="_blank" rel="noopener" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment.">WhatsApp to Book</a><a href="tel:+60165890610">Call 016-589 0610</a></div></div></div>
-
+<div aria-hidden="true" class="mobile-menu" id="mobileMenu"><div class="mobile-panel"><button aria-label="Close menu" class="mobile-close" id="mobileClose" type="button">×</button><div class="mobile-links"><a href="#home">Home</a><a href="#services">Services</a><a href="#studio">The Studio</a><a href="#academy">Academy</a><a href="#gallery">Gallery</a><a href="#visit">Visit Us</a></div><div class="mobile-actions"><a class="smart-wa" data-enquiry="Appointment Booking" data-service="General Beauty Appointment" href="javascript:void(0)">WhatsApp to Book</a><a href="tel:+60168083598">Call 016-808 3598</a></div></div></div>
 <main>
 <section class="hero" id="home">
-  <div class="hero-left"><div class="hero-inner reveal"><div class="eyebrow">Beauty, Refined.</div><h1>Beauty,<i>Refined.</i></h1><p>Boutique beauty services, personalised care and a refined studio experience in Kuala Lumpur — from nails and lashes to facial treatments, makeup and bridal beauty.</p><div class="hero-actions"><a class="btn btn-gold" target="_blank" rel="noopener" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment.">Book Appointment <span>◉</span></a><a class="btn btn-outline" href="#services">Explore Services →</a></div><div class="hero-badges"><span>Professional</span><span>Personalised</span><span>Premium</span><span>Hygiene</span></div></div></div>
-  <div class="hero-image"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1800&q=90" alt="Elegant manicure treatment at 610 Studio"><div class="hero-float"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=400&q=85" alt="Elegant salon interior"><span>A calm, elegant space where beauty meets artistry.</span></div></div>
+<div class="hero-left"><div class="hero-inner reveal"><div class="eyebrow">Beauty, Refined.</div><h1>Beauty,<i>Refined.</i></h1><p>Boutique beauty services, personalised care and a refined studio experience in Kuala Lumpur — from nails and lashes to facial treatments, makeup and bridal beauty.</p><div class="hero-actions"><a class="btn btn-gold smart-wa" data-enquiry="Appointment Booking" data-service="General Beauty Appointment" href="javascript:void(0)">Book Appointment <span>◉</span></a><a class="btn btn-outline" href="#services">Explore Services →</a></div><div class="hero-badges"><span>Professional</span><span>Personalised</span><span>Premium</span><span>Hygiene</span></div></div></div>
+<div class="hero-image"><img alt="Elegant manicure treatment at 610 Beauté Academy" src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&amp;fit=crop&amp;w=1800&amp;q=90"/><div class="hero-float"><img alt="Elegant salon interior" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&amp;fit=crop&amp;w=400&amp;q=85"/><span>A calm, elegant space where beauty meets artistry.</span></div></div>
 </section>
-
 <section class="trust"><div class="shell"><div class="trust-item"><div class="trust-icon">♡</div><div><strong>Expert Care</strong><small>Skilled professionals</small></div></div><div class="trust-item"><div class="trust-icon">♢</div><div><strong>Premium Products</strong><small>For the best results</small></div></div><div class="trust-item"><div class="trust-icon">◯</div><div><strong>Personalised</strong><small>Beauty tailored to you</small></div></div><div class="trust-item"><div class="trust-icon">✓</div><div><strong>Hygiene Focused</strong><small>Clean, safe and maintained</small></div></div></div></section>
-<div class="category-strip"><span>Nails</span><span>Eyelash Perm</span><span>Facial</span><span>Makeup & Bridal</span><span>Academy</span><span>Beauty Products</span></div>
-
-<section class="services" id="services"><div class="shell services-layout"><div class="services-intro reveal"><div class="section-kicker">Our Services</div><h2>Care designed<br>around <i>you.</i></h2><p>Thoughtful beauty services with attention to detail. Tap any service to learn more, then speak directly with the team to confirm the treatment that suits you.</p></div><div class="service-grid">
-  <article class="service-card reveal" onclick="openService('Nail Art & Manicure','Clean, elegant nail care — from polished everyday looks to detailed nail designs tailored to your style.')"><div class="service-copy"><div class="service-round">♢</div><div><h3>Nails</h3><p>Manicure, gel polish, nail art and nail care.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=88" alt="Nail services"></div></article>
-  <article class="service-card reveal" onclick="openService('Eyelash Perm','Enhance your natural eye shape with professional lash and eye beauty treatments, including eyelash perm services.')"><div class="service-copy"><div class="service-round">◡</div><div><h3>Eyelash</h3><p>Eyelash perm, lash lift and lash care.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=900&q=88" alt="Eyelash treatment"></div></article>
-  <article class="service-card reveal" onclick="openService('Facial Treatments','Personalised facial care designed to leave your skin feeling refreshed, cared for and beautifully renewed.')"><div class="service-copy"><div class="service-round">♡</div><div><h3>Facial</h3><p>Classic facial, skin treatment and deep cleansing.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=88" alt="Facial treatment"></div></article>
-  <article class="service-card reveal" onclick="openService('Makeup','Professional makeup for celebrations, events, photography and special occasions — tailored to your preferred look.')"><div class="service-copy"><div class="service-round">✧</div><div><h3>Makeup</h3><p>Daily makeup, event makeup and professional styling.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=88" alt="Makeup services"></div></article>
-  <article class="service-card reveal" onclick="openService('Bridal Beauty','A personalised bridal beauty experience designed around your features, style and wedding-day vision.')"><div class="service-copy"><div class="service-round">♕</div><div><h3>Bridal</h3><p>Bridal makeup, hairdo and pre-wedding packages.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=88" alt="Bridal beauty"></div></article>
-  <article class="service-card reveal" onclick="openService('610 Beaute Academy','Professional beauty learning for aspiring artists who want to build technique, confidence and practical experience.')"><div class="service-copy"><div class="service-round">⌂</div><div><h3>Academy</h3><p>Professional beauty courses for aspiring beauty artists.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=88" alt="Beauty academy"></div></article>
+<div class="category-strip"><span>Nails</span><span>Eyelash Perm</span><span>Facial</span><span>Makeup &amp; Bridal</span><span>Academy</span><span>Beauty Products</span></div>
+<section class="services" id="services"><div class="shell services-layout"><div class="services-intro reveal"><div class="section-kicker">Our Services</div><h2>Care designed<br/>around <i>you.</i></h2><p>Thoughtful beauty services with attention to detail. Tap any service to learn more, then speak directly with the team to confirm the treatment that suits you.</p></div><div class="service-grid">
+<article class="service-card reveal" onclick="openService('Nail Art &amp; Manicure','Clean, elegant nail care — from polished everyday looks to detailed nail designs tailored to your style.')"><div class="service-copy"><div class="service-round">♢</div><div><h3>Nails</h3><p>Manicure, gel polish, nail art and nail care.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img alt="Nail services" src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&amp;fit=crop&amp;w=900&amp;q=88"/></div></article>
+<article class="service-card reveal" onclick="openService('Eyelash Perm','Enhance your natural eye shape with professional lash and eye beauty treatments, including eyelash perm services.')"><div class="service-copy"><div class="service-round">◡</div><div><h3>Eyelash</h3><p>Eyelash perm, lash lift and lash care.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img alt="Eyelash treatment" src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&amp;fit=crop&amp;w=900&amp;q=88"/></div></article>
+<article class="service-card reveal" onclick="openService('Facial Treatments','Personalised facial care designed to leave your skin feeling refreshed, cared for and beautifully renewed.')"><div class="service-copy"><div class="service-round">♡</div><div><h3>Facial</h3><p>Classic facial, skin treatment and deep cleansing.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img alt="Facial treatment" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&amp;fit=crop&amp;w=900&amp;q=88"/></div></article>
+<article class="service-card reveal" onclick="openService('Makeup','Professional makeup for celebrations, events, photography and special occasions — tailored to your preferred look.')"><div class="service-copy"><div class="service-round">✧</div><div><h3>Makeup</h3><p>Daily makeup, event makeup and professional styling.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img alt="Makeup services" src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&amp;fit=crop&amp;w=900&amp;q=88"/></div></article>
+<article class="service-card reveal" onclick="openService('Bridal Beauty','A personalised bridal beauty experience designed around your features, style and wedding-day vision.')"><div class="service-copy"><div class="service-round">♕</div><div><h3>Bridal</h3><p>Bridal makeup, hairdo and pre-wedding packages.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img alt="Bridal beauty" src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&amp;fit=crop&amp;w=900&amp;q=88"/></div></article>
+<article class="service-card reveal" onclick="openService('610 Beauté Academy','Professional beauty learning for aspiring artists who want to build technique, confidence and practical experience.')"><div class="service-copy"><div class="service-round">⌂</div><div><h3>Academy</h3><p>Professional beauty courses for aspiring beauty artists.</p><div class="service-arrow">→</div></div></div><div class="service-photo"><img alt="Beauty academy" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&amp;fit=crop&amp;w=900&amp;q=88"/></div></article>
 </div></div></section>
-
-<section class="about" id="studio"><div class="shell about-grid"><div class="about-media reveal"><div class="about-main"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=88" alt="610 Studio interior"></div><div class="about-small"><img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=800&q=88" alt="610 Studio beauty area"></div></div><div class="about-copy reveal"><div class="section-kicker">About 610 Studio</div><h2>A studio that feels<br>as good as it looks.</h2><p>Clean lines, warm neutrals and a relaxed atmosphere create the setting for a more personal beauty experience. Every visit is designed to feel comfortable, unrushed and beautifully considered.</p><div class="quality-grid"><div class="quality"><span>♧</span><strong>Personalised<br>Care</strong></div><div class="quality"><span>♢</span><strong>Quality<br>Products</strong></div><div class="quality"><span>✓</span><strong>Hygiene<br>Focused</strong></div><div class="quality"><span>☆</span><strong>Skilled<br>Artists</strong></div></div></div></div></section>
-
-<section class="academy" id="academy"><div class="shell academy-card"><div class="academy-copy reveal"><div class="section-kicker">610 Academy</div><h2>Learn.<br>Create.<br>Master.</h2><p>Take your beauty passion to the next level and build your dream career with practical studio learning.</p><a class="btn" style="border:1px solid #c8b79e;margin-top:12px" target="_blank" rel="noopener" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20know%20more%20about%20the%20beauty%20academy.">View Courses →</a></div><div class="academy-points reveal"><span><i>◯</i> Professional Trainers</span><span><i>✦</i> Hands-On Practical</span><span><i>◇</i> Certificate Provided</span></div><div class="academy-photo reveal"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=88" alt="610 Beauty Academy classroom"></div></div></section>
-
-<section class="gallery" id="gallery"><div class="shell gallery-wrap"><div class="gallery-intro reveal"><div class="section-kicker">Gallery</div><h2>Beauty in<br>the details.</h2><p>Every service, every touch, crafted with passion and precision.</p></div><div class="gallery-row"><div class="gallery-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=900&q=88" alt="Beauty tools"></div><div class="gallery-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=88" alt="Makeup palette"></div><div class="gallery-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=88" alt="Bridal styling"></div><div class="gallery-item" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=88" alt="Salon interior"></div></div><div class="review-card reveal"><div class="score">5.0</div><div class="stars">★★★★★</div><p>“A beauty space created to help you look good, feel confident and enjoy the experience.”</p><small>Google rating shown in current business listing</small></div></div></section>
-
-<section class="visit" id="visit"><div class="shell visit-grid"><div class="visit-intro reveal"><div class="section-kicker">Visit Us</div><h2>Your next beauty appointment starts here.</h2><p>Speak directly with the studio to check availability, confirm your preferred treatment and arrange your visit.</p><div class="visit-card"><h3>610 STUDIO</h3><div class="info"><label>Address</label>Wisma Aman Elite, Jalan Desa Aman 1,<br>Taman Desa Aman Cheras, 56100 Kuala Lumpur</div><div class="info"><label>Phone</label>016-589 0610</div><div class="info"><label>Opening Hours</label>Please contact the studio to confirm today's availability.</div><div class="visit-actions"><a class="btn btn-gold" target="_blank" rel="noopener" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment.">WhatsApp to Book</a><a class="btn btn-outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=610+Studio+Wisma+Aman+Elite+Jalan+Desa+Aman+1+Kuala+Lumpur">Directions</a></div></div></div><div class="reveal"><div class="mini-gallery"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=700&q=88" alt="Salon interior"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=700&q=88" alt="Beauty studio"><img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=700&q=88" alt="Beauty salon"></div><div class="book-banner"><div><small style="color:#c6bfb6;text-transform:uppercase;letter-spacing:.13em">Book Now</small><br><strong>Ready for your next beauty visit?</strong></div><a class="wa" target="_blank" rel="noopener" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment."><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.62c-.26-.13-1.55-.76-1.79-.85-.24-.09-.42-.13-.6.13-.18.26-.69.85-.85 1.03-.16.18-.31.2-.58.07-.26-.13-1.1-.41-2.1-1.3-.78-.69-1.3-1.54-1.46-1.8-.16-.26-.02-.4.12-.53.12-.12.26-.31.4-.47.13-.16.18-.26.26-.44.09-.18.04-.33-.02-.46-.07-.13-.6-1.44-.82-1.97-.22-.52-.44-.45-.6-.46h-.51c-.18 0-.46.07-.71.33-.24.26-.93.91-.93 2.21s.96 2.56 1.09 2.74c.13.18 1.88 2.87 4.56 4.02.64.28 1.14.44 1.53.56.64.2 1.22.17 1.68.1.51-.08 1.55-.64 1.77-1.25.22-.62.22-1.15.16-1.25-.07-.12-.24-.18-.51-.31Z"/><path d="M16.03 3.2A12.72 12.72 0 0 0 5.18 22.58L3.2 28.8l6.42-1.95A12.77 12.77 0 1 0 16.03 3.2Zm0 23.15c-2.15 0-4.15-.65-5.81-1.76l-.42-.28-3.81 1.16 1.2-3.7-.27-.43a10.31 10.31 0 1 1 9.11 5.01Z"/></svg>Book via WhatsApp</a></div></div></div></section>
+<section class="about" id="studio"><div class="shell about-grid"><div class="about-media reveal"><div class="about-main"><img alt="610 Beauté Academy interior" src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&amp;fit=crop&amp;w=1200&amp;q=88"/></div><div class="about-small"><img alt="610 Beauté Academy beauty area" src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&amp;fit=crop&amp;w=800&amp;q=88"/></div></div><div class="about-copy reveal"><div class="section-kicker">About 610 Beauté Academy</div><h2>A studio that feels<br/>as good as it looks.</h2><p>Clean lines, warm neutrals and a relaxed atmosphere create the setting for a more personal beauty experience. Every visit is designed to feel comfortable, unrushed and beautifully considered.</p><div class="quality-grid"><div class="quality"><span>♧</span><strong>Personalised<br/>Care</strong></div><div class="quality"><span>♢</span><strong>Quality<br/>Products</strong></div><div class="quality"><span>✓</span><strong>Hygiene<br/>Focused</strong></div><div class="quality"><span>☆</span><strong>Skilled<br/>Artists</strong></div></div></div></div></section>
+<section class="academy" id="academy"><div class="shell academy-card"><div class="academy-copy reveal"><div class="section-kicker">610 Beauté Academy</div><h2>Learn.<br/>Create.<br/>Master.</h2><p>Take your beauty passion to the next level and build your dream career with practical studio learning.</p><a class="btn smart-wa" data-enquiry="Academy Course Enquiry" data-service="610 Beauté Academy Courses" href="javascript:void(0)" style="border:1px solid #c8b79e;margin-top:12px">View Courses →</a></div><div class="academy-points reveal"><span><i>◯</i> Professional Trainers</span><span><i>✦</i> Hands-On Practical</span><span><i>◇</i> Certificate Provided</span></div><div class="academy-photo reveal"><img alt="610 Beauté Academy classroom" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&amp;fit=crop&amp;w=1400&amp;q=88"/></div></div></section>
+<section class="gallery" id="gallery"><div class="shell gallery-wrap"><div class="gallery-intro reveal"><div class="section-kicker">Gallery</div><h2>Beauty in<br/>the details.</h2><p>Every service, every touch, crafted with passion and precision.</p></div><div class="gallery-row"><div class="gallery-item" onclick="openLightbox(this)"><img alt="Beauty tools" src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&amp;fit=crop&amp;w=900&amp;q=88"/></div><div class="gallery-item" onclick="openLightbox(this)"><img alt="Makeup palette" src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&amp;fit=crop&amp;w=900&amp;q=88"/></div><div class="gallery-item" onclick="openLightbox(this)"><img alt="Bridal styling" src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&amp;fit=crop&amp;w=900&amp;q=88"/></div><div class="gallery-item" onclick="openLightbox(this)"><img alt="Salon interior" src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&amp;fit=crop&amp;w=900&amp;q=88"/></div></div><div class="review-card reveal"><div class="score">5.0</div><div class="stars">★★★★★</div><p>“A beauty space created to help you look good, feel confident and enjoy the experience.”</p><small>Google rating shown in current business listing</small></div></div></section>
+<section class="visit" id="visit"><div class="shell visit-grid"><div class="visit-intro reveal"><div class="section-kicker">Visit Us</div><h2>Your next beauty appointment starts here.</h2><p>Speak directly with the studio to check availability, confirm your preferred treatment and arrange your visit.</p><div class="visit-card"><h3>610 BEAUTÉ ACADEMY</h3><div class="info"><label>Address</label>Wisma Aman Elite, Jalan Desa Aman 1,<br/>Taman Desa Aman Cheras, 56100 Kuala Lumpur</div><div class="info"><label>Phone</label>016-808 3598</div><div class="info"><label>Opening Hours</label>Please contact the studio to confirm today's availability.</div><div class="visit-actions"><a class="btn btn-gold smart-wa" data-enquiry="Appointment Booking" data-service="General Beauty Appointment" href="javascript:void(0)">WhatsApp to Book</a><a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=610+Studio+Wisma+Aman+Elite+Jalan+Desa+Aman+1+Kuala+Lumpur" rel="noopener" target="_blank">Directions</a></div></div></div><div class="reveal"><div class="mini-gallery"><img alt="Salon interior" src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&amp;fit=crop&amp;w=700&amp;q=88"/><img alt="Beauty studio" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&amp;fit=crop&amp;w=700&amp;q=88"/><img alt="Beauty salon" src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&amp;fit=crop&amp;w=700&amp;q=88"/></div><div class="book-banner"><div><small style="color:#c6bfb6;text-transform:uppercase;letter-spacing:.13em">Book Now</small><br/><strong>Ready for your next beauty visit?</strong></div><a class="wa smart-wa" data-enquiry="Appointment Booking" data-service="General Beauty Appointment" href="javascript:void(0)"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 32 32"><path d="M19.11 17.62c-.26-.13-1.55-.76-1.79-.85-.24-.09-.42-.13-.6.13-.18.26-.69.85-.85 1.03-.16.18-.31.2-.58.07-.26-.13-1.1-.41-2.1-1.3-.78-.69-1.3-1.54-1.46-1.8-.16-.26-.02-.4.12-.53.12-.12.26-.31.4-.47.13-.16.18-.26.26-.44.09-.18.04-.33-.02-.46-.07-.13-.6-1.44-.82-1.97-.22-.52-.44-.45-.6-.46h-.51c-.18 0-.46.07-.71.33-.24.26-.93.91-.93 2.21s.96 2.56 1.09 2.74c.13.18 1.88 2.87 4.56 4.02.64.28 1.14.44 1.53.56.64.2 1.22.17 1.68.1.51-.08 1.55-.64 1.77-1.25.22-.62.22-1.15.16-1.25-.07-.12-.24-.18-.51-.31Z"></path><path d="M16.03 3.2A12.72 12.72 0 0 0 5.18 22.58L3.2 28.8l6.42-1.95A12.77 12.77 0 1 0 16.03 3.2Zm0 23.15c-2.15 0-4.15-.65-5.81-1.76l-.42-.28-3.81 1.16 1.2-3.7-.27-.43a10.31 10.31 0 1 1 9.11 5.01Z"></path></svg>Book via WhatsApp</a></div></div></div></section>
 </main>
-
-<footer class="footer"><div class="shell footer-grid"><div><div class="logo610" style="font-size:32px">610 STUDIO</div><div style="font-size:10px;color:#80776e;margin-top:2px">Beauty salon & beauty academy in Kuala Lumpur.</div></div><div class="socials" aria-label="Social media"><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.8l.42-3.1H13.5V7.92c0-.9.25-1.51 1.57-1.51h1.78V3.64c-.31-.04-1.36-.13-2.58-.13-2.55 0-4.3 1.55-4.3 4.41V9.9H7v3.1h2.97v8h3.53Z"/></svg></a><a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.4 3h3.05c.18 1.52 1.05 2.85 2.55 3.62v3.05a7.24 7.24 0 0 1-2.6-.63v6.2A5.76 5.76 0 1 1 12 9.5v3.14a2.66 2.66 0 1 0 2.4 2.65V3Z"/></svg></a><a target="_blank" rel="noopener" href="https://wa.me/60165890610" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M19.11 17.62c-.26-.13-1.55-.76-1.79-.85-.24-.09-.42-.13-.6.13-.18.26-.69.85-.85 1.03-.16.18-.31.2-.58.07-.26-.13-1.1-.41-2.1-1.3-.78-.69-1.3-1.54-1.46-1.8-.16-.26-.02-.4.12-.53.12-.12.26-.31.4-.47.13-.16.18-.26.26-.44.09-.18.04-.33-.02-.46-.07-.13-.6-1.44-.82-1.97-.22-.52-.44-.45-.6-.46h-.51c-.18 0-.46.07-.71.33-.24.26-.93.91-.93 2.21s.96 2.56 1.09 2.74c.13.18 1.88 2.87 4.56 4.02.64.28 1.14.44 1.53.56.64.2 1.22.17 1.68.1.51-.08 1.55-.64 1.77-1.25.22-.62.22-1.15.16-1.25-.07-.12-.24-.18-.51-.31Z"/><path d="M16.03 3.2A12.72 12.72 0 0 0 5.18 22.58L3.2 28.8l6.42-1.95A12.77 12.77 0 1 0 16.03 3.2Zm0 23.15c-2.15 0-4.15-.65-5.81-1.76l-.42-.28-3.81 1.16 1.2-3.7-.27-.43a10.31 10.31 0 1 1 9.11 5.01Z"/></svg></a></div><div class="footer-note">016-589 0610 · Taman Desa Aman Cheras · Kuala Lumpur</div></div></footer>
-
-<a class="mobile-book" target="_blank" rel="noopener" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20book%20an%20appointment."><span>610 STUDIO</span><b>Book Appointment</b></a>
-<div class="lightbox" id="lightbox" onclick="closeLightbox(event)"><button class="lb-close" aria-label="Close">×</button><img id="lbImg" alt="Gallery preview"></div>
-<div class="modal" id="serviceModal" onclick="closeService(event)"><div class="modal-card"><button class="modal-close" onclick="document.getElementById('serviceModal').classList.remove('open')">×</button><div class="section-kicker">610 Studio Service</div><h3 id="modalTitle">Service</h3><p id="modalText"></p><a class="btn btn-gold" style="margin-top:10px" target="_blank" rel="noopener" href="https://wa.me/60165890610?text=Hi%20610%20Studio%2C%20I%27d%20like%20to%20enquire%20about%20a%20beauty%20service.">Ask on WhatsApp</a></div></div>
+<footer class="footer"><div class="shell footer-grid"><div><div class="logo610" style="font-size:32px">610 BEAUTÉ ACADEMY</div><div style="font-size:10px;color:#80776e;margin-top:2px">Beauty salon &amp; beauty academy in Kuala Lumpur.</div></div><div aria-label="Social media" class="socials"><a aria-label="Instagram" href="#"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.4" cy="6.6" fill="currentColor" r="1" stroke="none"></circle></svg></a><a aria-label="Facebook" href="#"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M13.5 21v-8h2.8l.42-3.1H13.5V7.92c0-.9.25-1.51 1.57-1.51h1.78V3.64c-.31-.04-1.36-.13-2.58-.13-2.55 0-4.3 1.55-4.3 4.41V9.9H7v3.1h2.97v8h3.53Z"></path></svg></a><a aria-label="TikTok" href="#"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M14.4 3h3.05c.18 1.52 1.05 2.85 2.55 3.62v3.05a7.24 7.24 0 0 1-2.6-.63v6.2A5.76 5.76 0 1 1 12 9.5v3.14a2.66 2.66 0 1 0 2.4 2.65V3Z"></path></svg></a><a aria-label="WhatsApp" class="smart-wa" data-enquiry="General Enquiry" data-service="Beauty Services" href="javascript:void(0)"><svg fill="currentColor" viewbox="0 0 32 32"><path d="M19.11 17.62c-.26-.13-1.55-.76-1.79-.85-.24-.09-.42-.13-.6.13-.18.26-.69.85-.85 1.03-.16.18-.31.2-.58.07-.26-.13-1.1-.41-2.1-1.3-.78-.69-1.3-1.54-1.46-1.8-.16-.26-.02-.4.12-.53.12-.12.26-.31.4-.47.13-.16.18-.26.26-.44.09-.18.04-.33-.02-.46-.07-.13-.6-1.44-.82-1.97-.22-.52-.44-.45-.6-.46h-.51c-.18 0-.46.07-.71.33-.24.26-.93.91-.93 2.21s.96 2.56 1.09 2.74c.13.18 1.88 2.87 4.56 4.02.64.28 1.14.44 1.53.56.64.2 1.22.17 1.68.1.51-.08 1.55-.64 1.77-1.25.22-.62.22-1.15.16-1.25-.07-.12-.24-.18-.51-.31Z"></path><path d="M16.03 3.2A12.72 12.72 0 0 0 5.18 22.58L3.2 28.8l6.42-1.95A12.77 12.77 0 1 0 16.03 3.2Zm0 23.15c-2.15 0-4.15-.65-5.81-1.76l-.42-.28-3.81 1.16 1.2-3.7-.27-.43a10.31 10.31 0 1 1 9.11 5.01Z"></path></svg></a></div><div class="footer-note">016-808 3598 · Taman Desa Aman Cheras · Kuala Lumpur</div></div></footer>
+<a class="mobile-book smart-wa" data-enquiry="Appointment Booking" data-service="General Beauty Appointment" href="javascript:void(0)"><span>610 BEAUTÉ ACADEMY</span><b>Book Appointment</b></a>
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)"><button aria-label="Close" class="lb-close">×</button><img alt="Gallery preview" id="lbImg"/></div>
+<div class="modal" id="serviceModal" onclick="closeService(event)"><div class="modal-card"><button class="modal-close" onclick="document.getElementById('serviceModal').classList.remove('open')">×</button><div class="section-kicker">610 Beauté Academy Service</div><h3 id="modalTitle">Service</h3><p id="modalText"></p><a class="btn btn-gold smart-wa" data-enquiry="Service Enquiry" data-service="Beauty Service" href="javascript:void(0)" id="serviceSmartWa" style="margin-top:10px">Ask on WhatsApp</a></div></div>
+<div aria-hidden="true" class="smart-modal" id="smartEnquiryModal">
+<div class="smart-card">
+<button aria-label="Close enquiry form" class="smart-close" id="smartClose" type="button">×</button>
+<div class="smart-head">
+<div class="section-kicker">Smart Enquiry</div>
+<h3>Tell us what you need.</h3>
+<p>Fill in a few details first. We’ll prepare a clear WhatsApp message so the team can understand your enquiry immediately.</p>
+</div>
+<div class="smart-context">
+<span id="smartEnquiryBadge">General Enquiry</span>
+<span id="smartServiceBadge">Beauty Services</span>
+</div>
+<form class="smart-form" id="smartEnquiryForm">
+<div class="smart-field">
+<label for="smartName">Your Name *</label>
+<input id="smartName" name="name" placeholder="e.g. Michelle" required="" type="text"/>
+</div>
+<div class="smart-field">
+<label for="smartContact">Contact Number</label>
+<input id="smartContact" name="contact" placeholder="e.g. 012-345 6789" type="tel"/>
+</div>
+<div class="smart-field full">
+<label for="smartService">What are you interested in? *</label>
+<select id="smartService" name="service" required="">
+<option value="">Choose one</option>
+<option>Nails / Manicure / Nail Art</option>
+<option>Eyelash Perm / Lash Lift</option>
+<option>Facial Treatment</option>
+<option>Makeup</option>
+<option>Bridal Beauty</option>
+<option>610 Beauté Academy Courses</option>
+<option>Beauty Products</option>
+<option>General Beauty Appointment</option>
+<option>Other Enquiry</option>
+</select>
+</div>
+<div class="smart-field">
+<label for="smartDate">Preferred Date</label>
+<input id="smartDate" name="date" type="date"/>
+</div>
+<div class="smart-field">
+<label for="smartTime">Preferred Time</label>
+<select id="smartTime" name="time">
+<option value="">No preference</option>
+<option>Morning</option>
+<option>Afternoon</option>
+<option>Evening</option>
+</select>
+</div>
+<div class="smart-field full">
+<label for="smartNotes">Anything you’d like us to know?</label>
+<textarea id="smartNotes" name="notes" placeholder="Example: I’m looking for bridal makeup for 2 people, or I’d like to know the course fee and next intake."></textarea>
+</div>
+<button class="smart-submit" type="submit">Continue to WhatsApp →</button>
+<div class="smart-note">For this demo, all enquiries are sent to Plannique’s WhatsApp number: 016-808 3598.</div>
+</form>
+</div>
+</div>
 <script>
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 function openLightbox(el){document.getElementById('lbImg').src=el.querySelector('img').src;document.getElementById('lightbox').classList.add('open');document.body.classList.add('modal-open')}
 function closeLightbox(e){if(e.target.id==='lightbox'||e.target.classList.contains('lb-close')){document.getElementById('lightbox').classList.remove('open');document.body.classList.remove('modal-open')}}
-function openService(title,text){document.getElementById('modalTitle').textContent=title;document.getElementById('modalText').textContent=text;document.getElementById('serviceModal').classList.add('open');document.body.classList.add('modal-open')}
+function openService(title,text){
+  document.getElementById('modalTitle').textContent=title;
+  document.getElementById('modalText').textContent=text;
+  const serviceWa=document.getElementById('serviceSmartWa');
+  if(serviceWa){serviceWa.dataset.enquiry='Service Enquiry';serviceWa.dataset.service=title}
+  document.getElementById('serviceModal').classList.add('open');
+  document.body.classList.add('modal-open')
+}
 function closeService(e){if(e.target.id==='serviceModal'){e.currentTarget.classList.remove('open');document.body.classList.remove('modal-open')}}
 const menuBtn=document.getElementById('menuBtn'),mobileMenu=document.getElementById('mobileMenu'),mobileClose=document.getElementById('mobileClose');function setMenu(open){mobileMenu.classList.toggle('open',open);menuBtn.classList.toggle('active',open);menuBtn.setAttribute('aria-expanded',String(open));mobileMenu.setAttribute('aria-hidden',String(!open));document.body.classList.toggle('menu-open',open)}menuBtn.addEventListener('click',()=>setMenu(!mobileMenu.classList.contains('open')));mobileClose.addEventListener('click',()=>setMenu(false));mobileMenu.addEventListener('click',e=>{if(e.target===mobileMenu)setMenu(false)});document.querySelectorAll('.mobile-links a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape'){setMenu(false);document.getElementById('lightbox').classList.remove('open');document.getElementById('serviceModal').classList.remove('open');document.body.classList.remove('modal-open')}});
 
 function setupMobileCarousel(track,items,dotsClass,delay=3300){
   if(!track||!items.length)return;
-  const dots=document.createElement('div');dots.className='mobile-dots '+dotsClass;
-  items.forEach((item,i)=>{const b=document.createElement('button');b.className='mobile-dot'+(i===0?' active':'');b.type='button';b.setAttribute('aria-label','Go to item '+(i+1));b.addEventListener('click',()=>{item.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});restart()});dots.appendChild(b)});
+
+  const dots=document.createElement('div');
+  dots.className='mobile-dots '+dotsClass;
+
+  let current=0,timer=null,scrollTimer=null;
+
+  function updateDots(){
+    [...dots.children].forEach((d,j)=>d.classList.toggle('active',j===current));
+  }
+
+  function scrollItemIntoTrack(item,behavior='smooth'){
+    const itemCenter=item.offsetLeft+(item.offsetWidth/2);
+    const target=itemCenter-(track.clientWidth/2);
+    track.scrollTo({left:Math.max(0,target),behavior});
+  }
+
+  function go(i){
+    current=(i+items.length)%items.length;
+    scrollItemIntoTrack(items[current],'smooth');
+    updateDots();
+  }
+
+  items.forEach((item,i)=>{
+    const b=document.createElement('button');
+    b.className='mobile-dot'+(i===0?' active':'');
+    b.type='button';
+    b.setAttribute('aria-label','Go to item '+(i+1));
+    b.addEventListener('click',()=>{
+      go(i);
+      restart();
+    });
+    dots.appendChild(b);
+  });
+
   track.insertAdjacentElement('afterend',dots);
-  const dotEls=[...dots.children];let current=0,timer;
-  const go=i=>{current=(i+items.length)%items.length;items[current].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});dotEls.forEach((d,j)=>d.classList.toggle('active',j===current))};
-  const nearest=()=>{const c=track.scrollLeft+track.clientWidth/2;let best=0,dist=Infinity;items.forEach((el,i)=>{const ec=el.offsetLeft+el.offsetWidth/2,d=Math.abs(ec-c);if(d<dist){dist=d;best=i}});current=best;dotEls.forEach((d,j)=>d.classList.toggle('active',j===current))};
-  const start=()=>{if(window.innerWidth<=720&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(()=>go(current+1),delay)};
-  const stop=()=>clearInterval(timer);const restart=()=>{stop();start()};
-  let scrollTimer;track.addEventListener('scroll',()=>{clearTimeout(scrollTimer);scrollTimer=setTimeout(nearest,80)},{passive:true});
-  track.addEventListener('pointerdown',stop,{passive:true});track.addEventListener('pointerup',restart,{passive:true});track.addEventListener('touchstart',stop,{passive:true});track.addEventListener('touchend',restart,{passive:true});
-  document.addEventListener('visibilitychange',()=>document.hidden?stop():restart());start();
+
+  function nearest(){
+    const c=track.scrollLeft+track.clientWidth/2;
+    let best=0,dist=Infinity;
+    items.forEach((el,i)=>{
+      const ec=el.offsetLeft+el.offsetWidth/2;
+      const d=Math.abs(ec-c);
+      if(d<dist){dist=d;best=i}
+    });
+    current=best;
+    updateDots();
+  }
+
+  function start(){
+    stop();
+    if(
+      window.innerWidth<=720 &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ){
+      timer=setInterval(()=>go(current+1),delay);
+    }
+  }
+
+  function stop(){
+    if(timer){clearInterval(timer);timer=null}
+  }
+
+  function restart(){
+    stop();
+    start();
+  }
+
+  track.addEventListener('scroll',()=>{
+    clearTimeout(scrollTimer);
+    scrollTimer=setTimeout(nearest,90);
+  },{passive:true});
+
+  track.addEventListener('pointerdown',stop,{passive:true});
+  track.addEventListener('pointerup',restart,{passive:true});
+  track.addEventListener('touchstart',stop,{passive:true});
+  track.addEventListener('touchend',restart,{passive:true});
+
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden)stop();
+    else restart();
+  });
+
+  window.addEventListener('resize',()=>{
+    nearest();
+    restart();
+  },{passive:true});
+
+  start();
 }
 
 setupMobileCarousel(document.querySelector('.category-strip'),[...document.querySelectorAll('.category-strip span')],'category-dots',2800);
 setupMobileCarousel(document.querySelector('.gallery-row'),[...document.querySelectorAll('.gallery-item')],'gallery-dots',3600);
+
+// SMART WHATSAPP ENQUIRY
+const SMART_WA_NUMBER='60168083598';
+const smartModal=document.getElementById('smartEnquiryModal');
+const smartForm=document.getElementById('smartEnquiryForm');
+const smartClose=document.getElementById('smartClose');
+const smartName=document.getElementById('smartName');
+const smartContact=document.getElementById('smartContact');
+const smartService=document.getElementById('smartService');
+const smartDate=document.getElementById('smartDate');
+const smartTime=document.getElementById('smartTime');
+const smartNotes=document.getElementById('smartNotes');
+const smartEnquiryBadge=document.getElementById('smartEnquiryBadge');
+const smartServiceBadge=document.getElementById('smartServiceBadge');
+let smartEnquiryType='General Enquiry';
+
+function openSmartEnquiry(enquiry='General Enquiry',service='Beauty Services'){
+  smartEnquiryType=enquiry||'General Enquiry';
+  smartEnquiryBadge.textContent=smartEnquiryType;
+  smartServiceBadge.textContent=service||'Beauty Services';
+
+  const values=[...smartService.options].map(o=>o.value);
+  if(service && values.includes(service)) smartService.value=service;
+  else if(service && /nail/i.test(service)) smartService.value='Nails / Manicure / Nail Art';
+  else if(service && /eyelash|lash/i.test(service)) smartService.value='Eyelash Perm / Lash Lift';
+  else if(service && /facial/i.test(service)) smartService.value='Facial Treatment';
+  else if(service && /bridal/i.test(service)) smartService.value='Bridal Beauty';
+  else if(service && /makeup/i.test(service)) smartService.value='Makeup';
+  else if(service && /academy|course/i.test(service)) smartService.value='610 Beauté Academy Courses';
+  else if(service && /general beauty appointment/i.test(service)) smartService.value='General Beauty Appointment';
+  else smartService.value='';
+
+  smartModal.classList.add('open');
+  smartModal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  setTimeout(()=>smartName.focus(),100);
+}
+
+function closeSmartEnquiry(){
+  smartModal.classList.remove('open');
+  smartModal.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+}
+
+document.addEventListener('click',e=>{
+  const trigger=e.target.closest('.smart-wa');
+  if(!trigger)return;
+  e.preventDefault();
+
+  // Close service popup first if this came from a service detail.
+  const serviceModal=document.getElementById('serviceModal');
+  if(serviceModal)serviceModal.classList.remove('open');
+
+  openSmartEnquiry(trigger.dataset.enquiry||'General Enquiry',trigger.dataset.service||'Beauty Services');
+});
+
+smartClose.addEventListener('click',closeSmartEnquiry);
+smartModal.addEventListener('click',e=>{if(e.target===smartModal)closeSmartEnquiry()});
+
+smartForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=smartName.value.trim();
+  const contact=smartContact.value.trim();
+  const service=smartService.value;
+  const date=smartDate.value;
+  const time=smartTime.value;
+  const notes=smartNotes.value.trim();
+
+  if(!name || !service)return;
+
+  let msg=`Hi Plannique, I’m enquiring through the 610 Beauté Academy demo website.%0A%0A`;
+  msg+=`*Enquiry Type:* ${smartEnquiryType}%0A`;
+  msg+=`*Name:* ${name}%0A`;
+  if(contact)msg+=`*Contact:* ${contact}%0A`;
+  msg+=`*Interested In:* ${service}%0A`;
+  if(date)msg+=`*Preferred Date:* ${date}%0A`;
+  if(time)msg+=`*Preferred Time:* ${time}%0A`;
+  if(notes)msg+=`*Notes:* ${notes}%0A`;
+  msg+=`%0ACould you please assist me with the next step?`;
+
+  window.open(`https://wa.me/${SMART_WA_NUMBER}?text=${msg}`,'_blank','noopener');
+  closeSmartEnquiry();
+});
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape' && smartModal.classList.contains('open'))closeSmartEnquiry();
+});
+
 </script>
 </body>
 </html>
