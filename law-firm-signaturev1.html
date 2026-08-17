@@ -1,4 +1,11 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lex & Partners — Signature Law Firm Demo</title><meta name="description" content="Premium multi-page law firm signature website demo."><style>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lex & Partners — Signature 7-Section Demo</title>
+<meta name="description" content="Premium single-file law firm Signature demo combining seven website pages into one presentation HTML.">
+<style>
 :root{
   --ink:#121212;
   --paper:#f3f0e8;
@@ -178,19 +185,68 @@ footer{background:#111;color:#fff;padding:60px var(--pad) 25px}
  .footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.page-loader{display:none}.reveal{opacity:1;transform:none}}
-</style></head><body>
-<div class="page-loader" id="pageLoader"><div class="loader-box"><div class="loader-seal">L</div><div class="loader-text">Legal practice · Signature demo</div><div class="loader-line"></div></div></div>
-<div class="page-cover"></div>
-<header class="site-header ">
+
+.demo-page{position:relative;scroll-margin-top:76px}
+.demo-page:not(#home){border-top:1px solid var(--line)}
+.demo-page .subhero{padding-top:150px}
+.navlinks a.active{color:var(--gold)}
+.navlinks a.active:after{right:0!important}
+.page-number{
+ position:absolute;right:var(--pad);top:105px;z-index:3;
+ font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+ color:rgba(18,18,18,.5)
+}
+#home .page-number{color:rgba(255,255,255,.65);top:110px}
+.demo-index{
+ position:fixed;right:18px;top:50%;transform:translateY(-50%);
+ z-index:65;display:flex;flex-direction:column;gap:9px
+}
+.demo-index a{
+ width:7px;height:7px;border-radius:50%;border:1px solid currentColor;
+ color:rgba(255,255,255,.75);background:transparent;transition:.3s
+}
+.site-header.scrolled ~ .demo-index a{color:#111}
+.demo-index a.active{background:var(--gold);border-color:var(--gold);transform:scale(1.45)}
+@media(max-width:900px){.demo-index{display:none}.page-number{right:20px}}
+</style>
+</head>
+<body>
+
+<div class="page-loader" id="pageLoader">
+  <div class="loader-box">
+    <div class="loader-seal">L</div>
+    <div class="loader-text">Legal practice · Signature demo</div>
+    <div class="loader-line"></div>
+  </div>
+</div>
+<header class="site-header" id="siteHeader">
  <div class="nav">
-  <a class="brand" data-transition href="index.html"><span class="monogram">L</span><span>Lex & Partners <small style="opacity:.55">Demo</small></span></a>
-  <nav class="navlinks"><a data-transition href="firm.html">The Firm</a><a data-transition href="expertise.html">Expertise</a><a data-transition href="people.html">People</a><a data-transition href="experience.html">Experience</a><a data-transition href="insights.html">Insights</a><a class="navcta" data-transition href="contact.html">Contact</a></nav>
+  <a class="brand" href="#home"><span class="monogram">L</span><span>Lex & Partners <small style="opacity:.55">Demo</small></span></a>
+  <nav class="navlinks">
+    <a href="#firm">The Firm</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#people">People</a>
+    <a href="#experience">Experience</a>
+    <a href="#insights">Insights</a>
+    <a class="navcta" href="#contact">Contact</a>
+  </nav>
   <button class="menubtn" id="menuBtn">Menu</button>
  </div>
 </header>
-<div class="menu" id="menu"><div class="menu-inner"><a data-transition href="firm.html">The Firm</a><a data-transition href="expertise.html">Expertise</a><a data-transition href="people.html">People</a><a data-transition href="experience.html">Experience</a><a data-transition href="insights.html">Insights</a><a data-transition href="contact.html">Contact</a></div></div>
+<div class="menu" id="menu">
+ <div class="menu-inner">
+  <a href="#firm">The Firm</a>
+  <a href="#expertise">Expertise</a>
+  <a href="#people">People</a>
+  <a href="#experience">Experience</a>
+  <a href="#insights">Insights</a>
+  <a href="#contact">Contact</a>
+ </div>
+</div>
 
+<nav class="demo-index" aria-label="Demo page sections"><a href="#home" aria-label="Home"></a><a href="#firm" aria-label="Firm"></a><a href="#expertise" aria-label="Expertise"></a><a href="#people" aria-label="People"></a><a href="#experience" aria-label="Experience"></a><a href="#insights" aria-label="Insights"></a><a href="#contact" aria-label="Contact"></a></nav>
 <main>
+<section class="demo-page" id="home"><div class="page-number">01 / 07</div>
 <section class="hero">
  <div class="hero-media">
   <video autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=2200&q=85">
@@ -199,7 +255,7 @@ footer{background:#111;color:#fff;padding:60px var(--pad) 25px}
  </div>
  <div class="hero-inner">
   <div><div class="eyebrow">Independent legal practice · Malaysia</div><h1>Strategic counsel.<em>Measured confidence.</em></h1></div>
-  <div class="hero-side"><p>A premium, multi-page legal practice experience built around credibility, expertise and clear client journeys.</p><a class="arrow-link" data-transition href="expertise.html">Explore expertise <span class="circle">→</span></a></div>
+  <div class="hero-side"><p>A premium, multi-page legal practice experience built around credibility, expertise and clear client journeys.</p><a class="arrow-link" href="#expertise">Explore expertise <span class="circle">→</span></a></div>
  </div>
 </section>
 
@@ -213,33 +269,96 @@ footer{background:#111;color:#fff;padding:60px var(--pad) 25px}
 
 <section class="feature-split">
  <div class="feature-media"><img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1600&q=85" alt="Professional meeting"></div>
- <div class="feature-copy reveal"><div class="eyebrow">Why this signature concept</div><h2>More than a landing page.</h2><p>This direction demonstrates how a premium law firm can use dedicated pages for practice areas, lawyers, experience and insights without losing the client's preferred minimalist feel.</p><div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:20px"><a class="navcta" data-transition href="firm.html">View the firm</a><button class="navcta" data-video-open style="background:transparent;color:white">Watch firm video</button></div></div>
+ <div class="feature-copy reveal"><div class="eyebrow">Why this signature concept</div><h2>More than a landing page.</h2><p>This direction demonstrates how a premium law firm can use dedicated pages for practice areas, lawyers, experience and insights without losing the client's preferred minimalist feel.</p><div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:20px"><a class="navcta" href="#firm">View the firm</a><button class="navcta" data-video-open style="background:transparent;color:white">Watch firm video</button></div></div>
 </section>
 
 <section class="section">
  <div class="shell">
   <div class="intro-grid" style="margin-bottom:60px"><div class="eyebrow reveal">02 · Selected expertise</div><h2 class="big-title reveal">Focused where it <em>matters.</em></h2></div>
   <div class="practices reveal">
-   <div class="practice-row" data-modal-title="Corporate & Commercial" data-modal-body="<p>Sample popup treatment for a practice area. In the live site, this can summarise services, industries, representative matters and provide a direct link to a full expertise page.</p><p><a href='expertise.html'>View all expertise →</a></p>"><small>01</small><div class="practice-name">Corporate & Commercial</div><b>↗</b></div>
+   <div class="practice-row" data-modal-title="Corporate & Commercial" data-modal-body="<p>Sample popup treatment for a practice area. In the live site, this can summarise services, industries, representative matters and provide a direct link to a full expertise page.</p><p><a href='#expertise'>View all expertise →</a></p>"><small>01</small><div class="practice-name">Corporate & Commercial</div><b>↗</b></div>
    <div class="practice-row" data-modal-title="Dispute Resolution" data-modal-body="<p>Commercial disputes, litigation strategy and resolution-focused representation. This popup is designed to create interaction without forcing users away from the homepage immediately.</p>"><small>02</small><div class="practice-name">Dispute Resolution</div><b>↗</b></div>
    <div class="practice-row" data-modal-title="Property & Conveyancing" data-modal-body="<p>Placeholder legal content for property transactions, development, leasing and conveyancing work.</p>"><small>03</small><div class="practice-name">Property & Conveyancing</div><b>↗</b></div>
    <div class="practice-row" data-modal-title="Employment Advisory" data-modal-body="<p>Placeholder legal content for employment, workplace, disciplinary and industrial relations matters.</p>"><small>04</small><div class="practice-name">Employment Advisory</div><b>↗</b></div>
   </div>
  </div>
 </section>
+</section><section class="demo-page" id="firm"><div class="page-number">02 / 07</div>
+<section class="subhero"><div class="shell"><div class="eyebrow">01 · The Firm</div><h1>Independent by design.</h1><p>A dedicated firm page gives the client room to establish credibility, philosophy, positioning and the way the practice works.</p></div></section>
+<section class="section"><div class="shell intro-grid"><div class="eyebrow reveal">Our position</div><div><div class="copy-xl reveal">A modern practice with an <em>established standard.</em></div><div class="twocol reveal"><p>We advise businesses, founders, families and individuals on matters where legal precision and sound judgement need to work together.</p><p>The firm is structured to remain responsive and partner-led, allowing matters to be handled with continuity from first discussion through resolution.</p></div></div></div></section>
+<section class="section" style="background:#ddd5c8"><div class="shell"><div class="intro-grid"><div class="eyebrow reveal">Principles</div><h2 class="big-title reveal">How we choose to <em>practice.</em></h2></div><div class="cards reveal" style="margin-top:60px"><article class="card"><div class="eyebrow">01</div><h3>Clarity</h3><p>Direct explanations, clear options and practical next steps.</p></article><article class="card"><div class="eyebrow">02</div><h3>Judgement</h3><p>Strategy grounded in legal detail and commercial reality.</p></article><article class="card"><div class="eyebrow">03</div><h3>Access</h3><p>Clients know who is responsible and how to reach them.</p></article></div></div></section>
+</section><section class="demo-page" id="expertise"><div class="page-number">03 / 07</div>
+<section class="subhero"><div class="shell"><div class="eyebrow">02 · Expertise</div><h1>Depth where clients need it.</h1><p>In the Signature package, each practice area can later become its own detailed page or guided enquiry path.</p></div></section>
+<section class="section"><div class="shell"><div class="practices">
+<div class="practice-row" data-modal-title="Corporate & Commercial" data-modal-body="<p>Business structuring, shareholders' arrangements, commercial contracts, transactions and ongoing corporate advisory.</p><p><strong>Example client journey:</strong> Read summary → open detail popup → submit a focused corporate enquiry.</p>"><small>01</small><div class="practice-name">Corporate & Commercial</div><b>↗</b></div>
+<div class="practice-row" data-modal-title="Dispute Resolution" data-modal-body="<p>Commercial litigation, negotiation, settlement strategy and court representation.</p>"><small>02</small><div class="practice-name">Dispute Resolution</div><b>↗</b></div>
+<div class="practice-row" data-modal-title="Property & Conveyancing" data-modal-body="<p>Property acquisitions, disposals, financing, tenancy and development-related work.</p>"><small>03</small><div class="practice-name">Property & Conveyancing</div><b>↗</b></div>
+<div class="practice-row" data-modal-title="Employment & Industrial Relations" data-modal-body="<p>Employment documentation, disciplinary matters, termination, workplace disputes and advisory.</p>"><small>04</small><div class="practice-name">Employment & Industrial Relations</div><b>↗</b></div>
+<div class="practice-row" data-modal-title="Private Client" data-modal-body="<p>Private wealth, succession, probate, family arrangements and personal legal advisory.</p>"><small>05</small><div class="practice-name">Private Client</div><b>↗</b></div>
+</div></div></section>
+</section><section class="demo-page" id="people"><div class="page-number">04 / 07</div>
+<section class="subhero"><div class="shell"><div class="eyebrow">03 · People</div><h1>Advice is personal.</h1><p>A dedicated people page builds trust and gives every lawyer room for a proper professional profile.</p></div></section>
+<section class="section"><div class="shell"><div class="people-grid">
+<article class="person reveal" data-modal-title="Alex Tan — Managing Partner" data-modal-body="<div class='modal-grid'><img src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=85'><div><p>Demo lawyer profile. The live version can include admissions, qualifications, languages, areas of practice, representative matters and professional memberships.</p><p><strong>Practice:</strong> Corporate & Commercial, Disputes</p><p><strong>Languages:</strong> English, Bahasa Malaysia, Mandarin</p></div></div>"><div class="person-img"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=85"></div><h3>Alex Tan</h3><p>Managing Partner</p></article>
+<article class="person reveal" data-modal-title="Sarah Lim — Partner" data-modal-body="<div class='modal-grid'><img src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=85'><div><p>Demo partner profile with experience, selected matters and areas of focus.</p><p><strong>Practice:</strong> Property, Private Client</p></div></div>"><div class="person-img"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=85"></div><h3>Sarah Lim</h3><p>Partner</p></article>
+<article class="person reveal" data-modal-title="Daniel Lee — Senior Associate" data-modal-body="<div class='modal-grid'><img src='https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=900&q=85'><div><p>Demo senior associate profile.</p><p><strong>Practice:</strong> Employment, Litigation</p></div></div>"><div class="person-img"><img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=900&q=85"></div><h3>Daniel Lee</h3><p>Senior Associate</p></article>
+</div></div></section>
+</section><section class="demo-page" id="experience"><div class="page-number">05 / 07</div>
+<section class="subhero"><div class="shell"><div class="eyebrow">04 · Experience</div><h1>Selected matters. Clear capability.</h1><p>This page can present representative experience without using aggressive sales claims.</p></div></section>
+<section class="section"><div class="shell"><div class="case-grid">
+<article class="case reveal"><small>Corporate / Transaction</small><div><h3>Strategic acquisition advisory</h3><p>Demo matter summary showing how representative experience can be communicated in a discreet, professional way.</p></div><span>Read context →</span></article>
+<article class="case reveal"><small>Dispute Resolution</small><div><h3>Complex commercial dispute</h3><p>Placeholder description for a significant dispute, settlement strategy or court matter.</p></div><span>Read context →</span></article>
+<article class="case reveal"><small>Property</small><div><h3>Multi-party property transaction</h3><p>Placeholder description for a substantial acquisition, financing or development-related transaction.</p></div><span>Read context →</span></article>
+<article class="case reveal"><small>Employment</small><div><h3>Workplace restructuring advice</h3><p>Placeholder description for employer advisory, restructuring or industrial-relations work.</p></div><span>Read context →</span></article>
+</div></div></section>
+</section><section class="demo-page" id="insights"><div class="page-number">06 / 07</div>
+<section class="subhero"><div class="shell"><div class="eyebrow">05 · Insights</div><h1>Useful thinking, not filler.</h1><p>A knowledge page can support credibility, SEO and repeat visits while keeping the site professional.</p></div></section>
+<section class="section"><div class="shell"><div class="insight-grid">
+<article class="feature-article reveal"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1500&q=85"><div class="eyebrow" style="margin-top:18px">Corporate · 8 min read</div><h2>What founders should consider before signing a shareholders' agreement.</h2><p class="muted">Demo editorial content showing how the firm can publish useful legal guidance in a restrained format.</p></article>
+<div><article class="article-card reveal"><div class="eyebrow">Employment · 6 min</div><h3>Managing risk when changing employment terms.</h3><p class="muted">A concise legal insight summary.</p></article><article class="article-card reveal"><div class="eyebrow">Property · 5 min</div><h3>Key checks before a commercial property transaction.</h3><p class="muted">A concise legal insight summary.</p></article><article class="article-card reveal"><div class="eyebrow">Disputes · 7 min</div><h3>Litigation or settlement: thinking about the real objective.</h3><p class="muted">A concise legal insight summary.</p></article></div>
+</div></div></section>
+</section><section class="demo-page" id="contact"><div class="page-number">07 / 07</div>
+<section class="subhero"><div class="shell"><div class="eyebrow">06 · Contact</div><h1>Start with the matter.</h1><p>The Signature package can use a richer guided enquiry rather than a generic “contact us” box.</p></div></section>
+<section class="section"><div class="shell contact-grid">
+<div class="reveal"><div class="eyebrow">Enquiries</div><h2 class="big-title" style="margin-top:18px">Tell us what you <em>need.</em></h2><p class="muted" style="line-height:1.75;max-width:44ch;margin-top:30px">Demo details only. Final address, email, telephone, office hours, maps and legal disclaimer can be added later.</p></div>
+<form class="contact-form reveal" onsubmit="event.preventDefault();openModal('Thank you','<p>This is a demo interaction. On the live site this form can send the enquiry to the firm, email inbox, CRM or WhatsApp workflow.</p>')">
+<input class="field" placeholder="Name" required><input class="field" placeholder="Email" type="email" required>
+<input class="field" placeholder="Phone"><select class="field"><option>Area of enquiry</option><option>Corporate & Commercial</option><option>Dispute Resolution</option><option>Property</option><option>Employment</option><option>Private Client</option></select>
+<textarea class="field full" placeholder="Briefly tell us about the matter"></textarea>
+<div class="full"><button class="submit">Send enquiry →</button></div>
+</form>
+</div></section>
+</section>
 </main>
 
 <footer>
  <div class="footer-grid">
   <div class="footer-brand">Lex & Partners</div>
-  <div class="footer-col"><strong>Navigate</strong><a data-transition href="firm.html">The Firm</a><a data-transition href="expertise.html">Expertise</a><a data-transition href="people.html">People</a></div>
-  <div class="footer-col"><strong>Explore</strong><a data-transition href="experience.html">Experience</a><a data-transition href="insights.html">Insights</a><a data-transition href="contact.html">Contact</a></div>
+  <div class="footer-col"><strong>Navigate</strong><a href="#firm">The Firm</a><a href="#expertise">Expertise</a><a href="#people">People</a></div>
+  <div class="footer-col"><strong>Explore</strong><a href="#experience">Experience</a><a href="#insights">Insights</a><a href="#contact">Contact</a></div>
   <div class="footer-col"><strong>Demo</strong><a href="#">LinkedIn</a><a href="#">Privacy</a><a href="#">Legal notice</a></div>
  </div>
  <div class="footer-bottom"><span>© 2026 Lex & Partners — Signature demo.</span><span>Placeholder content for presentation only.</span></div>
 </footer>
-<div class="modal" id="detailModal"><div class="modal-card"><button class="modal-close" data-close-modal>×</button><div class="eyebrow">Further information</div><h2 id="modalTitle"></h2><div id="modalBody"></div></div></div>
-<div class="modal video-modal" id="videoModal"><div class="modal-card"><button class="video-close" data-close-modal>×</button><video id="modalVideo" controls muted loop playsinline poster="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1800&q=80"><source src="https://videos.pexels.com/video-files/8061617/8061617-hd_1920_1080_25fps.mp4" type="video/mp4"></video></div></div>
+
+<div class="modal" id="detailModal">
+ <div class="modal-card">
+  <button class="modal-close" data-close-modal>×</button>
+  <div class="eyebrow">Further information</div>
+  <h2 id="modalTitle"></h2>
+  <div id="modalBody"></div>
+ </div>
+</div>
+
+<div class="modal video-modal" id="videoModal">
+ <div class="modal-card">
+  <button class="video-close" data-close-modal>×</button>
+  <video id="modalVideo" controls muted loop playsinline poster="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1800&q=80">
+   <source src="https://videos.pexels.com/video-files/8061617/8061617-hd_1920_1080_25fps.mp4" type="video/mp4">
+  </video>
+ </div>
+</div>
+
 <script>
 const header=document.querySelector('.site-header');
 const menu=document.getElementById('menu');
@@ -261,16 +380,7 @@ document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>{
 const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-document.querySelectorAll('a[data-transition]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
-    e.preventDefault();
-    const href=a.getAttribute('href');
-    const c=document.querySelector('.page-cover');
-    c.classList.add('in');document.body.classList.add('is-transitioning');
-    setTimeout(()=>location.href=href,520);
-  });
-});
+
 
 const modal=document.getElementById('detailModal');
 const modalTitle=document.getElementById('modalTitle');
@@ -289,4 +399,26 @@ document.querySelectorAll('[data-video-open]').forEach(el=>el.addEventListener('
 if(videoModal)videoModal.querySelectorAll('[data-close-modal]').forEach(el=>el.addEventListener('click',()=>{video.pause();video.currentTime=0;}));
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open'));document.body.style.overflow='';if(video)video.pause()}});
-</script></body></html>
+
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',()=>{
+    if(menu){menu.classList.remove('open');document.body.style.overflow='';if(menuBtn)menuBtn.textContent='Menu';}
+  });
+});
+
+const demoSections=[...document.querySelectorAll('.demo-page')];
+const navAnchors=[...document.querySelectorAll('.navlinks a[href^="#"], .demo-index a')];
+const sectionObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const id='#'+entry.target.id;
+      navAnchors.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===id));
+    }
+  });
+},{rootMargin:'-42% 0px -48% 0px',threshold:0});
+demoSections.forEach(s=>sectionObserver.observe(s));
+
+</script>
+</body>
+</html>
