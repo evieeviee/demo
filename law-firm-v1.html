@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Demo Law Firm | Modern Legal Practice</title>
+  <meta name="description" content="A minimalist, premium law firm landing page demo with subtle motion, video, practice areas, firm positioning, people and consultation CTA.">
+  <meta name="theme-color" content="#11130f">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#11130f;
+      --paper:#f3f0e9;
+      --soft:#e9e4da;
+      --sage:#bcc2b2;
+      --olive:#676f5d;
+      --line:rgba(17,19,15,.16);
+      --white:#fff;
+      --ease:cubic-bezier(.2,.8,.2,1);
+      --pad:clamp(20px,5vw,78px);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--paper);
+      font-family:"DM Sans",system-ui,sans-serif;
+      overflow-x:hidden;
+    }
+    body.menu-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea,select{font:inherit}
+    img,video{display:block;max-width:100%}
+    ::selection{background:#8d947e;color:white}
+
+    .container{width:min(1540px,100% - (var(--pad)*2));margin:auto}
+    .eyebrow{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-weight:600;
+    }
+    .serif{font-family:"Libre Caslon Display",Georgia,serif}
+    .section{padding:clamp(90px,11vw,170px) 0}
+    .line{height:1px;background:var(--line)}
+
+    /* loader */
+    .loader{
+      position:fixed;inset:0;background:var(--ink);color:white;z-index:9999;
+      display:grid;place-items:center;transition:opacity .8s var(--ease),visibility .8s;
+    }
+    .loader.hide{opacity:0;visibility:hidden}
+    .loader-inner{width:min(440px,74vw)}
+    .loader-title{
+      font-family:"Libre Caslon Display",Georgia,serif;
+      font-size:clamp(36px,6vw,78px);
+      line-height:.9;
+      overflow:hidden;
+    }
+    .loader-title span{display:block;transform:translateY(110%);animation:rise .9s .12s var(--ease) forwards}
+    .loader-track{height:1px;background:rgba(255,255,255,.2);margin-top:30px;overflow:hidden}
+    .loader-bar{height:100%;width:0;background:white;animation:load 1.45s .12s var(--ease) forwards}
+    @keyframes load{to{width:100%}}
+    @keyframes rise{to{transform:translateY(0)}}
+
+    /* nav */
+    header{
+      position:fixed;left:0;right:0;top:0;z-index:80;
+      color:white;
+      transition:background .35s,color .35s,border-color .35s;
+      border-bottom:1px solid transparent;
+    }
+    header.scrolled{
+      color:var(--ink);
+      background:rgba(243,240,233,.92);
+      backdrop-filter:blur(18px);
+      border-color:var(--line);
+    }
+    .nav{
+      height:84px;display:flex;align-items:center;justify-content:space-between;
+      width:min(1540px,100% - (var(--pad)*2));margin:auto;
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
+    .brand-mark{
+      width:34px;height:34px;border:1px solid currentColor;border-radius:50%;
+      display:grid;place-items:center;font-family:"Libre Caslon Display",serif;font-size:17px;
+    }
+    .desktop-nav{display:flex;gap:31px;align-items:center;font-size:13px}
+    .desktop-nav a{position:relative}
+    .desktop-nav a:after{
+      content:"";position:absolute;left:0;right:100%;bottom:-6px;height:1px;background:currentColor;
+      transition:right .35s var(--ease);
+    }
+    .desktop-nav a:hover:after{right:0}
+    .nav-cta{border:1px solid currentColor;padding:11px 16px;border-radius:999px}
+    .menu-btn{display:none;background:none;border:0;color:inherit;padding:8px;font-size:13px;text-transform:uppercase;letter-spacing:.12em}
+
+    /* hero */
+    .hero{
+      min-height:100svh;
+      background:#151813;color:white;
+      position:relative;overflow:hidden;
+      display:flex;align-items:flex-end;
+    }
+    .hero-media{
+      position:absolute;inset:0;
+    }
+    .hero-media video{
+      width:100%;height:100%;object-fit:cover;
+      filter:grayscale(.2) saturate(.62) contrast(.94);
+      transform:scale(1.035);
+    }
+    .hero-media:after{
+      content:"";position:absolute;inset:0;
+      background:
+        linear-gradient(90deg,rgba(10,12,9,.86) 0%,rgba(10,12,9,.48) 48%,rgba(10,12,9,.12) 78%),
+        linear-gradient(0deg,rgba(10,12,9,.6),transparent 55%);
+    }
+    .hero-fallback{
+      position:absolute;inset:0;
+      background:
+      linear-gradient(90deg,rgba(10,12,9,.78),rgba(10,12,9,.15)),
+      url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=2200&q=84") center/cover;
+      z-index:-1;
+    }
+    .hero-content{
+      position:relative;z-index:2;
+      width:min(1540px,100% - (var(--pad)*2));margin:0 auto;
+      padding:160px 0 65px;
+      display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.46fr);gap:9vw;align-items:end;
+    }
+    .hero-kicker{display:flex;align-items:center;gap:12px;margin-bottom:24px;opacity:.86}
+    .hero-kicker:before{content:"";width:36px;height:1px;background:currentColor}
+    h1{
+      margin:0;
+      font-family:"Libre Caslon Display",Georgia,serif;
+      font-size:clamp(58px,8.4vw,144px);
+      line-height:.82;
+      font-weight:400;
+      letter-spacing:-.055em;
+      max-width:10ch;
+    }
+    h1 .indent{display:block;margin-left:1.1ch}
+    .hero-side{
+      padding-bottom:5px;
+      max-width:370px;
+      justify-self:end;
+    }
+    .hero-side p{font-size:16px;line-height:1.65;color:rgba(255,255,255,.78);margin:0 0 30px}
+    .arrow-link{
+      display:inline-flex;align-items:center;gap:14px;
+      font-size:13px;text-transform:uppercase;letter-spacing:.14em;font-weight:600;
+    }
+    .arrow-link .circle{
+      width:48px;height:48px;border:1px solid currentColor;border-radius:50%;
+      display:grid;place-items:center;transition:.35s var(--ease);
+    }
+    .arrow-link:hover .circle{transform:translateX(5px);background:white;color:var(--ink)}
+    .scroll-note{
+      position:absolute;right:var(--pad);bottom:30px;z-index:3;
+      font-size:10px;letter-spacing:.14em;text-transform:uppercase;writing-mode:vertical-rl;
+      opacity:.7;
+    }
+
+    /* intro */
+    .intro-grid{
+      display:grid;grid-template-columns:.45fr 1fr;gap:9vw;
+      align-items:start;
+    }
+    .intro-copy{
+      font-family:"Libre Caslon Display",serif;
+      font-size:clamp(39px,5.4vw,82px);
+      line-height:.98;letter-spacing:-.035em;
+      max-width:13ch;
+    }
+    .intro-copy em{font-style:italic;color:var(--olive)}
+    .intro-small{
+      display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:70px;
+      padding-top:24px;border-top:1px solid var(--line);
+    }
+    .intro-small p{font-size:14px;line-height:1.7;max-width:34ch;color:#4f524c;margin:0}
+
+    /* moving statement */
+    .statement{
+      background:var(--ink);color:white;
+      padding:26px 0;overflow:hidden;
+    }
+    .marquee{
+      white-space:nowrap;display:flex;width:max-content;
+      animation:marquee 28s linear infinite;
+      font-family:"Libre Caslon Display",serif;font-size:clamp(38px,5vw,76px);
+      line-height:1;
+    }
+    .marquee span{padding-right:55px}
+    .marquee i{font-style:italic;color:var(--sage)}
+    @keyframes marquee{to{transform:translateX(-50%)}}
+
+    /* expertise */
+    .expertise-head{
+      display:grid;grid-template-columns:.45fr 1fr;gap:9vw;margin-bottom:70px;
+    }
+    .section-title{
+      font-family:"Libre Caslon Display",serif;
+      font-size:clamp(48px,7vw,110px);line-height:.88;letter-spacing:-.05em;margin:0;
+    }
+    .section-title span{display:block;color:var(--olive);font-style:italic}
+    .expertise-list{border-top:1px solid var(--line)}
+    .practice{
+      border-bottom:1px solid var(--line);
+      display:grid;grid-template-columns:72px 1fr auto;gap:20px;align-items:center;
+      padding:25px 0;cursor:pointer;position:relative;overflow:hidden;
+    }
+    .practice:before{
+      content:"";position:absolute;inset:0;background:var(--ink);
+      transform:translateY(101%);transition:transform .5s var(--ease);z-index:-1;
+    }
+    .practice:hover{color:white;padding-left:18px;padding-right:18px}
+    .practice:hover:before{transform:none}
+    .practice,.practice *{transition:.45s var(--ease)}
+    .practice-num{font-size:11px;letter-spacing:.1em;opacity:.55}
+    .practice-name{font-family:"Libre Caslon Display",serif;font-size:clamp(27px,3.6vw,54px);line-height:1}
+    .practice-arrow{font-size:24px;transform:rotate(-45deg)}
+    .practice:hover .practice-arrow{transform:rotate(0)}
+
+    /* image / text feature */
+    .feature{
+      display:grid;grid-template-columns:1.08fr .92fr;min-height:780px;background:var(--soft);
+    }
+    .feature-image{overflow:hidden;position:relative;min-height:620px}
+    .feature-image img{
+      width:100%;height:120%;object-fit:cover;position:absolute;top:-10%;
+      filter:saturate(.7) contrast(.95);
+      will-change:transform;
+    }
+    .feature-copy{
+      padding:clamp(50px,8vw,120px);
+      display:flex;flex-direction:column;justify-content:center;
+    }
+    .feature-copy h2{
+      font-family:"Libre Caslon Display",serif;font-size:clamp(47px,5.3vw,84px);
+      line-height:.92;letter-spacing:-.045em;font-weight:400;margin:18px 0 34px;
+    }
+    .feature-copy p{line-height:1.75;color:#51544d;max-width:48ch;margin:0 0 30px}
+
+    /* principles */
+    .principles{background:#d5d2c9}
+    .principles-top{
+      display:grid;grid-template-columns:.45fr 1fr;gap:9vw;margin-bottom:80px;
+    }
+    .principles-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(0,0,0,.2)}
+    .principle{padding:34px 28px 50px 0;border-right:1px solid rgba(0,0,0,.2)}
+    .principle:not(:first-child){padding-left:28px}
+    .principle:last-child{border-right:0}
+    .principle strong{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+    .principle h3{font-family:"Libre Caslon Display",serif;font-size:38px;font-weight:400;margin:55px 0 20px}
+    .principle p{font-size:14px;line-height:1.75;color:#50534d}
+
+    /* video story */
+    .video-section{
+      background:#1a1d18;color:white;padding:clamp(90px,10vw,150px) 0;
+    }
+    .video-top{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:45px}
+    .video-top h2{
+      font-family:"Libre Caslon Display",serif;font-weight:400;
+      font-size:clamp(48px,6.5vw,100px);line-height:.9;letter-spacing:-.045em;margin:0;
+      max-width:8ch;
+    }
+    .video-frame{position:relative;aspect-ratio:16/8.2;overflow:hidden;background:#2a2f27}
+    .video-frame video{width:100%;height:100%;object-fit:cover;filter:saturate(.58) contrast(.93) brightness(.82)}
+    .video-frame:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.46))}
+    .video-caption{
+      position:absolute;left:30px;bottom:28px;right:30px;z-index:3;
+      display:flex;justify-content:space-between;align-items:end;
+    }
+    .play{
+      width:70px;height:70px;border:1px solid rgba(255,255,255,.8);border-radius:50%;
+      display:grid;place-items:center;background:rgba(255,255,255,.08);backdrop-filter:blur(8px)
+    }
+    .play:before{
+      content:"";width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;
+      border-left:11px solid white;margin-left:4px;
+    }
+    .video-credit{font-size:10px;line-height:1.45;color:rgba(255,255,255,.66);max-width:290px;text-align:right}
+
+    /* person */
+    .people-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:50px;gap:30px}
+    .people-head p{max-width:38ch;line-height:1.65;color:#555851;font-size:14px}
+    .person-card{
+      display:grid;grid-template-columns:.86fr 1.14fr;border-top:1px solid var(--line);
+      padding-top:30px;gap:6vw;
+    }
+    .person-image{aspect-ratio:4/5;overflow:hidden;background:#ddd}
+    .person-image img{width:100%;height:112%;object-fit:cover;filter:grayscale(1);transition:1s var(--ease)}
+    .person-card:hover img{transform:scale(1.035);filter:grayscale(.35)}
+    .person-copy{padding:5vw 0}
+    .person-copy h3{font-family:"Libre Caslon Display",serif;font-size:clamp(50px,6vw,90px);line-height:.87;font-weight:400;margin:12px 0 15px}
+    .person-role{font-size:12px;text-transform:uppercase;letter-spacing:.15em;color:var(--olive);font-weight:600}
+    .person-copy p{max-width:50ch;font-size:14px;line-height:1.75;color:#555851}
+
+    /* contact */
+    .contact{
+      min-height:88svh;background:var(--ink);color:white;display:flex;align-items:center;position:relative;overflow:hidden;
+    }
+    .contact:before{
+      content:"";position:absolute;width:52vw;height:52vw;border:1px solid rgba(255,255,255,.12);
+      border-radius:50%;right:-15vw;top:-16vw;
+    }
+    .contact:after{
+      content:"";position:absolute;width:32vw;height:32vw;border:1px solid rgba(255,255,255,.09);
+      border-radius:50%;right:-5vw;top:-6vw;
+    }
+    .contact-inner{position:relative;z-index:2;padding:100px 0}
+    .contact h2{
+      font-family:"Libre Caslon Display",serif;font-size:clamp(60px,9.3vw,150px);
+      line-height:.84;letter-spacing:-.055em;font-weight:400;margin:20px 0 55px;max-width:9ch;
+    }
+    .contact-bottom{display:flex;justify-content:space-between;align-items:end;border-top:1px solid rgba(255,255,255,.2);padding-top:24px}
+    .contact-bottom p{max-width:38ch;color:rgba(255,255,255,.62);font-size:13px;line-height:1.7}
+    .contact-btn{display:inline-flex;gap:12px;align-items:center;border:1px solid white;border-radius:999px;padding:15px 20px;text-transform:uppercase;font-size:11px;letter-spacing:.13em}
+    footer{background:var(--ink);color:white;border-top:1px solid rgba(255,255,255,.12);padding:26px var(--pad);display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.54)}
+
+    /* modal / mobile */
+    .menu-overlay{
+      position:fixed;inset:0;background:#d4d0c6;color:var(--ink);z-index:70;
+      opacity:0;visibility:hidden;transition:.45s var(--ease);display:flex;align-items:flex-end;
+    }
+    .menu-overlay.open{opacity:1;visibility:visible}
+    .menu-panel{width:100%;padding:120px var(--pad) 50px}
+    .menu-panel a{display:block;font-family:"Libre Caslon Display",serif;font-size:clamp(42px,13vw,80px);line-height:1.05;border-top:1px solid rgba(0,0,0,.16);padding:12px 0}
+    .menu-panel a:last-of-type{border-bottom:1px solid rgba(0,0,0,.16)}
+
+    /* reveal */
+    .reveal{opacity:0;transform:translateY(34px);transition:1s var(--ease)}
+    .reveal.in{opacity:1;transform:none}
+
+    @media(max-width:900px){
+      .nav{height:72px}
+      .desktop-nav{display:none}
+      .menu-btn{display:block}
+      .hero-content{grid-template-columns:1fr;gap:38px;padding-top:135px;padding-bottom:54px}
+      h1{font-size:clamp(59px,18vw,98px)}
+      .hero-side{justify-self:start;max-width:320px}
+      .scroll-note{display:none}
+      .intro-grid,.expertise-head,.principles-top{grid-template-columns:1fr;gap:40px}
+      .intro-small{grid-template-columns:1fr;gap:24px}
+      .practice{grid-template-columns:44px 1fr auto}
+      .feature{grid-template-columns:1fr}
+      .feature-image{min-height:68svh}
+      .principles-grid{grid-template-columns:1fr}
+      .principle,.principle:not(:first-child){border-right:0;border-bottom:1px solid rgba(0,0,0,.2);padding:30px 0}
+      .principle h3{margin-top:28px}
+      .video-top{display:block}
+      .video-top .eyebrow{margin-top:25px}
+      .video-frame{aspect-ratio:4/5}
+      .video-credit{display:none}
+      .person-card{grid-template-columns:1fr}
+      .person-copy{padding:20px 0}
+      .contact-bottom{display:block}
+      .contact-btn{margin-top:25px}
+      footer{gap:15px;flex-direction:column}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+      .loader{display:none}
+      .reveal{opacity:1;transform:none}
+      .marquee{transform:none}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-title"><span>Legal clarity.</span></div>
+      <div class="loader-track"><div class="loader-bar"></div></div>
+    </div>
+  </div>
+
+  <header id="header">
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand-mark">L</span>
+        <span>Law Firm <small style="opacity:.6;font-weight:400">Demo</small></span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#firm">The Firm</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#people">People</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-panel">
+      <a href="#firm">The Firm</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#people">People</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-media">
+        <div class="hero-fallback"></div>
+        <!-- Free demo footage reference from Pexels.
+             Replace this URL later with the client's own licensed corporate/law footage. -->
+        <video autoplay muted loop playsinline preload="metadata"
+          poster="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=2200&q=84">
+          <source src="https://videos.pexels.com/video-files/8061617/8061617-hd_1920_1080_25fps.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="hero-content">
+        <div>
+          <div class="hero-kicker eyebrow">Independent legal practice · Malaysia</div>
+          <h1>
+            Clear thinking.
+            <span class="indent">Quiet confidence.</span>
+          </h1>
+        </div>
+
+        <div class="hero-side">
+          <p>
+            Strategic legal advice delivered with precision, perspective and a close understanding
+            of what matters to our clients.
+          </p>
+          <a href="#expertise" class="arrow-link">
+            Explore our practice
+            <span class="circle">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="scroll-note">Scroll to discover</div>
+    </section>
+
+    <section class="section" id="firm">
+      <div class="container intro-grid">
+        <div class="eyebrow reveal">01 · The Firm</div>
+        <div>
+          <div class="intro-copy reveal">
+            Law should feel <em>considered</em>, not complicated.
+          </div>
+
+          <div class="intro-small reveal">
+            <p>
+              We are a modern legal practice built around direct advice, disciplined thinking and
+              long-term client relationships.
+            </p>
+            <p>
+              Our approach is deliberately focused: understand the issue, identify the commercial
+              reality and provide a clear path forward.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="statement" aria-hidden="true">
+      <div class="marquee">
+        <span>Precise advice · <i>Practical strategy</i> · Lasting relationships · </span>
+        <span>Precise advice · <i>Practical strategy</i> · Lasting relationships · </span>
+      </div>
+    </div>
+
+    <section class="section" id="expertise">
+      <div class="container">
+        <div class="expertise-head">
+          <div class="eyebrow reveal">02 · Expertise</div>
+          <h2 class="section-title reveal">Where we <span>focus.</span></h2>
+        </div>
+
+        <div class="expertise-list reveal">
+          <div class="practice">
+            <div class="practice-num">01</div>
+            <div class="practice-name">Corporate & Commercial</div>
+            <div class="practice-arrow">↗</div>
+          </div>
+          <div class="practice">
+            <div class="practice-num">02</div>
+            <div class="practice-name">Dispute Resolution</div>
+            <div class="practice-arrow">↗</div>
+          </div>
+          <div class="practice">
+            <div class="practice-num">03</div>
+            <div class="practice-name">Property & Conveyancing</div>
+            <div class="practice-arrow">↗</div>
+          </div>
+          <div class="practice">
+            <div class="practice-num">04</div>
+            <div class="practice-name">Employment & Industrial Relations</div>
+            <div class="practice-arrow">↗</div>
+          </div>
+          <div class="practice">
+            <div class="practice-num">05</div>
+            <div class="practice-name">Private Client & Advisory</div>
+            <div class="practice-arrow">↗</div>
+          </div>
+        </div>
+
+        <p style="margin:28px 0 0;font-size:12px;color:#696c65;max-width:52ch">
+          Demo content only — these practice areas can be replaced once the firm's actual areas of practice are confirmed.
+        </p>
+      </div>
+    </section>
+
+    <section class="feature">
+      <div class="feature-image">
+        <img
+          src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1600&q=84"
+          alt="Professional meeting in a modern office"
+          id="parallaxImage">
+      </div>
+      <div class="feature-copy reveal">
+        <div class="eyebrow">A focused approach</div>
+        <h2>Measured advice for complex decisions.</h2>
+        <p>
+          Strong legal work is not about saying more. It is about understanding the issue deeply,
+          finding the point that matters and communicating the next step with clarity.
+        </p>
+        <a href="#contact" class="arrow-link">
+          Speak with us
+          <span class="circle">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section principles">
+      <div class="container">
+        <div class="principles-top">
+          <div class="eyebrow reveal">03 · How we work</div>
+          <h2 class="section-title reveal">Built around <span>trust.</span></h2>
+        </div>
+
+        <div class="principles-grid reveal">
+          <article class="principle">
+            <strong>01 / Direct</strong>
+            <h3>Clear from the outset.</h3>
+            <p>No unnecessary complexity. We explain the position, the options and the practical implications in plain language.</p>
+          </article>
+          <article class="principle">
+            <strong>02 / Considered</strong>
+            <h3>Strategy before action.</h3>
+            <p>We look beyond the immediate legal question to understand the wider commercial and personal context.</p>
+          </article>
+          <article class="principle">
+            <strong>03 / Personal</strong>
+            <h3>Close to the matter.</h3>
+            <p>Clients work directly with the people responsible for their matter, with responsive communication throughout.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section">
+      <div class="container">
+        <div class="video-top reveal">
+          <h2>Inside the practice.</h2>
+          <div class="eyebrow">Sample video treatment</div>
+        </div>
+
+        <div class="video-frame reveal">
+          <video muted loop playsinline preload="metadata"
+            poster="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1800&q=84"
+            id="storyVideo">
+            <source src="https://videos.pexels.com/video-files/8061449/8061449-hd_1920_1080_25fps.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">
+            <button class="play" id="videoToggle" aria-label="Play or pause firm video"></button>
+            <div class="video-credit">
+              Demo stock footage only. Replace with the firm's own corporate video or licensed footage for the live site.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="people">
+      <div class="container">
+        <div class="people-head reveal">
+          <div>
+            <div class="eyebrow">04 · People</div>
+            <h2 class="section-title" style="margin-top:20px">People you can <span>reach.</span></h2>
+          </div>
+          <p>
+            For a real law firm, this area can feature the principal lawyers with their actual
+            qualifications, admissions, areas of practice and professional experience.
+          </p>
+        </div>
+
+        <article class="person-card reveal">
+          <div class="person-image">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1000&q=84" alt="Sample principal lawyer portrait">
+          </div>
+          <div class="person-copy">
+            <div class="person-role">Managing Partner · Demo profile</div>
+            <h3>Alex<br>Tan</h3>
+            <p>
+              Alex advises businesses and private clients on complex commercial matters, disputes
+              and strategic transactions. His practice is defined by calm judgement, commercial
+              awareness and practical advice.
+            </p>
+            <a href="#contact" class="arrow-link" style="margin-top:15px">
+              View profile
+              <span class="circle">→</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-inner">
+        <div class="eyebrow reveal">Start a conversation</div>
+        <h2 class="reveal">Tell us what matters.</h2>
+        <div class="contact-bottom reveal">
+          <p>
+            This is demo wording. Final contact details, office location, telephone, email,
+            consultation process and legal disclaimer can be inserted once provided by the firm.
+          </p>
+          <a class="contact-btn" href="mailto:hello@example.com">Contact the firm <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Law Firm Demo. All rights reserved.</span>
+    <span>Privacy · Legal Notice · Disclaimer</span>
+  </footer>
+
+  <script>
+    const loader = document.getElementById('loader');
+    window.addEventListener('load', () => setTimeout(() => loader.classList.add('hide'), 450));
+
+    const header = document.getElementById('header');
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 30);
+    onScroll();
+    addEventListener('scroll', onScroll, {passive:true});
+
+    const menuBtn = document.getElementById('menuBtn');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const closeMenu = () => {
+      menuOverlay.classList.remove('open');
+      document.body.classList.remove('menu-open');
+      menuBtn.textContent = 'Menu';
+    };
+    menuBtn.addEventListener('click', () => {
+      const open = !menuOverlay.classList.contains('open');
+      menuOverlay.classList.toggle('open', open);
+      document.body.classList.toggle('menu-open', open);
+      menuBtn.textContent = open ? 'Close' : 'Menu';
+    });
+    menuOverlay.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const parallaxImage = document.getElementById('parallaxImage');
+    const parallax = () => {
+      if(window.innerWidth < 700) return;
+      const rect = parallaxImage.parentElement.getBoundingClientRect();
+      const view = window.innerHeight;
+      const progress = (view - rect.top) / (view + rect.height);
+      const shift = (progress - .5) * 90;
+      parallaxImage.style.transform = `translateY(${shift}px) scale(1.04)`;
+    };
+    addEventListener('scroll', parallax, {passive:true});
+    parallax();
+
+    const storyVideo = document.getElementById('storyVideo');
+    const videoToggle = document.getElementById('videoToggle');
+    videoToggle.addEventListener('click', async () => {
+      if(storyVideo.paused){
+        try{ await storyVideo.play(); }catch(e){}
+        videoToggle.style.opacity = '.55';
+      } else {
+        storyVideo.pause();
+        videoToggle.style.opacity = '1';
+      }
+    });
+  </script>
+</body>
+</html>
