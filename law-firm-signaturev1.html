@@ -1,0 +1,292 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lex & Partners — Signature Law Firm Demo</title><meta name="description" content="Premium multi-page law firm signature website demo."><style>
+:root{
+  --ink:#121212;
+  --paper:#f3f0e8;
+  --warm:#e7e0d3;
+  --gold:#9d7c4a;
+  --muted:#6b675f;
+  --line:rgba(18,18,18,.16);
+  --white:#fff;
+  --ease:cubic-bezier(.22,.75,.22,1);
+  --pad:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+body.is-transitioning{pointer-events:none}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+button,input,textarea,select{font:inherit}
+button{color:inherit}
+::selection{background:var(--gold);color:#fff}
+
+.shell{width:min(1540px,100% - var(--pad)*2);margin:auto}
+.serif{font-family:Georgia,"Times New Roman",serif}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:700}
+.muted{color:var(--muted)}
+.section{padding:clamp(86px,10vw,150px) 0}
+.rule{height:1px;background:var(--line)}
+.big-title{font-family:Georgia,"Times New Roman",serif;font-size:clamp(48px,7vw,108px);line-height:.88;letter-spacing:-.045em;font-weight:400;margin:0}
+.big-title em{color:var(--gold);font-weight:400}
+
+.site-header{position:fixed;top:0;left:0;right:0;z-index:90;transition:.35s;color:white;border-bottom:1px solid transparent}
+.site-header.scrolled,.site-header.light{background:rgba(243,240,232,.93);backdrop-filter:blur(16px);color:var(--ink);border-color:var(--line)}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between;width:min(1540px,100% - var(--pad)*2);margin:auto}
+.brand{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+.monogram{width:38px;height:38px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:18px}
+.navlinks{display:flex;gap:28px;align-items:center;font-size:12px}
+.navlinks a{position:relative}
+.navlinks a:not(.navcta):after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:1px;background:currentColor;transition:.3s}
+.navlinks a:hover:after{right:0}
+.navcta{border:1px solid currentColor;border-radius:999px;padding:10px 15px}
+.menubtn{display:none;background:transparent;border:0;text-transform:uppercase;font-size:11px;letter-spacing:.16em}
+
+.menu{position:fixed;inset:0;background:#d8d1c4;z-index:80;opacity:0;visibility:hidden;transition:.45s var(--ease);display:flex;align-items:flex-end}
+.menu.open{opacity:1;visibility:visible}
+.menu-inner{padding:120px var(--pad) 50px;width:100%}
+.menu a{display:block;font-family:Georgia,serif;font-size:clamp(36px,12vw,78px);line-height:1;border-top:1px solid rgba(0,0,0,.17);padding:13px 0}
+.menu a:last-child{border-bottom:1px solid rgba(0,0,0,.17)}
+
+.page-loader{position:fixed;inset:0;z-index:9999;background:#111;color:#fff;display:grid;place-items:center}
+.page-loader.out{animation:loaderOut 1s .2s var(--ease) forwards}
+.loader-box{text-align:center}
+.loader-seal{width:90px;height:90px;border:1px solid rgba(255,255,255,.5);border-radius:50%;display:grid;place-items:center;margin:auto;font-family:Georgia,serif;font-size:32px;opacity:0;transform:scale(.85);animation:sealIn .7s .1s var(--ease) forwards}
+.loader-text{font-size:10px;letter-spacing:.28em;text-transform:uppercase;margin-top:20px;opacity:0;animation:fadeIn .7s .4s forwards}
+.loader-line{height:1px;background:#a68a62;width:0;margin:18px auto 0;animation:lineIn .9s .55s var(--ease) forwards}
+@keyframes sealIn{to{opacity:1;transform:scale(1)}}
+@keyframes fadeIn{to{opacity:1}}
+@keyframes lineIn{to{width:150px}}
+@keyframes loaderOut{to{transform:translateY(-100%)}}
+
+.page-cover{position:fixed;inset:0;background:#111;z-index:9998;transform:translateY(100%);pointer-events:none}
+.page-cover.in{animation:coverIn .65s var(--ease) forwards}
+@keyframes coverIn{to{transform:translateY(0)}}
+
+.hero{min-height:100svh;position:relative;color:#fff;display:flex;align-items:flex-end;overflow:hidden;background:#111}
+.hero-media{position:absolute;inset:0}
+.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;filter:grayscale(.3) saturate(.65) brightness(.72);transform:scale(1.05);animation:heroSettle 2s .4s var(--ease) forwards}
+.hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.82),rgba(10,10,10,.24) 62%,rgba(10,10,10,.08)),linear-gradient(0deg,rgba(10,10,10,.55),transparent 55%)}
+.hero-inner{position:relative;z-index:2;width:min(1540px,100% - var(--pad)*2);margin:auto;padding:160px 0 60px;display:grid;grid-template-columns:1.1fr .5fr;gap:8vw;align-items:end}
+.hero h1{font-family:Georgia,serif;font-size:clamp(58px,8.5vw,138px);line-height:.82;letter-spacing:-.055em;font-weight:400;margin:0;max-width:9ch}
+.hero h1 em{display:block;color:#d3b889;font-weight:400}
+.hero-side p{line-height:1.7;color:rgba(255,255,255,.75);font-size:15px}
+.hero-side{max-width:390px;justify-self:end}
+@keyframes heroSettle{to{transform:scale(1)}}
+
+.arrow-link{display:inline-flex;align-items:center;gap:13px;font-size:11px;text-transform:uppercase;letter-spacing:.15em;font-weight:700}
+.circle{width:46px;height:46px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;transition:.3s}
+.arrow-link:hover .circle{transform:translateX(5px);background:currentColor;color:var(--paper)}
+
+.intro-grid{display:grid;grid-template-columns:.35fr 1fr;gap:8vw}
+.copy-xl{font-family:Georgia,serif;font-size:clamp(38px,5.4vw,80px);line-height:.98;letter-spacing:-.035em;max-width:14ch}
+.copy-xl em{color:var(--gold)}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:45px;margin-top:60px;border-top:1px solid var(--line);padding-top:24px}
+.twocol p{line-height:1.75;font-size:14px;color:#59564f;margin:0}
+
+.practices{border-top:1px solid var(--line)}
+.practice-row{display:grid;grid-template-columns:65px 1fr auto;align-items:center;gap:20px;border-bottom:1px solid var(--line);padding:25px 0;cursor:pointer;position:relative;overflow:hidden;transition:.4s}
+.practice-row:before{content:"";position:absolute;inset:0;background:#171717;transform:translateY(101%);transition:.45s var(--ease);z-index:-1}
+.practice-row:hover{color:#fff;padding-left:18px;padding-right:18px}
+.practice-row:hover:before{transform:none}
+.practice-name{font-family:Georgia,serif;font-size:clamp(28px,3.6vw,52px)}
+.practice-row small{opacity:.55}
+.practice-row b{font-size:23px;font-weight:400;transform:rotate(-45deg);transition:.35s}
+.practice-row:hover b{transform:none}
+
+.feature-split{display:grid;grid-template-columns:1fr 1fr;background:#191919;color:#fff}
+.feature-media{min-height:760px;position:relative;overflow:hidden}
+.feature-media img,.feature-media video{width:100%;height:100%;object-fit:cover;filter:grayscale(.4) saturate(.55) brightness(.8)}
+.feature-copy{padding:clamp(50px,7vw,110px);display:flex;flex-direction:column;justify-content:center}
+.feature-copy h2{font-family:Georgia,serif;font-size:clamp(48px,5.5vw,84px);line-height:.92;font-weight:400;margin:18px 0 28px}
+.feature-copy p{line-height:1.75;color:#bcb9b2;max-width:48ch}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.card{padding:30px 30px 55px 0;border-right:1px solid var(--line)}
+.card:not(:first-child){padding-left:30px}
+.card:last-child{border-right:0}
+.card h3{font-family:Georgia,serif;font-size:34px;font-weight:400;margin:45px 0 18px}
+.card p{font-size:14px;line-height:1.75;color:#5f5b54}
+
+.people-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.person{cursor:pointer}
+.person-img{aspect-ratio:4/5;overflow:hidden;background:#ddd}
+.person-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:.7s}
+.person:hover img{transform:scale(1.035);filter:grayscale(.25)}
+.person h3{font-family:Georgia,serif;font-weight:400;font-size:34px;margin:18px 0 5px}
+.person p{margin:0;color:var(--muted);font-size:13px}
+
+.case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line)}
+.case{background:var(--paper);padding:45px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;transition:.3s}
+.case:hover{background:#e7e0d3}
+.case h3{font-family:Georgia,serif;font-size:42px;font-weight:400;margin:20px 0;line-height:1}
+.case p{font-size:13px;color:#5e5a53;line-height:1.7}
+.case small{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--gold)}
+
+.insight-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:30px}
+.feature-article,.article-card{border-top:1px solid var(--line);padding-top:18px}
+.feature-article img{width:100%;aspect-ratio:16/10;object-fit:cover;filter:grayscale(.35)}
+.feature-article h2{font-family:Georgia,serif;font-size:48px;line-height:1;font-weight:400}
+.article-card{padding-bottom:28px;border-bottom:1px solid var(--line)}
+.article-card h3{font-family:Georgia,serif;font-size:29px;font-weight:400;margin:12px 0}
+
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:8vw}
+.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.contact-form .full{grid-column:1/-1}
+.field{border:0;border-bottom:1px solid var(--line);background:transparent;padding:14px 0;outline:0;width:100%}
+textarea.field{min-height:110px;resize:vertical}
+.submit{background:#111;color:#fff;border:0;padding:15px 18px;text-transform:uppercase;letter-spacing:.14em;font-size:11px;cursor:pointer}
+
+.modal{position:fixed;inset:0;background:rgba(15,15,15,.76);backdrop-filter:blur(8px);z-index:120;display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:.3s}
+.modal.open{opacity:1;visibility:visible}
+.modal-card{width:min(900px,100%);max-height:88svh;overflow:auto;background:var(--paper);padding:clamp(24px,4vw,55px);position:relative;transform:translateY(25px) scale(.98);transition:.4s var(--ease)}
+.modal.open .modal-card{transform:none}
+.modal-close{position:absolute;right:18px;top:16px;border:0;background:transparent;font-size:28px;cursor:pointer}
+.modal h2{font-family:Georgia,serif;font-size:clamp(38px,5vw,70px);font-weight:400;margin:15px 0}
+.modal p{line-height:1.75;color:#59564f}
+.modal-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:35px}
+.modal-grid img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(.7)}
+
+.video-modal .modal-card{padding:0;background:#000;color:#fff;width:min(1100px,100%)}
+.video-modal video{width:100%;aspect-ratio:16/9;object-fit:cover}
+.video-close{position:absolute;z-index:2;right:14px;top:10px;width:42px;height:42px;border:1px solid rgba(255,255,255,.7);border-radius:50%;background:rgba(0,0,0,.25);color:#fff;font-size:22px}
+
+footer{background:#111;color:#fff;padding:60px var(--pad) 25px}
+.footer-grid{display:grid;grid-template-columns:1.2fr repeat(3,.6fr);gap:40px;width:min(1540px,100%);margin:auto 55px}
+.footer-brand{font-family:Georgia,serif;font-size:44px}
+.footer-col strong{font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:#b8a17d}
+.footer-col a{display:block;color:#aaa;font-size:13px;margin-top:12px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:18px;display:flex;justify-content:space-between;color:#777;font-size:10px;width:min(1540px,100%);margin:auto}
+
+.reveal{opacity:0;transform:translateY(30px);transition:.9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+.subhero{padding:170px 0 80px;background:#d9d1c3}
+.subhero h1{font-family:Georgia,serif;font-size:clamp(56px,8vw,120px);line-height:.85;letter-spacing:-.05em;font-weight:400;margin:20px 0}
+.subhero p{max-width:620px;line-height:1.75;color:#5b574f}
+
+@media(max-width:900px){
+ .navlinks{display:none}.menubtn{display:block}
+ .hero-inner{grid-template-columns:1fr;gap:35px}.hero-side{justify-self:start}
+ .intro-grid,.contact-grid{grid-template-columns:1fr;gap:35px}
+ .twocol{grid-template-columns:1fr;gap:22px}
+ .feature-split{grid-template-columns:1fr}.feature-media{min-height:62svh}
+ .cards,.people-grid{grid-template-columns:1fr}
+ .card,.card:not(:first-child){border-right:0;border-bottom:1px solid var(--line);padding:28px 0}
+ .case-grid,.insight-grid{grid-template-columns:1fr}
+ .contact-form{grid-template-columns:1fr}.contact-form .full{grid-column:auto}
+ .modal-grid{grid-template-columns:1fr}.modal-grid img{max-height:380px}
+ .footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.page-loader{display:none}.reveal{opacity:1;transform:none}}
+</style></head><body>
+<div class="page-loader" id="pageLoader"><div class="loader-box"><div class="loader-seal">L</div><div class="loader-text">Legal practice · Signature demo</div><div class="loader-line"></div></div></div>
+<div class="page-cover"></div>
+<header class="site-header ">
+ <div class="nav">
+  <a class="brand" data-transition href="index.html"><span class="monogram">L</span><span>Lex & Partners <small style="opacity:.55">Demo</small></span></a>
+  <nav class="navlinks"><a data-transition href="firm.html">The Firm</a><a data-transition href="expertise.html">Expertise</a><a data-transition href="people.html">People</a><a data-transition href="experience.html">Experience</a><a data-transition href="insights.html">Insights</a><a class="navcta" data-transition href="contact.html">Contact</a></nav>
+  <button class="menubtn" id="menuBtn">Menu</button>
+ </div>
+</header>
+<div class="menu" id="menu"><div class="menu-inner"><a data-transition href="firm.html">The Firm</a><a data-transition href="expertise.html">Expertise</a><a data-transition href="people.html">People</a><a data-transition href="experience.html">Experience</a><a data-transition href="insights.html">Insights</a><a data-transition href="contact.html">Contact</a></div></div>
+
+<main>
+<section class="hero">
+ <div class="hero-media">
+  <video autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=2200&q=85">
+   <source src="https://videos.pexels.com/video-files/8061617/8061617-hd_1920_1080_25fps.mp4" type="video/mp4">
+  </video>
+ </div>
+ <div class="hero-inner">
+  <div><div class="eyebrow">Independent legal practice · Malaysia</div><h1>Strategic counsel.<em>Measured confidence.</em></h1></div>
+  <div class="hero-side"><p>A premium, multi-page legal practice experience built around credibility, expertise and clear client journeys.</p><a class="arrow-link" data-transition href="expertise.html">Explore expertise <span class="circle">→</span></a></div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="shell intro-grid">
+  <div class="eyebrow reveal">01 · The practice</div>
+  <div><div class="copy-xl reveal">Legal advice designed for <em>important decisions.</em></div>
+  <div class="twocol reveal"><p>We combine rigorous legal thinking with commercial perspective, helping clients understand not only the law but the decisions that follow from it.</p><p>Our structure is intentionally personal. Clients work directly with the lawyers responsible for the strategy and outcome of their matter.</p></div></div>
+ </div>
+</section>
+
+<section class="feature-split">
+ <div class="feature-media"><img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1600&q=85" alt="Professional meeting"></div>
+ <div class="feature-copy reveal"><div class="eyebrow">Why this signature concept</div><h2>More than a landing page.</h2><p>This direction demonstrates how a premium law firm can use dedicated pages for practice areas, lawyers, experience and insights without losing the client's preferred minimalist feel.</p><div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:20px"><a class="navcta" data-transition href="firm.html">View the firm</a><button class="navcta" data-video-open style="background:transparent;color:white">Watch firm video</button></div></div>
+</section>
+
+<section class="section">
+ <div class="shell">
+  <div class="intro-grid" style="margin-bottom:60px"><div class="eyebrow reveal">02 · Selected expertise</div><h2 class="big-title reveal">Focused where it <em>matters.</em></h2></div>
+  <div class="practices reveal">
+   <div class="practice-row" data-modal-title="Corporate & Commercial" data-modal-body="<p>Sample popup treatment for a practice area. In the live site, this can summarise services, industries, representative matters and provide a direct link to a full expertise page.</p><p><a href='expertise.html'>View all expertise →</a></p>"><small>01</small><div class="practice-name">Corporate & Commercial</div><b>↗</b></div>
+   <div class="practice-row" data-modal-title="Dispute Resolution" data-modal-body="<p>Commercial disputes, litigation strategy and resolution-focused representation. This popup is designed to create interaction without forcing users away from the homepage immediately.</p>"><small>02</small><div class="practice-name">Dispute Resolution</div><b>↗</b></div>
+   <div class="practice-row" data-modal-title="Property & Conveyancing" data-modal-body="<p>Placeholder legal content for property transactions, development, leasing and conveyancing work.</p>"><small>03</small><div class="practice-name">Property & Conveyancing</div><b>↗</b></div>
+   <div class="practice-row" data-modal-title="Employment Advisory" data-modal-body="<p>Placeholder legal content for employment, workplace, disciplinary and industrial relations matters.</p>"><small>04</small><div class="practice-name">Employment Advisory</div><b>↗</b></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="footer-grid">
+  <div class="footer-brand">Lex & Partners</div>
+  <div class="footer-col"><strong>Navigate</strong><a data-transition href="firm.html">The Firm</a><a data-transition href="expertise.html">Expertise</a><a data-transition href="people.html">People</a></div>
+  <div class="footer-col"><strong>Explore</strong><a data-transition href="experience.html">Experience</a><a data-transition href="insights.html">Insights</a><a data-transition href="contact.html">Contact</a></div>
+  <div class="footer-col"><strong>Demo</strong><a href="#">LinkedIn</a><a href="#">Privacy</a><a href="#">Legal notice</a></div>
+ </div>
+ <div class="footer-bottom"><span>© 2026 Lex & Partners — Signature demo.</span><span>Placeholder content for presentation only.</span></div>
+</footer>
+<div class="modal" id="detailModal"><div class="modal-card"><button class="modal-close" data-close-modal>×</button><div class="eyebrow">Further information</div><h2 id="modalTitle"></h2><div id="modalBody"></div></div></div>
+<div class="modal video-modal" id="videoModal"><div class="modal-card"><button class="video-close" data-close-modal>×</button><video id="modalVideo" controls muted loop playsinline poster="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1800&q=80"><source src="https://videos.pexels.com/video-files/8061617/8061617-hd_1920_1080_25fps.mp4" type="video/mp4"></video></div></div>
+<script>
+const header=document.querySelector('.site-header');
+const menu=document.getElementById('menu');
+const menuBtn=document.getElementById('menuBtn');
+const loader=document.getElementById('pageLoader');
+window.addEventListener('load',()=>{setTimeout(()=>loader&&loader.classList.add('out'),700);setTimeout(()=>loader&&loader.remove(),1900)});
+const scrollHeader=()=>{if(header)header.classList.toggle('scrolled',scrollY>35)};
+scrollHeader();addEventListener('scroll',scrollHeader,{passive:true});
+
+if(menuBtn){
+  menuBtn.addEventListener('click',()=>{
+    menu.classList.toggle('open');
+    menuBtn.textContent=menu.classList.contains('open')?'Close':'Menu';
+    document.body.style.overflow=menu.classList.contains('open')?'hidden':'';
+  });
+}
+document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');document.body.style.overflow='';}));
+
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+document.querySelectorAll('a[data-transition]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+    e.preventDefault();
+    const href=a.getAttribute('href');
+    const c=document.querySelector('.page-cover');
+    c.classList.add('in');document.body.classList.add('is-transitioning');
+    setTimeout(()=>location.href=href,520);
+  });
+});
+
+const modal=document.getElementById('detailModal');
+const modalTitle=document.getElementById('modalTitle');
+const modalBody=document.getElementById('modalBody');
+function openModal(title,body){
+  if(!modal)return;
+  modalTitle.textContent=title;modalBody.innerHTML=body;modal.classList.add('open');document.body.style.overflow='hidden';
+}
+document.querySelectorAll('[data-modal-title]').forEach(el=>el.addEventListener('click',()=>openModal(el.dataset.modalTitle,el.dataset.modalBody||'')));
+document.querySelectorAll('[data-close-modal]').forEach(el=>el.addEventListener('click',()=>{el.closest('.modal').classList.remove('open');document.body.style.overflow=''}));
+document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m){m.classList.remove('open');document.body.style.overflow=''}}));
+
+const videoModal=document.getElementById('videoModal');
+const video=document.getElementById('modalVideo');
+document.querySelectorAll('[data-video-open]').forEach(el=>el.addEventListener('click',async()=>{videoModal.classList.add('open');document.body.style.overflow='hidden';try{await video.play()}catch(e){}}));
+if(videoModal)videoModal.querySelectorAll('[data-close-modal]').forEach(el=>el.addEventListener('click',()=>{video.pause();video.currentTime=0;}));
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open'));document.body.style.overflow='';if(video)video.pause()}});
+</script></body></html>
