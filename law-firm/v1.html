@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Law Firm Proposal 03 — Editorial Counsel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f6f0e5;--red:#7f241e;--ink:#1b1917;--tan:#d9cbb9;--line:#bcb2a4}
+*{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}
+header{padding:25px 4vw;display:flex;justify-content:space-between;align-items:center;position:absolute;width:100%;z-index:10;color:white}.logo{font-family:Italiana,serif;font-size:27px}.menu{font-size:11px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid;padding-bottom:4px}
+.hero{min-height:100svh;position:relative;color:white;display:flex;align-items:flex-end;padding:130px 4vw 55px;overflow:hidden}.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.7) contrast(1.08)}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(40,10,8,.82),rgba(40,10,8,.08) 70%),linear-gradient(90deg,rgba(40,10,8,.35),transparent)}
+.hero-content{position:relative;z-index:2;width:100%}.tag{font-size:10px;letter-spacing:.17em;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:Italiana,serif;font-weight:400;font-size:clamp(65px,10.5vw,170px);line-height:.76;letter-spacing:-.04em;margin:0;max-width:9ch}.hero-bottom{display:flex;justify-content:space-between;align-items:end;border-top:1px solid rgba(255,255,255,.4);margin-top:48px;padding-top:20px}.hero-bottom p{max-width:480px;line-height:1.65;color:#eee4dc;font-size:14px}.round{width:60px;height:60px;border:1px solid white;border-radius:50%;display:grid;place-items:center;font-size:24px}
+.section{padding:120px 4vw}.intro{display:grid;grid-template-columns:.32fr 1fr;gap:7vw}.label{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--red)}.big{font-family:Italiana,serif;font-size:clamp(48px,7vw,105px);line-height:.9;margin:0;font-weight:400}.big span{color:var(--red)}.intro-text{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:55px;border-top:1px solid var(--line);padding-top:24px}.intro-text p{font-size:14px;line-height:1.75;color:#59524b}
+.practice-wrap{background:var(--red);color:white;padding:110px 4vw}.practice-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:55px}.practice-head h2{font-family:Italiana,serif;font-size:clamp(52px,7vw,100px);font-weight:400;line-height:.88;margin:0}.practice-head p{max-width:330px;font-size:13px;line-height:1.7;color:#e0c6bf}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid rgba(255,255,255,.35)}.card{padding:35px 30px 55px 0;border-bottom:1px solid rgba(255,255,255,.35);position:relative}.card:nth-child(odd){border-right:1px solid rgba(255,255,255,.35)}.card:nth-child(even){padding-left:30px}.card small{opacity:.65}.card h3{font-family:Italiana,serif;font-size:clamp(32px,4vw,55px);font-weight:400;margin:50px 0 15px}.card p{max-width:42ch;font-size:13px;line-height:1.7;color:#e0c6bf}
+.story{display:grid;grid-template-columns:.9fr 1.1fr}.story-copy{padding:9vw 6vw;background:var(--tan);display:flex;flex-direction:column;justify-content:center}.story-copy h2{font-family:Italiana,serif;font-size:clamp(48px,5.5vw,82px);font-weight:400;line-height:.92;margin:20px 0 28px}.story-copy p{font-size:14px;line-height:1.75;color:#554c44}.story-media{min-height:780px;position:relative}.story-media video{width:100%;height:100%;object-fit:cover;filter:grayscale(.75)}.contact{padding:130px 4vw 55px}.contact h2{font-family:Italiana,serif;font-size:clamp(62px,9vw,140px);line-height:.82;font-weight:400;margin:18px 0 60px;max-width:9ch}.contact-row{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;align-items:center}.button{background:var(--red);color:white;padding:15px 20px;font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+.reveal{opacity:0;transform:translateY(30px);transition:1s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}
+@media(max-width:800px){.hero-bottom,.practice-head,.contact-row{align-items:flex-start}.hero-bottom{gap:20px}.intro{grid-template-columns:1fr;gap:30px}.intro-text{grid-template-columns:1fr}.practice-head{display:block}.practice-head p{margin-top:25px}.cards{grid-template-columns:1fr}.card:nth-child(odd){border-right:0}.card:nth-child(even){padding-left:0}.story{grid-template-columns:1fr}.story-media{min-height:65svh}.hero h1{font-size:clamp(64px,20vw,105px)}}
+</style>
+<style id="opening-effects">
+.folio-loader{position:fixed;inset:0;z-index:9999;background:#f6f0e5;color:#1b1917;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.folio-loader:before,.folio-loader:after{content:"";position:absolute;top:0;bottom:0;width:50%;background:#f6f0e5;z-index:3;transition:transform 1.05s cubic-bezier(.77,0,.18,1)}
+.folio-loader:before{left:0}.folio-loader:after{right:0}
+.folio-loader.open:before{transform:translateX(-100%)}.folio-loader.open:after{transform:translateX(100%)}
+.folio-center{position:relative;z-index:4;text-align:center;width:min(540px,78vw);transition:opacity .35s ease}
+.folio-loader.open .folio-center{opacity:0}
+.folio-number{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#7f241e;opacity:0;animation:folioFade .6s .15s forwards}
+.folio-title{font-family:Italiana,serif;font-size:clamp(48px,8vw,88px);line-height:.9;margin:20px 0 18px;overflow:hidden}
+.folio-title span{display:block;transform:translateY(105%);animation:folioRise .85s .3s cubic-bezier(.2,.8,.2,1) forwards}
+.folio-rule{height:1px;background:#bcb2a4;width:0;margin:auto;animation:folioRule .8s .6s cubic-bezier(.2,.8,.2,1) forwards}
+.folio-sub{font-size:10px;letter-spacing:.19em;text-transform:uppercase;margin-top:18px;opacity:0;animation:folioFade .7s .78s forwards}
+.hero .tag,.hero h1,.hero-bottom{opacity:0;transform:translateY(26px)}
+body.ready .hero .tag{animation:heroReveal .75s .12s forwards}
+body.ready .hero h1{animation:heroReveal 1s .24s forwards}
+body.ready .hero-bottom{animation:heroReveal .9s .48s forwards}
+.hero img{transform:scale(1.08)}
+body.ready .hero img{animation:imageEase 2s .05s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes folioFade{to{opacity:1}}
+@keyframes folioRise{to{transform:none}}
+@keyframes folioRule{to{width:160px}}
+@keyframes heroReveal{to{opacity:1;transform:none}}
+@keyframes imageEase{to{transform:scale(1)}}
+</style>
+<style id="enhance-v3">header{transition:.35s}header.scrolled{position:fixed;background:rgba(246,240,229,.94);backdrop-filter:blur(14px);color:var(--ink);border-bottom:1px solid var(--line)}.menuBtn3{display:none;background:none;border:0;color:inherit;font-size:11px;letter-spacing:.16em;text-transform:uppercase}.mobileMenu3{position:fixed;inset:0;background:var(--cream);color:var(--ink);z-index:90;display:flex;flex-direction:column;justify-content:center;padding:10vw;opacity:0;visibility:hidden;transition:.35s}.mobileMenu3.open{opacity:1;visibility:visible}.mobileMenu3 a{font-family:Italiana,serif;font-size:clamp(42px,12vw,72px);padding:12px 0;border-bottom:1px solid var(--line)}.close3{position:absolute;right:6vw;top:24px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent}.card{cursor:pointer;transition:.35s;background:transparent;color:inherit;text-align:left;width:100%}.card:hover{background:#8c2f28;padding-left:24px}.modal3{position:fixed;inset:0;z-index:120;background:rgba(28,19,17,.77);display:none;align-items:center;justify-content:center;padding:22px;backdrop-filter:blur(8px)}.modal3.open{display:flex}.modal3-card{width:min(760px,100%);max-height:88vh;overflow:auto;background:var(--cream);color:var(--ink);position:relative}.modal3-top{background:var(--red);color:#fff;padding:34px 70px 28px 30px}.modal3-top h3{font-family:Italiana,serif;font-size:clamp(38px,5vw,62px);font-weight:400;margin:8px 0 0}.modal3-body{padding:30px}.modal3-body p,.modal3-body li{font-size:14px;line-height:1.75;color:#59524b}.modal3-close{position:absolute;right:18px;top:18px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:transparent;color:#fff;z-index:2}@media(max-width:800px){.menu{display:none}.menuBtn3{display:block}.hero h1{font-size:clamp(52px,16vw,78px);line-height:.86}.big{font-size:clamp(40px,12vw,56px)}.practice-head h2{font-size:clamp(44px,13vw,60px)}.story-copy h2{font-size:clamp(40px,12vw,56px)}.contact h2{font-size:clamp(48px,14vw,70px)}.section{padding:82px 4vw}.practice-wrap{padding:82px 4vw}.contact{padding:90px 4vw 50px}}</style>
+
+<style id="mobile-menu-ux-v3">
+@media(max-width:800px){
+  header{padding:18px 20px;min-height:68px}
+  .logo{font-size:22px;max-width:70%}
+  .menuBtn3{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-width:64px;min-height:40px;border:1px solid currentColor;
+    border-radius:999px;padding:9px 14px;
+  }
+  .mobileMenu3{justify-content:flex-start;padding:96px 20px 28px}
+  .mobileMenu3 a{
+    font-family:Inter,sans-serif;
+    font-size:clamp(22px,6vw,30px);line-height:1.2;padding:17px 2px;
+    letter-spacing:-.01em;display:flex;align-items:center;justify-content:space-between;
+  }
+  .mobileMenu3 a::after{content:"↗";font-size:.72em;opacity:.45}
+  .close3{right:20px;top:18px;width:42px;height:42px;font-size:18px}
+}
+@media(max-width:520px){.mobileMenu3 a{font-size:22px}}
+</style>
+
+</head><body>
+<div class="folio-loader" id="folioLoader" aria-hidden="true">
+  <div class="folio-center">
+    <div class="folio-number">Private legal practice</div>
+    <div class="folio-title"><span>Chambers</span></div>
+    <div class="folio-rule"></div>
+    <div class="folio-sub">Clarity · Discretion · Counsel</div>
+  </div>
+</div>
+
+<header><div class="logo">Chambers / Demo</div><a class="menu" href="#contact">Enquire</a><button class="menuBtn3" id="menuBtn3">Menu</button></header>
+<div class="mobileMenu3" id="mobileMenu3"><button class="close3" id="close3">×</button><a href="#intro">Approach</a><a href="#practice3">Practice</a><a href="#contact">Contact</a></div><section class="hero"><img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=2200&q=85" alt="Law and justice"><div class="hero-content"><div class="tag">Independent counsel · Kuala Lumpur</div><h1>Law, with perspective.</h1><div class="hero-bottom"><p>Thoughtful legal representation for clients who value clarity, discretion and a considered approach to important decisions.</p><a class="round" href="#intro">↓</a></div></div></section>
+<section class="section" id="intro"><div class="intro"><div class="label reveal">01 / Our approach</div><div><h2 class="big reveal">Less noise.<br><span>More clarity.</span></h2><div class="intro-text reveal"><p>We believe strong legal advice begins with understanding. The facts, the risks, the commercial context and the outcome that truly matters.</p><p>From there, we provide focused advice designed to help clients make informed decisions with confidence.</p></div></div></div></section>
+<section class="practice-wrap" id="practice3"><div class="practice-head reveal"><h2>Areas of<br>practice.</h2><p>Placeholder practice areas for the proposal. These can be replaced with the firm's actual legal services.</p></div><div class="cards reveal"><button class="card" type="button" data-practice3="corporate"><small>01</small><h3>Corporate Advisory</h3><p>Commercial agreements, business structuring, transactions and day-to-day strategic counsel.</p></button><button class="card" type="button" data-practice3="disputes"><small>02</small><h3>Dispute Resolution</h3><p>Pragmatic representation and strategy for complex commercial and civil disputes.</p></button><button class="card" type="button" data-practice3="realestate"><small>03</small><h3>Real Estate</h3><p>Property transactions, conveyancing and related commercial documentation.</p></button><button class="card" type="button" data-practice3="private"><small>04</small><h3>Private Client</h3><p>Discreet advice for individuals, families and privately held interests.</p></button></div></section>
+<section class="story"><div class="story-copy reveal"><div class="label">02 / The practice</div><h2>Professional, without feeling distant.</h2><p>A more editorial alternative to the conventional corporate law website — warm, composed and human while retaining the authority expected of a legal practice.</p></div><div class="story-media"><video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80"><source src="https://videos.pexels.com/video-files/8061617/8061617-hd_1920_1080_25fps.mp4" type="video/mp4"></video></div></section>
+<section class="contact" id="contact"><div class="label reveal">03 / Contact</div><h2 class="reveal">Let’s discuss what comes next.</h2><div class="contact-row reveal"><span style="font-size:13px">Demo contact details · Malaysia</span><a class="button" href="mailto:hello@example.com">Contact the firm →</a></div></section>
+<script>const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("in")}),{threshold:.12});document.querySelectorAll(".reveal").forEach(x=>o.observe(x));</script>
+
+<script>
+window.addEventListener("load",()=>{
+  const l=document.getElementById("folioLoader");
+  setTimeout(()=>{
+    l.classList.add("open");
+    document.body.classList.add("ready");
+    setTimeout(()=>l.remove(),1200);
+  },1350);
+});
+</script>
+<div class="modal3" id="modal3"><div class="modal3-card"><button class="modal3-close" id="modal3Close">×</button><div class="modal3-top"><div class="tag">Practice detail</div><h3 id="modal3Title"></h3></div><div class="modal3-body"><p id="modal3Intro"></p><ul id="modal3List"></ul><a class="button" href="#contact" style="display:inline-block;margin-top:15px">Discuss this matter →</a></div></div></div>
+<script id="enhance-js-v3">addEventListener('scroll',()=>document.querySelector('header').classList.toggle('scrolled',scrollY>30),{passive:true});menuBtn3.onclick=()=>mobileMenu3.classList.add('open');close3.onclick=()=>mobileMenu3.classList.remove('open');mobileMenu3.querySelectorAll('a').forEach(a=>a.onclick=()=>mobileMenu3.classList.remove('open'));const d3={corporate:["Corporate Advisory","Commercial legal support around agreements, structuring, governance and transactions.",["Commercial agreements","Business structuring","Shareholder matters","Strategic transactions"]],disputes:["Dispute Resolution","A considered approach to commercial and civil disputes, focused on position, leverage and practical outcome.",["Early case assessment","Negotiation and settlement","Commercial disputes","Litigation strategy"]],realestate:["Real Estate","Legal support for property transactions, leasing and related documentation.",["Sale and purchase","Leases and tenancies","Property due diligence","Transaction documentation"]],private:["Private Client","Discreet legal advice for individuals, families and privately held interests.",["Private legal advisory","Sensitive negotiations","Personal arrangements","Succession-related planning"]]};document.querySelectorAll('[data-practice3]').forEach(x=>x.onclick=()=>{const d=d3[x.dataset.practice3];modal3Title.textContent=d[0];modal3Intro.textContent=d[1];modal3List.innerHTML=d[2].map(y=>`<li>${y}</li>`).join('');modal3.classList.add('open');document.body.style.overflow='hidden'});function cm3(){modal3.classList.remove('open');document.body.style.overflow=''}modal3Close.onclick=cm3;modal3.onclick=e=>{if(e.target===modal3)cm3()};document.addEventListener('keydown',e=>{if(e.key==='Escape')cm3()});</script>
+</body></html>
