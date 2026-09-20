@@ -1,0 +1,1580 @@
+
+<!DOCTYPE html>
+<html lang="en-MY">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>SÖDRA Brunch House | Organic Brunch & Specialty Coffee in Kuala Lumpur</title>
+  <meta
+    name="description"
+    content="Visit SÖDRA Brunch House in Kuala Lumpur for organic sourdough brunch, specialty coffee, fresh pastries and relaxed Scandinavian-inspired dining."
+  >
+  <meta
+    name="keywords"
+    content="SÖDRA Brunch House, organic brunch Kuala Lumpur, specialty coffee KL, sourdough cafe Kuala Lumpur, Scandinavian cafe KL, brunch cafe Malaysia"
+  >
+  <meta name="author" content="SÖDRA Brunch House">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1e2220">
+
+  <!-- Replace with the final live URL -->
+  <link rel="canonical" href="https://www.sodrabrunch.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SÖDRA Brunch House | Organic Brunch & Specialty Coffee">
+  <meta
+    property="og:description"
+    content="Organic sourdough brunch, specialty coffee and fresh pastries in a bright Scandinavian-inspired cafe."
+  >
+  <meta property="og:url" content="https://www.sodrabrunch.com/">
+  <meta
+    property="og:image"
+    content="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1400&q=85"
+  >
+  <meta property="og:locale" content="en_MY">
+  <meta property="og:site_name" content="SÖDRA Brunch House">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SÖDRA Brunch House">
+  <meta
+    name="twitter:description"
+    content="Organic brunch, fresh sourdough and specialty coffee in Kuala Lumpur."
+  >
+  <meta
+    name="twitter:image"
+    content="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1400&q=85"
+  >
+
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231e2220'/%3E%3Ctext x='50' y='65' text-anchor='middle' font-size='54' fill='%23fbfbf9' font-family='sans-serif'%3ES%3C/text%3E%3C/svg%3E"
+  >
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <!-- Local Business Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "SÖDRA Brunch House",
+    "image": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1400&q=85",
+    "description": "A Scandinavian-inspired brunch cafe serving organic sourdough, specialty coffee and fresh pastries in Kuala Lumpur.",
+    "telephone": "+60123456789",
+    "priceRange": "RM",
+    "servesCuisine": [
+      "Scandinavian",
+      "Brunch",
+      "Specialty Coffee",
+      "Pastries"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "18 Jalan Example",
+      "addressLocality": "Kuala Lumpur",
+      "addressCountry": "MY"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/",
+      "https://www.facebook.com/",
+      "https://www.tiktok.com/"
+    ],
+    "url": "https://www.sodrabrunch.com/"
+  }
+  </script>
+
+  <style>
+    :root {
+      --light-bg: #fbfbf9;
+      --scandi-beige: #e7dfd2;
+      --sage: #617067;
+      --sage-dark: #445149;
+      --charcoal: #1e2220;
+      --white: #ffffff;
+      --muted: #606761;
+      --line: #cfc5b7;
+      --yellow: #f2d879;
+      --wa-green: #25d366;
+      --shadow: 0 24px 70px rgba(30, 34, 32, 0.12);
+      --sans: "DM Sans", sans-serif;
+      --display: "Space Grotesk", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 95% 4%, rgba(242, 216, 121, 0.17), transparent 24%),
+        var(--light-bg);
+      color: var(--charcoal);
+      font-family: var(--sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    h1,
+    h2,
+    h3,
+    .logo {
+      font-family: var(--display);
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .announcement {
+      padding: 10px 16px;
+      background: var(--charcoal);
+      color: rgba(255, 255, 255, 0.78);
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .announcement strong {
+      color: var(--yellow);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 2px solid var(--charcoal);
+      background: rgba(251, 251, 249, 0.92);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-container {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.06em;
+    }
+
+    .logo span {
+      color: var(--sage);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--sage);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .social-icons a {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--charcoal);
+      border-radius: 8px;
+      background: white;
+      transition: 0.25s ease;
+    }
+
+    .social-icons a:hover {
+      background: var(--charcoal);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 2px solid var(--charcoal);
+      border-radius: 8px;
+      background: white;
+    }
+
+    .mobile-menu {
+      display: none;
+      padding: 10px 0 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .mobile-menu.open {
+      display: grid;
+      gap: 8px;
+    }
+
+    .mobile-menu a {
+      padding: 12px 2px;
+      border-bottom: 1px solid var(--line);
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 76px 0 92px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--sage-dark);
+      font-size: 0.67rem;
+      font-weight: 800;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--charcoal);
+    }
+
+    .hero-copy h1 {
+      max-width: 680px;
+      margin: 18px 0 22px;
+      font-size: clamp(3.45rem, 7vw, 5.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+    }
+
+    .hero-copy p {
+      max-width: 590px;
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.85;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .action-btn {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 24px;
+      border: 2px solid var(--charcoal);
+      font-size: 0.88rem;
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .btn-dark {
+      background: var(--charcoal);
+      color: var(--white);
+      box-shadow: 5px 5px 0 var(--scandi-beige);
+    }
+
+    .btn-dark:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0 var(--scandi-beige);
+    }
+
+    .btn-plain {
+      background: transparent;
+    }
+
+    .btn-plain:hover {
+      background: var(--scandi-beige);
+      transform: translateY(-2px);
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .hero-point {
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.75);
+      color: var(--muted);
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .hero-gallery {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .hero-gallery img {
+      height: 500px;
+      border: 2px solid var(--charcoal);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-gallery img:nth-child(2) {
+      height: 430px;
+      margin-top: 52px;
+    }
+
+    .hero-badge {
+      position: absolute;
+      left: 42%;
+      bottom: 18px;
+      z-index: 2;
+      width: 170px;
+      height: 170px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--charcoal);
+      border-radius: 50%;
+      background: var(--yellow);
+      text-align: center;
+      font-family: var(--display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.35;
+      transform: rotate(-7deg);
+      box-shadow: 5px 5px 0 var(--charcoal);
+    }
+
+    section {
+      padding: 82px 0;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 36px;
+    }
+
+    .section-heading.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin-top: 10px;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+    }
+
+    .section-heading p {
+      margin-top: 12px;
+      color: var(--muted);
+    }
+
+    .menu-section {
+      border-top: 2px solid var(--charcoal);
+      border-bottom: 2px solid var(--charcoal);
+      background: var(--scandi-beige);
+    }
+
+    .menu-slider {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(300px, 1fr);
+      gap: 20px;
+      overflow-x: auto;
+      padding: 4px 3px 18px;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: var(--charcoal) transparent;
+      overscroll-behavior-inline: contain;
+    }
+
+    .menu-slider::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .menu-slider::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .menu-slider::-webkit-scrollbar-thumb {
+      border-radius: 99px;
+      background: var(--charcoal);
+    }
+
+    .menu-card {
+      scroll-snap-align: start;
+      overflow: hidden;
+      border: 2px solid var(--charcoal);
+      border-radius: 12px;
+      background: var(--white);
+      transition: 0.28s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 7px 7px 0 var(--charcoal);
+    }
+
+    .menu-card img {
+      height: 220px;
+      border-bottom: 2px solid var(--charcoal);
+      transition: transform 0.6s ease;
+    }
+
+    .menu-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .menu-card-body {
+      padding: 22px;
+    }
+
+    .menu-card h3 {
+      font-size: 1.4rem;
+    }
+
+    .menu-card p {
+      min-height: 70px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .menu-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .menu-meta span {
+      color: var(--muted);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .menu-meta strong {
+      color: var(--sage-dark);
+      font-size: 1rem;
+    }
+
+    .slider-controls {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .slider-btn {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--charcoal);
+      border-radius: 8px;
+      background: white;
+      transition: 0.25s ease;
+    }
+
+    .slider-btn:hover {
+      background: var(--charcoal);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .promo-strip {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 22px;
+      align-items: center;
+      margin-top: 28px;
+      padding: 28px;
+      border: 2px solid var(--charcoal);
+      border-radius: 12px;
+      background:
+        linear-gradient(90deg, rgba(30,34,32,.93), rgba(59,70,64,.9)),
+        url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=85") center/cover;
+      color: white;
+      box-shadow: 6px 6px 0 var(--charcoal);
+    }
+
+    .promo-strip h3 {
+      font-size: 2rem;
+    }
+
+    .promo-strip p {
+      margin-top: 6px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .promo-price {
+      text-align: right;
+    }
+
+    .promo-price strong {
+      display: block;
+      font-size: 2.1rem;
+      font-family: var(--display);
+    }
+
+    .promo-price span {
+      color: rgba(255,255,255,.68);
+      font-size: .7rem;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .about-copy p {
+      margin-top: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .about-gallery {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-rows: 235px 235px;
+      gap: 12px;
+    }
+
+    .about-gallery img {
+      height: 100%;
+      border: 2px solid var(--charcoal);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-gallery img:first-child {
+      grid-row: 1 / 3;
+    }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .feature {
+      padding: 24px;
+      border: 2px solid var(--charcoal);
+      border-radius: 12px;
+      background: white;
+      transition: 0.25s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 6px 6px 0 var(--charcoal);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--charcoal);
+      border-radius: 8px;
+      background: var(--yellow);
+      font-size: 1.15rem;
+    }
+
+    .feature h3 {
+      margin-top: 16px;
+      font-size: 1.3rem;
+    }
+
+    .feature p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .reviews {
+      border-top: 2px solid var(--charcoal);
+      border-bottom: 2px solid var(--charcoal);
+      background: #f1eee8;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .review {
+      padding: 28px;
+      border: 2px solid var(--charcoal);
+      border-radius: 12px;
+      background: white;
+    }
+
+    .review-stars {
+      color: var(--sage);
+      letter-spacing: 0.12em;
+    }
+
+    .review blockquote {
+      margin: 18px 0;
+      font-family: var(--display);
+      font-size: 1.4rem;
+      line-height: 1.45;
+    }
+
+    .review footer {
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .booking-layout {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .visit-card {
+      padding: 36px;
+      border: 2px solid var(--charcoal);
+      border-radius: 14px;
+      background: var(--charcoal);
+      color: white;
+      box-shadow: 7px 7px 0 var(--scandi-beige);
+    }
+
+    .visit-card .eyebrow {
+      color: var(--yellow);
+    }
+
+    .visit-card .eyebrow::before {
+      background: var(--yellow);
+    }
+
+    .visit-card h2 {
+      margin-top: 14px;
+      font-size: clamp(2.4rem, 4vw, 3.5rem);
+      line-height: 1.04;
+    }
+
+    .visit-card p {
+      margin-top: 14px;
+      color: rgba(255,255,255,.68);
+    }
+
+    .visit-details {
+      display: grid;
+      gap: 12px;
+      margin-top: 26px;
+      color: rgba(255,255,255,.88);
+      font-size: 0.84rem;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 9px;
+      margin-top: 26px;
+    }
+
+    .social-row a {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 8px;
+      transition: 0.25s ease;
+    }
+
+    .social-row a:hover {
+      background: white;
+      color: var(--charcoal);
+    }
+
+    .booking-box {
+      padding: 40px;
+      border: 2px solid var(--charcoal);
+      border-radius: 14px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .booking-box h2 {
+      text-align: center;
+      font-size: 2.4rem;
+    }
+
+    .booking-box > p {
+      max-width: 560px;
+      margin: 10px auto 32px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 8px;
+    }
+
+    .form-group.full {
+      grid-column: span 2;
+    }
+
+    .form-group label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .input-style {
+      width: 100%;
+      min-height: 50px;
+      padding: 14px;
+      border: 2px solid var(--charcoal);
+      border-radius: 7px;
+      background: white;
+      color: var(--charcoal);
+      outline: none;
+    }
+
+    .input-style:focus {
+      border-color: var(--sage);
+      box-shadow: 0 0 0 3px rgba(97,112,103,.12);
+    }
+
+    .whatsapp-btn {
+      width: 100%;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+      border: 2px solid var(--charcoal);
+      border-radius: 7px;
+      background: var(--wa-green);
+      color: white;
+      font-weight: 800;
+      box-shadow: 5px 5px 0 var(--charcoal);
+      transition: 0.25s ease;
+    }
+
+    .whatsapp-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0 var(--charcoal);
+    }
+
+    footer {
+      padding: 36px 0;
+      background: var(--charcoal);
+      color: white;
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      color: rgba(255,255,255,.68);
+      font-size: 0.75rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      color: white;
+      font-weight: 700;
+    }
+
+    .floating-wa {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 70;
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--charcoal);
+      border-radius: 12px;
+      background: var(--wa-green);
+      color: white;
+      box-shadow: 5px 5px 0 var(--charcoal);
+      transition: 0.25s ease;
+    }
+
+    .floating-wa:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0 var(--charcoal);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links,
+      .social-icons {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .hero-layout,
+      .about-layout,
+      .booking-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-gallery {
+        max-width: 700px;
+      }
+
+      .feature-row {
+        grid-template-columns: 1fr;
+      }
+
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: span 1;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .hero {
+        padding-top: 48px;
+      }
+
+      .hero-copy h1 {
+        font-size: 3.3rem;
+      }
+
+      .hero-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-gallery img,
+      .hero-gallery img:nth-child(2) {
+        height: 340px;
+        margin-top: 0;
+      }
+
+      .hero-badge {
+        left: auto;
+        right: 10px;
+        bottom: 14px;
+        width: 135px;
+        height: 135px;
+        font-size: 0.75rem;
+      }
+
+      .menu-slider {
+        grid-auto-columns: minmax(275px, 84vw);
+      }
+
+      .promo-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .promo-price {
+        text-align: left;
+      }
+
+      .about-gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 240px);
+      }
+
+      .about-gallery img:first-child {
+        grid-row: auto;
+      }
+
+      .booking-box {
+        padding: 26px;
+      }
+
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* One-page package: no top navigation */
+    html { scroll-padding-top: 0; }
+
+    @media (max-width: 900px) {
+      .hero { padding: 54px 0 66px; }
+      .hero-layout { gap: 30px; }
+      .hero-copy h1 { font-size: clamp(2.55rem, 10vw, 4rem); line-height: 1.02; }
+      .hero-copy p { font-size: 0.98rem; line-height: 1.72; }
+      section { padding: 64px 0; }
+      .section-heading h2 { font-size: clamp(2rem, 8vw, 3rem); }
+      .menu-slider { grid-auto-columns: minmax(260px, 82vw); }
+      .menu-card img { height: 210px; }
+      .about-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px; }
+      .about-gallery img:first-child { grid-row: 1 / 3; }
+      .visit-card, .booking-box { padding: 30px; }
+    }
+
+    @media (max-width: 650px) {
+      .container { width: min(100% - 24px, 1200px); }
+      .hero { padding: 38px 0 52px; }
+      .hero-copy h1 { font-size: clamp(2.35rem, 12vw, 3.2rem); letter-spacing: -0.045em; }
+      .hero-copy p { font-size: 0.96rem; }
+      .button-row { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 24px; }
+      .action-btn { width: 100%; min-height: 48px; }
+      .hero-gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .hero-gallery img, .hero-gallery img:nth-child(2) { height: 260px; margin-top: 0; }
+      .hero-badge { width: 105px; height: 105px; right: 8px; bottom: 8px; font-size: 0.68rem; }
+      section { padding: 54px 0; }
+      .section-heading { margin-bottom: 28px; }
+      .section-heading h2 { font-size: clamp(1.9rem, 9vw, 2.65rem); }
+      .section-heading p { font-size: 0.92rem; }
+      .menu-slider { grid-auto-columns: 86vw; gap: 14px; }
+      .menu-card img { height: 190px; }
+      .menu-card-body { padding: 18px; }
+      .menu-card h3 { font-size: 1.2rem; }
+      .menu-card p { min-height: auto; font-size: 0.86rem; }
+      .slider-controls { justify-content: center; }
+      .promo-strip { padding: 22px; }
+      .promo-strip h3 { font-size: 1.55rem; }
+      .about-gallery { grid-template-columns: 1fr; grid-template-rows: repeat(3, 220px); }
+      .about-gallery img:first-child { grid-row: auto; }
+      .feature { padding: 20px; }
+      .review { padding: 22px; }
+      .review blockquote { font-size: 1.15rem; }
+      .visit-card, .booking-box { padding: 22px; }
+      .booking-box h2 { font-size: 1.85rem; }
+      .footer-row { gap: 14px; }
+      .floating-wa { right: 14px; bottom: 14px; width: 54px; height: 54px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-layout">
+        <article class="hero-copy reveal">
+          <span class="eyebrow">Scandinavian brunch house</span>
+          <h1>Organic sourdough, specialty coffee and brighter mornings.</h1>
+          <p>
+            SÖDRA brings Scandinavian calm together with organic-first produce, stone-baked sourdough and thoughtfully brewed specialty coffee.
+          </p>
+
+          <div class="button-row">
+            <a href="#book" class="action-btn btn-dark">Book a Table</a>
+            <a href="#menu" class="action-btn btn-plain">Browse Brunch</a>
+          </div>
+
+          <div class="hero-points">
+            <span class="hero-point">Organic ingredients</span>
+            <span class="hero-point">Fresh sourdough daily</span>
+            <span class="hero-point">Direct-trade coffee</span>
+          </div>
+        </article>
+
+        <div class="hero-gallery reveal">
+          <img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"
+            alt="Specialty coffee served at SÖDRA Brunch House"
+            width="900"
+            height="1000"
+            loading="eager"
+          >
+          <img
+            src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=85"
+            alt="Fresh sourdough bread at SÖDRA"
+            width="800"
+            height="900"
+            loading="eager"
+          >
+          <div class="hero-badge">Freshly baked<br>every morning</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow">Curated brunch menu</span>
+          <h2>Nordic-inspired plates, pastries and coffee rituals.</h2>
+          <p>
+            Swipe on mobile or use the arrows on desktop to explore more menu selections.
+          </p>
+        </div>
+
+        <div id="menuSlider" class="menu-slider" aria-label="Scrollable brunch menu">
+          <article class="menu-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85"
+              alt="Nordic green bowl"
+              loading="lazy"
+            >
+            <div class="menu-card-body">
+              <h3>Nordic Green Bowl</h3>
+              <p>Seasonal greens, avocado, soft egg, grains and herb dressing.</p>
+              <div class="menu-meta">
+                <span>Brunch</span>
+                <strong>RM28</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=900&q=85"
+              alt="Avocado sourdough toast"
+              loading="lazy"
+            >
+            <div class="menu-card-body">
+              <h3>Avocado Rye Toast</h3>
+              <p>Smashed avocado, poached egg, pickled radish and organic rye.</p>
+              <div class="menu-meta">
+                <span>Brunch</span>
+                <strong>RM26</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85"
+              alt="Bakery ritual pastries"
+              loading="lazy"
+            >
+            <div class="menu-card-body">
+              <h3>The Bakery Ritual</h3>
+              <p>Three morning pastries with berry butter and seasonal jam.</p>
+              <div class="menu-meta">
+                <span>Bakery</span>
+                <strong>RM22</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"
+              alt="Flat white coffee"
+              loading="lazy"
+            >
+            <div class="menu-card-body">
+              <h3>Single-Origin Flat White</h3>
+              <p>Double espresso with silky milk and rotating seasonal beans.</p>
+              <div class="menu-meta">
+                <span>Coffee</span>
+                <strong>RM14</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=900&q=85"
+              alt="Cardamom French toast"
+              loading="lazy"
+            >
+            <div class="menu-card-body">
+              <h3>Cardamom French Toast</h3>
+              <p>Buttery brioche, berries, cardamom cream and maple drizzle.</p>
+              <div class="menu-meta">
+                <span>Sweet Brunch</span>
+                <strong>RM24</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=85"
+              alt="Cinnamon pastry"
+              loading="lazy"
+            >
+            <div class="menu-card-body">
+              <h3>Cardamom Bun</h3>
+              <p>Soft laminated dough with cardamom sugar and toasted almond.</p>
+              <div class="menu-meta">
+                <span>Pastry</span>
+                <strong>RM12</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1497636577773-f1231844b336?auto=format&fit=crop&w=900&q=85"
+              alt="Pour over coffee"
+              loading="lazy"
+            >
+            <div class="menu-card-body">
+              <h3>Pour-Over Flight</h3>
+              <p>Two rotating single-origin profiles served side by side.</p>
+              <div class="menu-meta">
+                <span>Coffee Ritual</span>
+                <strong>RM25</strong>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="slider-controls" aria-label="Menu slider controls">
+          <button id="menuPrev" class="slider-btn" type="button" aria-label="Scroll menu left">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button id="menuNext" class="slider-btn" type="button" aria-label="Scroll menu right">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <div class="promo-strip reveal">
+          <div>
+            <span class="eyebrow" style="color:#f2d879">Weekend special</span>
+            <h3>Nordic Brunch Set</h3>
+            <p>Choose one brunch plate, one pastry and one selected coffee every Saturday and Sunday.</p>
+          </div>
+
+          <div class="promo-price">
+            <strong>RM42</strong>
+            <span>Weekend only · While stocks last</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-layout">
+        <article class="about-copy reveal">
+          <span class="eyebrow">Our story</span>
+          <h2>Simple food, careful coffee and calm daylight.</h2>
+          <p>
+            SÖDRA was created as a neighbourhood space for slow breakfasts, thoughtful coffee and honest ingredients. Our menu focuses on fresh sourdough, seasonal produce and simple combinations made well.
+          </p>
+          <div class="button-row">
+            <a href="#book" class="action-btn btn-dark">Plan Your Visit</a>
+          </div>
+        </article>
+
+        <div class="about-gallery reveal">
+          <img
+            src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=85"
+            alt="SÖDRA cafe interior"
+            loading="lazy"
+          >
+          <img
+            src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=85"
+            alt="Coffee preparation"
+            loading="lazy"
+          >
+          <img
+            src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=700&q=85"
+            alt="Coffee beans"
+            loading="lazy"
+          >
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="feature-row">
+          <article class="feature reveal">
+            <div class="feature-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+            <h3>Organic-First</h3>
+            <p>Seasonal ingredients and thoughtful sourcing remain central to the menu.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature-icon"><i class="fa-solid fa-bread-slice"></i></div>
+            <h3>Baked Fresh</h3>
+            <p>Sourdough loaves and morning pastries are prepared fresh every day.</p>
+          </article>
+
+          <article class="feature reveal">
+            <div class="feature-icon"><i class="fa-solid fa-mug-hot"></i></div>
+            <h3>Specialty Coffee</h3>
+            <p>Carefully selected beans and rotating profiles for every coffee ritual.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Guest reviews</span>
+          <h2>What the neighbourhood remembers.</h2>
+          <p>Replace these sample reviews with verified customer feedback before publishing.</p>
+        </div>
+
+        <div class="review-grid">
+          <article class="review reveal">
+            <div class="review-stars">★★★★★</div>
+            <blockquote>
+              “The space is bright, the coffee is excellent and the sourdough tastes genuinely fresh.”
+            </blockquote>
+            <footer>Amelia K. · Google Review</footer>
+          </article>
+
+          <article class="review reveal">
+            <div class="review-stars">★★★★★</div>
+            <blockquote>
+              “A beautiful brunch place with thoughtful food and a very calm atmosphere.”
+            </blockquote>
+            <footer>Marcus L. · Google Review</footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="book">
+      <div class="container booking-layout">
+        <aside class="visit-card reveal">
+          <span class="eyebrow">Visit SÖDRA</span>
+          <h2>Reserve a slower morning.</h2>
+          <p>
+            Walk-ins are welcome. Contact us through WhatsApp for table bookings, group visits or pre-orders.
+          </p>
+
+          <div class="visit-details">
+            <span>18 Jalan Example, Kuala Lumpur</span>
+            <span>Daily · 8:00 AM–6:00 PM</span>
+            <span>+60 12-345 6789</span>
+            <span>hello@sodrabrunch.com</span>
+          </div>
+
+          <div class="button-row">
+            <a
+              href="https://maps.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="action-btn btn-plain"
+              style="color:white;border-color:white"
+            >
+              Open Map
+            </a>
+          </div>
+
+          <div class="social-row">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
+        </aside>
+
+        <div class="booking-box reveal">
+          <h2>Join the Brunch Table</h2>
+          <p>
+            Complete the form and continue directly to WhatsApp to request your reservation.
+          </p>
+
+          <form id="bookingForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="guestName">Your Name</label>
+                <input id="guestName" class="input-style" type="text" placeholder="Your name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="guestPhone">WhatsApp Number</label>
+                <input id="guestPhone" class="input-style" type="tel" placeholder="+60" required>
+              </div>
+
+              <div class="form-group">
+                <label for="guestCount">Number of Guests</label>
+                <select id="guestCount" class="input-style" required>
+                  <option value="1 Guest">1 Guest</option>
+                  <option value="2 Guests">2 Guests</option>
+                  <option value="3 Guests">3 Guests</option>
+                  <option value="4 Guests">4 Guests</option>
+                  <option value="5+ Guests">5+ Guests</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="bookingType">Booking Type</label>
+                <select id="bookingType" class="input-style" required>
+                  <option value="Table Reservation">Table Reservation</option>
+                  <option value="Nordic Brunch Set">Nordic Brunch Set</option>
+                  <option value="Pastry Pre-Order">Pastry Pre-Order</option>
+                  <option value="Group Visit">Group Visit</option>
+                </select>
+              </div>
+
+              <div class="form-group full">
+                <label for="arrivalTime">Date & Arrival Time</label>
+                <input id="arrivalTime" class="input-style" type="datetime-local" required>
+              </div>
+            </div>
+
+            <button class="whatsapp-btn" type="submit">
+              <i class="fa-brands fa-whatsapp"></i>
+              Continue Reservation on WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© 2026 SÖDRA Brunch House. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <a
+    class="floating-wa"
+    href="https://wa.me/60123456789"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with SÖDRA on WhatsApp"
+  >
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    const menuSlider = document.getElementById("menuSlider");
+    const menuPrev = document.getElementById("menuPrev");
+    const menuNext = document.getElementById("menuNext");
+
+    function getScrollAmount() {
+      const firstCard = menuSlider.querySelector(".menu-card");
+      if (!firstCard) return 320;
+
+      const styles = window.getComputedStyle(menuSlider);
+      const gap = parseFloat(styles.columnGap || styles.gap || 20);
+
+      return firstCard.getBoundingClientRect().width + gap;
+    }
+
+    menuPrev.addEventListener("click", () => {
+      menuSlider.scrollBy({
+        left: -getScrollAmount(),
+        behavior: "smooth"
+      });
+    });
+
+    menuNext.addEventListener("click", () => {
+      menuSlider.scrollBy({
+        left: getScrollAmount(),
+        behavior: "smooth"
+      });
+    });
+
+    document.getElementById("bookingForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const whatsappNumber = "60123456789";
+      const guestName = document.getElementById("guestName").value.trim();
+      const guestPhone = document.getElementById("guestPhone").value.trim();
+      const guestCount = document.getElementById("guestCount").value;
+      const bookingType = document.getElementById("bookingType").value;
+      const arrivalTime = document.getElementById("arrivalTime").value;
+
+      const formattedTime = new Date(arrivalTime).toLocaleString("en-MY", {
+        dateStyle: "medium",
+        timeStyle: "short"
+      });
+
+      const message =
+        "Hello SÖDRA, I would like to request a reservation.%0A%0A" +
+        "Name: " + encodeURIComponent(guestName) + "%0A" +
+        "Customer WhatsApp: " + encodeURIComponent(guestPhone) + "%0A" +
+        "Guests: " + encodeURIComponent(guestCount) + "%0A" +
+        "Booking type: " + encodeURIComponent(bookingType) + "%0A" +
+        "Arrival: " + encodeURIComponent(formattedTime);
+
+      window.open(
+        "https://wa.me/" + whatsappNumber + "?text=" + message,
+        "_blank",
+        "noopener"
+      );
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.14 }
+      );
+
+      revealElements.forEach(element => observer.observe(element));
+    } else {
+      revealElements.forEach(element => element.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
