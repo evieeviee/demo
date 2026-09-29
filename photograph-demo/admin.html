@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090909">
+<title>Vermillion CMS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+:root{--sidebar:#090909;--bg:#f5f4f1;--card:#fff;--text:#171715;--muted:#76756f;--line:#e5e3dc;--gold:#b78d43;--gold2:#d8b765;--green:#207650;--red:#a84444;--amber:#95671f}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text)}button,input,textarea,select{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+.login-screen{min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;background:#090909}.login-visual{position:relative;background:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,.15)),url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1600&q=90") center/cover}.login-copy{position:absolute;left:48px;right:48px;bottom:48px;color:#fff}.login-copy h2{font-family:"Italiana",serif;font-size:58px;font-weight:400;line-height:.95}.login-copy p{max-width:470px;color:#d3cfc5;margin-top:18px;line-height:1.7}.login-panel{display:flex;align-items:center;justify-content:center;padding:30px;background:#0b0b0b;color:#fff}.login-box{width:min(410px,100%)}.login-logo{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--gold);color:var(--gold2);font-family:"Italiana",serif;font-size:36px;margin-bottom:32px}.login-box h1{font-family:"Italiana",serif;font-size:44px;font-weight:400}.login-sub{color:#898983;margin:10px 0 30px;font-size:13px}.dark-field{margin-bottom:16px}.dark-field label{display:block;color:#aaa79f;font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}.dark-field input{width:100%;height:52px;border:1px solid #292929;background:#131313;color:#fff;border-radius:7px;padding:0 14px;outline:none}.login-button{width:100%;height:54px;border:0;border-radius:7px;background:#d3ad61;color:#111;font-weight:700}.login-message{color:#df7777;font-size:12px;margin-top:13px;min-height:18px}
+.app{min-height:100vh;display:grid;grid-template-columns:250px 1fr}.sidebar{position:fixed;left:0;top:0;width:250px;height:100vh;background:var(--sidebar);color:#fff;padding:24px 16px;z-index:100;display:flex;flex-direction:column}.sidebar-brand{padding:8px 10px 26px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:18px}.brand-row{display:flex;align-items:center;gap:11px}.side-mark{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(214,174,92,.6);font-family:"Italiana",serif;color:#dbb566;font-size:23px}.sidebar-brand strong{font-family:"Italiana",serif;font-size:18px;font-weight:400;letter-spacing:.08em}.sidebar-brand small{display:block;color:#65655f;font-size:8px;text-transform:uppercase;letter-spacing:.14em;margin:7px 0 0 49px}.side-label{padding:8px 13px;color:#575752;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.16em}.side-link{width:100%;min-height:45px;padding:0 13px;display:flex;align-items:center;gap:12px;color:#aaa79f;border-radius:7px;background:none;border:0;text-align:left;margin-bottom:3px;font-size:12px}.side-link:hover,.side-link.active{background:#171717;color:#fff}.side-link.active{box-shadow:inset 2px 0 0 var(--gold)}.side-icon{width:18px;text-align:center;color:#76736c}.sidebar-bottom{margin-top:auto;border-top:1px solid rgba(255,255,255,.07);padding-top:14px}.main{grid-column:2;min-width:0}.topbar{height:74px;position:sticky;top:0;z-index:60;background:rgba(245,244,241,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 34px}.mobile-menu{display:none;border:0;background:none;width:40px;height:40px}.topbar-left h1{font-size:15px}.topbar-left p{font-size:10px;color:var(--muted);margin-top:3px}.topbar-user{display:flex;align-items:center;gap:10px}.user-avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#151515;color:#ddb769;font-size:11px;font-weight:700}.user-name{font-size:11px}.user-name small{display:block;color:#898982;margin-top:2px}.content{padding:34px;max-width:1500px;margin:auto}.view{display:none}.view.active{display:block}.page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px}.page-head h2{font-family:"Italiana",serif;font-size:40px;font-weight:400}.page-head p{font-size:12px;color:var(--muted);margin-top:5px}.primary-btn{min-height:46px;padding:0 18px;border:0;border-radius:7px;background:#161616;color:#fff;font-weight:600;font-size:11px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}.stat{background:#fff;border:1px solid var(--line);border-radius:9px;padding:20px}.stat-top{display:flex;justify-content:space-between;align-items:center;color:#888880;font-size:10px;text-transform:uppercase;letter-spacing:.08em}.stat-icon{width:28px;height:28px;border-radius:6px;background:#f2f0e9;display:grid;place-items:center}.stat-value{font-family:"Italiana",serif;font-size:38px;margin-top:18px}.stat-small{font-size:9px;color:#999991;margin-top:4px}.dashboard-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:18px}.panel{background:#fff;border:1px solid var(--line);border-radius:9px;overflow:hidden}.panel-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:15px}.panel-head h3{font-size:12px}.panel-head span{display:block;color:#92928b;font-size:9px;margin-top:3px}.mini-list{padding:8px 0}.mini-item{display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;padding:10px 18px;border-bottom:1px solid var(--line)}.mini-item:last-child{border-bottom:0}.mini-item img{width:58px;height:58px;object-fit:cover;border-radius:5px}.mini-title{font-size:11px;font-weight:700}.mini-meta{font-size:9px;color:#8f8d86;margin-top:4px}.badge{display:inline-flex;align-items:center;gap:5px;padding:6px 8px;border-radius:999px;font-size:8px;font-weight:700}.badge.live{background:#e6f5ed;color:#1b6f48}.badge.hidden-status{background:#faf0d9;color:#8a601e}.badge.past{background:#efefec;color:#66635e}.badge:before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}.tip-card{padding:22px}.tip-card h3{font-family:"Italiana",serif;font-size:28px;font-weight:400}.tip-card p{font-size:11px;color:#797770;line-height:1.7;margin-top:10px}.tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}.tab-btn{border:1px solid var(--line);background:#fff;padding:10px 14px;border-radius:999px;font-size:10px;color:#696760}.tab-btn.active{background:#161616;color:#fff;border-color:#161616}.experience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.experience-card{background:#fff;border:1px solid var(--line);border-radius:9px;overflow:hidden}.experience-card img{width:100%;aspect-ratio:4/3;object-fit:cover}.experience-body{padding:16px}.experience-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.experience-body h3{font-size:13px}.experience-body p{font-size:9px;color:#8c8a83;margin-top:5px;line-height:1.45}.experience-meta{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px;padding-top:12px;border-top:1px solid var(--line)}.experience-meta small{font-size:8px;color:#99978f;text-transform:uppercase;letter-spacing:.08em}.experience-meta strong{display:block;font-size:9px;margin-top:3px}.card-actions{display:flex;gap:7px;margin-top:14px;flex-wrap:wrap}.action-btn{flex:1;height:36px;border:1px solid var(--line);background:#fff;border-radius:6px;font-size:9px;min-width:78px}.action-btn.primary{background:#161616;color:#fff;border-color:#161616}.action-btn.danger{border-color:#ead0d0;background:#fff8f8;color:#a33b3b}.action-btn.danger:hover{background:#a33b3b;color:#fff;border-color:#a33b3b}.empty{padding:60px 20px;text-align:center;color:#8f8d86}.empty h3{font-size:13px;color:#222}.empty p{font-size:10px;margin:7px auto 15px;max-width:330px}.editor-overlay{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:.25s}.editor-overlay.active{opacity:1;pointer-events:auto}.editor{position:absolute;right:0;top:0;height:100%;width:min(580px,100%);background:#fff;display:flex;flex-direction:column;transform:translateX(100%);transition:.35s cubic-bezier(.22,.61,.36,1)}.editor-overlay.active .editor{transform:none}.editor-head{height:72px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.editor-head h3{font-family:"Italiana",serif;font-size:27px;font-weight:400}.close-editor{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:#fff}.editor-body{flex:1;overflow:auto;padding:22px}.form-section{margin-bottom:27px}.form-section-title{font-size:9px;font-weight:700;color:#96968f;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}.field{margin-bottom:15px}.field label{display:block;font-size:9px;font-weight:600;margin-bottom:7px;color:#484844}.field input,.field textarea,.field select{width:100%;border:1px solid #deded9;border-radius:6px;background:#fff;outline:none}.field input,.field select{height:44px;padding:0 12px}.field textarea{min-height:120px;padding:12px;resize:vertical;line-height:1.6}.field-help{font-size:8px;color:#9b9991;line-height:1.5;margin-top:6px}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.upload-box{border:1px dashed #c9c9c3;min-height:220px;border-radius:7px;position:relative;overflow:hidden;background:#fafaf8;display:flex;align-items:center;justify-content:center}.upload-empty{text-align:center;padding:25px;pointer-events:none}.upload-icon{width:48px;height:48px;background:#edede8;border-radius:50%;display:grid;place-items:center;margin:0 auto 12px}.upload-empty strong{display:block;font-size:11px}.upload-empty small{display:block;color:#989891;font-size:9px;margin-top:6px;line-height:1.5}.upload-input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}.upload-preview{width:100%;height:310px;object-fit:cover;display:none}.upload-box.has-image .upload-preview{display:block}.upload-box.has-image .upload-empty{display:none}.change-image{position:absolute;bottom:12px;right:12px;z-index:3;padding:9px 12px;background:rgba(0,0,0,.75);color:#fff;border-radius:5px;font-size:9px;pointer-events:none}.visibility{display:flex;align-items:center;justify-content:space-between;padding:13px;border:1px solid var(--line);border-radius:6px}.visibility strong{display:block;font-size:10px}.visibility small{display:block;color:#999991;font-size:8px;margin-top:4px}.switch{width:43px;height:24px;border-radius:30px;background:#ccc;padding:3px;transition:.2s}.switch-dot{width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s}.switch.active{background:#1e7b50}.switch.active .switch-dot{transform:translateX(19px)}.editor-footer{padding:15px 22px;border-top:1px solid var(--line);display:flex;gap:10px;background:#fff}.delete-btn{height:43px;padding:0 15px;border:1px solid #eed3d3;color:#a13737;background:#fffafa;border-radius:5px;font-size:10px}.save-btn{height:43px;padding:0 24px;border:0;border-radius:5px;background:#151515;color:#fff;font-size:10px;font-weight:700;margin-left:auto}.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,30px);z-index:1000;background:#111;color:#fff;padding:12px 17px;border-radius:6px;font-size:10px;opacity:0;pointer-events:none;transition:.3s}.toast.show{opacity:1;transform:translate(-50%,0)}.sidebar-overlay{display:none;position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.45)}
+@media(max-width:1080px){.stats{grid-template-columns:1fr 1fr}.experience-grid{grid-template-columns:1fr 1fr}.dashboard-grid{grid-template-columns:1fr}}
+@media(max-width:800px){.login-screen{grid-template-columns:1fr}.login-visual{display:none}.login-panel{min-height:100svh}.app{display:block}.sidebar{transform:translateX(-100%);transition:.3s}.sidebar.mobile-open{transform:none}.sidebar-overlay.active{display:block}.main{width:100%}.mobile-menu{display:block}.topbar{height:66px;padding:0 15px}.topbar-left{display:flex;align-items:center;gap:8px}.topbar-left p,.user-name{display:none}.content{padding:20px 14px}.page-head{align-items:flex-start;flex-direction:column}.page-head h2{font-size:34px}.primary-btn{width:100%}.experience-grid{grid-template-columns:1fr}.field-grid{grid-template-columns:1fr}.editor{width:100%}}
+@media(max-width:520px){.stats{grid-template-columns:1fr 1fr;gap:9px}.stat{padding:15px}.stat-value{font-size:31px}.experience-meta{grid-template-columns:1fr}.editor-body{padding:16px}.editor-footer{padding:12px 16px}.upload-preview{height:250px}}
+</style>
+</head>
+<body>
+<section class="login-screen" id="loginScreen">
+  <div class="login-visual"><div class="login-copy"><h2>Your stories.<br>Your experiences.</h2><p>Manage upcoming photography experiences, keep only the latest three past experiences, and publish updates from desktop or mobile.</p></div></div>
+  <div class="login-panel"><form class="login-box" id="loginForm"><div class="login-logo">V</div><h1>Welcome back.</h1><div class="login-sub">Sign in to manage Vermillion experiences.</div>
+    <div class="dark-field"><label>Email Address</label><input type="email" id="loginEmail" autocomplete="email" required></div>
+    <div class="dark-field"><label>Password</label><input type="password" id="loginPassword" autocomplete="current-password" required></div>
+    <button class="login-button" type="submit" id="loginButton">Sign In →</button><div class="login-message" id="loginMessage"></div>
+  </form></div>
+</section>
+
+<div class="app hidden" id="cmsApp">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand"><div class="brand-row"><div class="side-mark">V</div><strong>VERMILLION</strong></div><small>Content Manager</small></div>
+    <div class="side-label">Workspace</div>
+    <button class="side-link active" data-view="dashboard" onclick="showView('dashboard',this)"><span class="side-icon">◫</span>Dashboard</button>
+    <button class="side-link" data-view="experiences" onclick="showView('experiences',this)"><span class="side-icon">◇</span>Experiences</button>
+    <button class="side-link" onclick="newExperience()"><span class="side-icon">＋</span>New Experience</button>
+    <div class="side-label" style="margin-top:15px">Website</div>
+    <a class="side-link" href="./index.html" target="_blank" style="text-decoration:none"><span class="side-icon">↗</span>View Live Website</a>
+    <div class="sidebar-bottom"><button class="side-link" onclick="logout()"><span class="side-icon">⇥</span>Sign Out</button></div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <main class="main">
+    <header class="topbar"><div class="topbar-left"><button class="mobile-menu" id="mobileMenu">☰</button><div><h1>Vermillion CMS</h1><p>Content management</p></div></div><div class="topbar-user"><div class="user-avatar">V</div><div class="user-name">Administrator<small id="userEmail">—</small></div></div></header>
+    <div class="content">
+      <section class="view active" id="dashboardView">
+        <div class="page-head"><div><h2>Good day.</h2><p>Manage what's live now and what becomes part of the past portfolio.</p></div><button class="primary-btn" onclick="newExperience()">＋ Add Experience</button></div>
+        <div class="stats">
+          <div class="stat"><div class="stat-top">Total Experiences<span class="stat-icon">◇</span></div><div class="stat-value" id="statTotal">0</div><div class="stat-small">Stored right now</div></div>
+          <div class="stat"><div class="stat-top">Live<span class="stat-icon">●</span></div><div class="stat-value" id="statLive">0</div><div class="stat-small">Visible on website</div></div>
+          <div class="stat"><div class="stat-top">Upcoming<span class="stat-icon">◷</span></div><div class="stat-value" id="statUpcoming">0</div><div class="stat-small">Future shoot dates</div></div>
+          <div class="stat"><div class="stat-top">Past Kept<span class="stat-icon">↺</span></div><div class="stat-value" id="statPast">0</div><div class="stat-small">Maximum 3 retained</div></div>
+        </div>
+        <div class="dashboard-grid">
+          <div class="panel"><div class="panel-head"><div><h3>Upcoming Experiences</h3><span>Next scheduled shoots</span></div><button class="action-btn" style="flex:none;padding:0 12px" onclick="showView('experiences');setExperienceFilter('upcoming')">Manage all</button></div><div class="mini-list" id="dashboardUpcoming"></div></div>
+        </div>
+      </section>
+
+      <section class="view" id="experiencesView">
+        <div class="page-head"><div><h2>Experiences</h2><p>Upcoming events, latest past work, and hidden drafts in one place.</p></div><button class="primary-btn" onclick="newExperience()">＋ Add Experience</button></div>
+        <div class="tabs"><button class="tab-btn active" data-filter="upcoming" onclick="setExperienceFilter('upcoming',this)">Upcoming</button><button class="tab-btn" data-filter="past" onclick="setExperienceFilter('past',this)">Past (Latest 3)</button><button class="tab-btn" data-filter="hidden" onclick="setExperienceFilter('hidden',this)">Hidden</button><button class="tab-btn" data-filter="all" onclick="setExperienceFilter('all',this)">All</button></div>
+        <div class="experience-grid" id="experienceGrid"></div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<div class="editor-overlay" id="editorOverlay"><div class="editor"><div class="editor-head"><h3 id="editorTitle">New Experience</h3><button class="close-editor" onclick="closeEditor()">✕</button></div>
+  <div class="editor-body">
+    <div class="form-section"><div class="form-section-title">Event Poster / Cover</div><div class="upload-box" id="uploadBox"><div class="upload-empty"><div class="upload-icon">↑</div><strong>Upload event image</strong><small>Mobile or desktop. Large photos are automatically resized and compressed before upload.</small></div><img class="upload-preview" id="imagePreview" alt="Preview"><input class="upload-input" id="imageInput" type="file" accept="image/jpeg,image/png,image/webp"><div class="change-image hidden" id="changeImageText">Change Image</div></div></div>
+    <div class="form-section"><div class="form-section-title">Experience Details</div>
+      <div class="field"><label>Experience Name *</label><input id="shootTitle" type="text" placeholder="e.g. Ancient Rome"></div>
+
+      <div class="field-grid">
+        <div class="field">
+          <label>Date *</label>
+          <input id="shootDate" type="date">
+        </div>
+        <div class="field">
+          <label>Shoot Time</label>
+          <input id="shootTime" type="text" placeholder="e.g. 5:00 PM – 7:00 PM">
+        </div>
+      </div>
+
+      <div class="field-grid">
+        <div class="field">
+          <label>Duration</label>
+          <input id="shootDuration" type="text" placeholder="e.g. 2 Hours">
+        </div>
+        <div class="field">
+          <label>Capacity / Photographers</label>
+          <input id="shootCapacity" type="text" placeholder="e.g. 4–5 photographers">
+        </div>
+      </div>
+
+      <div class="field"><label>Location</label><input id="shootLocation" type="text" placeholder="e.g. Zhongshan Building, KL"></div>
+
+      <div class="field-grid">
+        <div class="field">
+          <label>Availability</label>
+          <select id="shootAvailability">
+            <option>Open</option>
+            <option>Limited Spaces</option>
+            <option>Invitation Only</option>
+            <option>Coming Soon</option>
+            <option>Fully Booked</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Theme / Style</label>
+          <input id="shootTheme" type="text" placeholder="e.g. Editorial / Ancient Rome">
+        </div>
+      </div>
+
+      <div class="field-grid">
+        <div class="field">
+          <label>Participation Fee</label>
+          <input id="shootPrice" type="text" placeholder="e.g. RM120 / photographer">
+        </div>
+        <div class="field">
+          <label>Short Enquiry Note</label>
+          <input id="shootEnquiryNote" type="text" placeholder="e.g. Suitable for portrait photographers">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Description</label>
+        <textarea id="shootDescription" placeholder="Tell photographers what this experience is about..."></textarea>
+      </div>
+
+      <div class="field">
+        <label>WhatsApp Enquiry Link</label>
+        <input id="shootWhatsApp" type="url" placeholder="https://wa.me/...">
+        <div class="field-help">The frontend can keep using this number while generating an event-specific WhatsApp message automatically.</div>
+      </div>
+
+      <div class="field-help" style="margin-top:-4px">
+        Upcoming events are now automatically sorted by event date, so there is no Display Order field to manage.
+      </div>
+    </div>
+    <div class="form-section"><div class="form-section-title">Publishing</div><div class="visibility"><div><strong>Show on website</strong><small>Turn this off to keep it hidden.</small></div><div class="switch active" id="visibilitySwitch"><div class="switch-dot"></div></div></div></div>
+  </div>
+  <div class="editor-footer"><button class="delete-btn hidden" id="deleteButton" onclick="deleteCurrent()">Delete</button><button class="save-btn" id="saveButton" onclick="saveExperience()">Save Experience</button></div>
+</div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const SUPABASE_URL="https://vmlsyvsexnjwvutslaeg.supabase.co";
+const SUPABASE_ANON_KEY="sb_publishable_RdpgmL_GjE-UUSfR5FWXGg_9hkHGi0t";
+const db=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+let shoots=[],currentEditId=null,currentImageUrl="",selectedFile=null,isVisible=true,currentFilter="upcoming";
+const MAX_PAST=3,MAX_IMAGE_WIDTH=1800,JPEG_QUALITY=.78;
+
+async function initialize(){
+  const {data:{session}}=await db.auth.getSession();
+  if(session){showApp(session.user);await loadShoots(true)}else showLogin();
+}
+db.auth.onAuthStateChange((event,session)=>{if(session)showApp(session.user);else showLogin()});
+document.getElementById("loginForm").addEventListener("submit",async e=>{
+  e.preventDefault();const btn=document.getElementById("loginButton"),msg=document.getElementById("loginMessage");btn.disabled=true;btn.textContent="Signing in...";msg.textContent="";
+  const {data,error}=await db.auth.signInWithPassword({email:document.getElementById("loginEmail").value.trim(),password:document.getElementById("loginPassword").value});
+  btn.disabled=false;btn.textContent="Sign In →";if(error){msg.textContent=error.message;return}showApp(data.user);await loadShoots(true);
+});
+async function logout(){await db.auth.signOut();location.reload()}
+function showApp(user){document.getElementById("loginScreen").classList.add("hidden");document.getElementById("cmsApp").classList.remove("hidden");document.getElementById("userEmail").textContent=user?.email||"Administrator"}
+function showLogin(){document.getElementById("cmsApp").classList.add("hidden");document.getElementById("loginScreen").classList.remove("hidden")}
+
+async function loadShoots(runCleanup=false){
+  const {data,error}=await db.from("shoots").select("*").order("event_date",{ascending:true});
+  if(error){toast("Unable to load experiences.");console.error(error);return}
+  shoots=data||[];
+  if(runCleanup){const changed=await cleanupOldPast();if(changed)return loadShoots(false)}
+  renderAll();
+}
+function renderAll(){updateStats();renderDashboard();renderExperienceGrid()}
+function updateStats(){
+  const today=startOfToday(),live=shoots.filter(x=>x.is_active).length,up=shoots.filter(x=>toDate(x.event_date)>=today).length,past=shoots.filter(x=>toDate(x.event_date)<today).length;
+  document.getElementById("statTotal").textContent=shoots.length;document.getElementById("statLive").textContent=live;document.getElementById("statUpcoming").textContent=up;document.getElementById("statPast").textContent=Math.min(past,MAX_PAST);
+}
+function renderDashboard(){
+  const box=document.getElementById("dashboardUpcoming"),items=shoots.filter(x=>toDate(x.event_date)>=startOfToday()).sort((a,b)=>toDate(a.event_date)-toDate(b.event_date)).slice(0,5);
+  if(!items.length){box.innerHTML='<div class="empty"><h3>No upcoming experiences</h3><p>Add the next shoot when it is ready.</p></div>';return}
+  box.innerHTML=items.map(s=>`<div class="mini-item"><img src="${safe(s.image_url||"")}" alt=""><div><div class="mini-title">${safe(s.title)}</div><div class="mini-meta">${formatDate(s.event_date)} · ${safe(s.location||"")}</div></div><span class="badge ${s.is_active?"live":"hidden-status"}">${s.is_active?"Live":"Hidden"}</span></div>`).join("");
+}
+function getFilteredShoots(){
+  const today=startOfToday();
+  if(currentFilter==="upcoming")return shoots.filter(x=>toDate(x.event_date)>=today).sort((a,b)=>toDate(a.event_date)-toDate(b.event_date));
+  if(currentFilter==="past")return shoots.filter(x=>toDate(x.event_date)<today).sort((a,b)=>toDate(b.event_date)-toDate(a.event_date)).slice(0,3);
+  if(currentFilter==="hidden")return shoots.filter(x=>!x.is_active).sort((a,b)=>toDate(b.event_date)-toDate(a.event_date));
+  return [...shoots].sort((a,b)=>toDate(b.event_date)-toDate(a.event_date));
+}
+function renderExperienceGrid(){
+  const grid=document.getElementById("experienceGrid"),items=getFilteredShoots();grid.innerHTML="";
+  if(!items.length){grid.innerHTML='<div class="empty" style="grid-column:1/-1"><h3>No experiences in this view</h3><p>Choose another tab or add a new experience.</p></div>';return}
+  grid.innerHTML=items.map(s=>{
+    const past=toDate(s.event_date)<startOfToday();const badgeClass=!s.is_active?"hidden-status":past?"past":"live";const badgeText=!s.is_active?"Hidden":past?"Past":"Live";
+    return `<article class="experience-card"><img src="${safe(s.image_url||"")}" alt=""><div class="experience-body"><div class="experience-top"><div><h3>${safe(s.title)}</h3><p>${safe(s.description||"No description")}</p></div><span class="badge ${badgeClass}">${badgeText}</span></div><div class="experience-meta"><div><small>Date</small><strong>${formatDate(s.event_date)}</strong></div><div><small>Location</small><strong>${safe(s.location||"—")}</strong></div><div><small>Time</small><strong>${safe(s.shoot_time||"—")}</strong></div><div><small>Availability</small><strong>${safe(s.availability||"—")}</strong></div></div><div class="card-actions"><button class="action-btn primary" onclick="editExperience('${s.id}')">Edit</button><button class="action-btn" onclick="togglePublish('${s.id}')">${s.is_active?"Hide":"Publish"}</button><button class="action-btn danger" onclick="deleteExperienceFromCard('${s.id}')">Delete</button></div></div></article>`;
+  }).join("");
+}
+function showView(name,button){
+  document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));document.getElementById(name+"View").classList.add("active");
+  document.querySelectorAll(".side-link[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===name));
+  if(button&&button.dataset.view)button.classList.add("active");closeMobileSidebar();
+}
+function setExperienceFilter(filter,button){
+  currentFilter=filter;document.querySelectorAll(".tab-btn").forEach(b=>b.classList.toggle("active",b.dataset.filter===filter));renderExperienceGrid();showView("experiences");
+}
+
+function newExperience(){
+  currentEditId=null;currentImageUrl="";selectedFile=null;isVisible=true;
+  document.getElementById("editorTitle").textContent="New Experience";
+  ["shootTitle","shootDate","shootTime","shootLocation","shootCapacity","shootTheme","shootPrice","shootEnquiryNote","shootDescription","shootWhatsApp"].forEach(id=>document.getElementById(id).value="");
+  document.getElementById("shootDuration").value="2 Hours";
+  document.getElementById("shootAvailability").value="Open";
+  document.getElementById("imageInput").value="";
+  resetPreview();document.getElementById("deleteButton").classList.add("hidden");setVisibility(true);openEditor();
+}
+function editExperience(id){
+  const s=shoots.find(x=>String(x.id)===String(id));if(!s)return;currentEditId=s.id;currentImageUrl=s.image_url||"";selectedFile=null;
+  document.getElementById("editorTitle").textContent="Edit Experience";
+  document.getElementById("shootTitle").value=s.title||"";
+  document.getElementById("shootDate").value=s.event_date||"";
+  document.getElementById("shootTime").value=s.shoot_time||"";
+  document.getElementById("shootDuration").value=s.duration||"";
+  document.getElementById("shootCapacity").value=s.capacity||"";
+  document.getElementById("shootLocation").value=s.location||"";
+  document.getElementById("shootAvailability").value=s.availability||"Open";
+  document.getElementById("shootTheme").value=s.theme||"";
+  document.getElementById("shootPrice").value=s.participation_fee||"";
+  document.getElementById("shootEnquiryNote").value=s.enquiry_note||"";
+  document.getElementById("shootDescription").value=s.description||"";
+  document.getElementById("shootWhatsApp").value=s.whatsapp_url||"";
+  currentImageUrl?showPreview(currentImageUrl):resetPreview();setVisibility(!!s.is_active);document.getElementById("deleteButton").classList.remove("hidden");openEditor();
+}
+document.getElementById("imageInput").addEventListener("change",async e=>{
+  const file=e.target.files[0];if(!file)return;if(!file.type.startsWith("image/"))return toast("Please choose an image file.");
+  try{selectedFile=await compressImage(file);showPreview(URL.createObjectURL(selectedFile));toast("Image optimized for web.")}catch(err){console.error(err);toast("Unable to process image.")}
+});
+async function compressImage(file){
+  const bitmap=await createImageBitmap(file),scale=Math.min(1,MAX_IMAGE_WIDTH/bitmap.width),w=Math.round(bitmap.width*scale),h=Math.round(bitmap.height*scale);
+  const canvas=document.createElement("canvas");canvas.width=w;canvas.height=h;canvas.getContext("2d").drawImage(bitmap,0,0,w,h);
+  const blob=await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error("Compression failed")),"image/jpeg",JPEG_QUALITY));
+  return new File([blob],`event-${Date.now()}.jpg`,{type:"image/jpeg"});
+}
+function showPreview(url){const img=document.getElementById("imagePreview");img.src=url;document.getElementById("uploadBox").classList.add("has-image");document.getElementById("changeImageText").classList.remove("hidden")}
+function resetPreview(){document.getElementById("imagePreview").removeAttribute("src");document.getElementById("uploadBox").classList.remove("has-image");document.getElementById("changeImageText").classList.add("hidden")}
+async function uploadImage(){
+  if(!selectedFile)return currentImageUrl;
+  const filepath=`events/${Date.now()}-${crypto.randomUUID()}.jpg`;
+  const {error}=await db.storage.from("shoot-images").upload(filepath,selectedFile,{cacheControl:"3600",upsert:false});if(error)throw error;
+  const {data}=db.storage.from("shoot-images").getPublicUrl(filepath);return data.publicUrl;
+}
+function storagePathFromUrl(url){
+  if(!url)return null;const marker="/storage/v1/object/public/shoot-images/";const i=url.indexOf(marker);return i===-1?null:decodeURIComponent(url.slice(i+marker.length));
+}
+async function deleteStorageUrl(url){const path=storagePathFromUrl(url);if(!path)return;const {error}=await db.storage.from("shoot-images").remove([path]);if(error)console.warn("Storage cleanup:",error.message)}
+async function saveExperience(){
+  const title=document.getElementById("shootTitle").value.trim(),eventDate=document.getElementById("shootDate").value;if(!title)return toast("Please enter an experience name.");if(!eventDate)return toast("Please choose an event date.");
+  const btn=document.getElementById("saveButton");btn.disabled=true;btn.textContent="Saving...";
+  try{
+    const oldImage=currentImageUrl,newImage=await uploadImage();if(!newImage)throw new Error("Please upload an event image.");
+    const payload={
+      title,
+      event_date:eventDate,
+      shoot_time:document.getElementById("shootTime").value.trim(),
+      duration:document.getElementById("shootDuration").value.trim(),
+      capacity:document.getElementById("shootCapacity").value.trim(),
+      location:document.getElementById("shootLocation").value.trim(),
+      availability:document.getElementById("shootAvailability").value,
+      theme:document.getElementById("shootTheme").value.trim(),
+      participation_fee:document.getElementById("shootPrice").value.trim(),
+      enquiry_note:document.getElementById("shootEnquiryNote").value.trim(),
+      description:document.getElementById("shootDescription").value.trim(),
+      whatsapp_url:document.getElementById("shootWhatsApp").value.trim(),
+      image_url:newImage,
+      is_active:isVisible,
+      updated_at:new Date().toISOString()
+    };
+    if(currentEditId){const {error}=await db.from("shoots").update(payload).eq("id",currentEditId);if(error)throw error;if(selectedFile&&oldImage&&oldImage!==newImage)await deleteStorageUrl(oldImage)}
+    else{const {error}=await db.from("shoots").insert(payload);if(error)throw error}
+    closeEditor();toast(currentEditId?"Experience updated.":"Experience published.");await loadShoots(true);
+  }catch(err){console.error(err);toast(err.message||"Unable to save experience.")}finally{btn.disabled=false;btn.textContent="Save Experience"}
+}
+async function togglePublish(id){
+  const s=shoots.find(x=>String(x.id)===String(id));if(!s)return;const {error}=await db.from("shoots").update({is_active:!s.is_active,updated_at:new Date().toISOString()}).eq("id",id);if(error)return toast("Unable to update visibility.");toast(s.is_active?"Experience hidden.":"Experience published.");await loadShoots(true);
+}
+async function deleteExperienceFromCard(id){
+  const s=shoots.find(x=>String(x.id)===String(id));
+  if(!s)return;
+  const ok=confirm(`Delete "${s.title}" permanently?\n\nThis will also remove its stored image from Supabase.`);
+  if(!ok)return;
+
+  const {error}=await db.from("shoots").delete().eq("id",id);
+  if(error){
+    console.error(error);
+    return toast("Unable to delete experience.");
+  }
+
+  if(s.image_url) await deleteStorageUrl(s.image_url);
+  toast("Experience deleted.");
+  await loadShoots(true);
+}
+
+async function deleteCurrent(){
+  if(!currentEditId)return;if(!confirm("Delete this experience and its stored image permanently?"))return;
+  const s=shoots.find(x=>String(x.id)===String(currentEditId));const {error}=await db.from("shoots").delete().eq("id",currentEditId);if(error)return toast("Unable to delete experience.");
+  if(s?.image_url)await deleteStorageUrl(s.image_url);closeEditor();toast("Experience deleted.");await loadShoots(true);
+}
+async function cleanupOldPast(){
+  const old=shoots.filter(x=>toDate(x.event_date)<startOfToday()).sort((a,b)=>toDate(b.event_date)-toDate(a.event_date)).slice(MAX_PAST);if(!old.length)return false;
+  for(const s of old){if(s.image_url)await deleteStorageUrl(s.image_url);const {error}=await db.from("shoots").delete().eq("id",s.id);if(error){console.warn("Past cleanup failed:",error.message);continue}}
+  toast(`${old.length} older past experience${old.length>1?"s":""} cleaned up.`);return true;
+}
+document.getElementById("visibilitySwitch").onclick=()=>setVisibility(!isVisible);
+function setVisibility(v){isVisible=v;document.getElementById("visibilitySwitch").classList.toggle("active",v)}
+function openEditor(){document.getElementById("editorOverlay").classList.add("active");document.body.style.overflow="hidden"}
+function closeEditor(){document.getElementById("editorOverlay").classList.remove("active");document.body.style.overflow=""}
+document.getElementById("editorOverlay").onclick=e=>{if(e.target.id==="editorOverlay")closeEditor()};
+const sidebar=document.getElementById("sidebar"),sidebarOverlay=document.getElementById("sidebarOverlay");
+document.getElementById("mobileMenu").onclick=()=>{sidebar.classList.add("mobile-open");sidebarOverlay.classList.add("active")};sidebarOverlay.onclick=closeMobileSidebar;
+function closeMobileSidebar(){sidebar.classList.remove("mobile-open");sidebarOverlay.classList.remove("active")}
+let toastTimer;function toast(message){const el=document.getElementById("toast");el.textContent=message;el.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove("show"),2800)}
+function startOfToday(){const d=new Date();d.setHours(0,0,0,0);return d}function toDate(v){return v?new Date(v+"T12:00:00"):new Date(0)}
+function formatDate(v){if(!v)return"—";return toDate(v).toLocaleDateString("en-MY",{day:"2-digit",month:"short",year:"numeric"})}
+function safe(v=""){return String(v).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
+initialize();
+</script>
+</body>
+</html>
